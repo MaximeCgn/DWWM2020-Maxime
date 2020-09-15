@@ -18,6 +18,9 @@
     $age=readline("Entrez votre âge :");
 
     switch ($age) {
+        case $age<=5:
+            echo "Vous êtes trop jeune.";
+            break;
         case $age==6 OR $age==7:
             echo "Vous entrez dans la catégorie Poussin.";
             break;
