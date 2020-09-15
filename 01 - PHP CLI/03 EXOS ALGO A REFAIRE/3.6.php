@@ -14,9 +14,9 @@
 //     else  if ($age>12) {
 //         echo "Vous entrez dans la catégorie Cadet.";
 //     }
-
+/*Requête auprès de l'utilisateur pour définir $age*/
 $age = readline("Entrez votre âge :");
-
+/*Switch pour choisir le cas de figure adapté à $age*/
 switch ($age) {
     case $age <= 5:
         echo "Vous êtes trop jeune.";
