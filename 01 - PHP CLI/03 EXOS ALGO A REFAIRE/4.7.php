@@ -28,7 +28,7 @@ if ($age < 25 and $temps < 2 and $acc == 0) {
 } else if ($age >= 25 and $temps >= 2 and $acc == 1) {
     echo "Vous bénéficiez du tarif orange.";
     if ($fid >= 1) {
-        echo "Vous pouvez passer au tarif vert.";
+        echo "Vous pouvez passer au tarif vert.";       
     }
 } else if ($age >= 25 and $temps >= 2 and $acc == 2) {
     echo "Vous bénéficiez du tarif rouge";
