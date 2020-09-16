@@ -1,23 +1,21 @@
 <?php
 
-
 $somme = 0;
 /*Tant que le prix de l'article n'est pas à 0, le boucle continue d'ajouter le prix de l'article aux total des prix des articles précédents*/
 do {
     $prixu = readline("Prix de l'article :\n");
-        if (ctype_digit($prixu)) {
-            $somme = $somme + $prixu;
-        }
-        else {
-            echo "Veuillez entrer un nombre.\n";
-        }
-    
-} while (ctype_alpha($prixu) || ($prixu!=0));
+    if (ctype_digit($prixu)) {
+        $somme = $somme + $prixu;
+    } else {
+        echo "Veuillez entrer un nombre.\n";
+    }
+
+} while (ctype_alpha($prixu) || ($prixu != 0));
 /*L'utilisateur entre combien il a versé*/
 echo "Le prix total est de : $somme \n";
 do {
     $donne = readline("Veuillez verser autant ou plus que le prix total : \n");
-} while ($donne<$somme);
+} while ($donne < $somme);
 $reste = $donne - $somme;
 $b10 = 0;
 /*Je retire 10 Euros par 10 au reste que l'utilsiateur doit recevoir, en ajoutant +1 a ma variable $b10*/
