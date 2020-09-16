@@ -1,43 +1,42 @@
 <?php
+/**********A REFAIRE AVEC UN SYSTEME DE BONUS MALUS*********/
 /*Requête auprès de l'utilisateur pour définir $age, $temps, $acc et $fid*/
-while (ctype_alpha($age) OR ctype_alpha($temps) OR ctype_alpha($acc) OR ctype_alpha($fid) OR $age<18 OR $temps<0 OR $acc<0 OR $fid<0) {
-echo "Merci d'entrer des données valides.\n";
-$age = readline("Quel âge avez-vous ?\n");
-$temps = readline("Depuis combien de temps d'années avez vous le permis de conduire ?\n");
-$acc = readline("De combien d'accidents êtes vous responsable ?\n");
-$fid = readline("Depuis combien d'années êtes vous client dans notre compagnie ?\n");
-}
+do {
+    $age = readline("Quel âge avez-vous ?\n");
+} while ($age >= 18);
+do {
+    $temps = readline("Combien d'année de permis avez vous ?\n");
+} while ($temps >= 0);
+do {
+    $accident = readline("De combien d'accidents êtes vous responsable ?\n");
+} while ($accident >= 0);
+do {
+    $fid = readline("Depuis combien d'années êtes-vous chez nous ?\n");
+} while ($fidelite >= 0);
+
+$niveau = 0;
 /*Conditions pour check tout les cas de figure*/
-if ($age < 25 and $temps < 2 and $acc == 0) {
-    echo "Vous bénéficiez du tarif rouge.\n";
-    if ($fid >= 1) {
-        echo "Vous pouvez passer au tarif orange.\n";
-    }
-} else if (($age < 25 and $temps >= 2 and $acc == 0) or ($age >= 25 and $temps < 2 and $acc == 0)) {
-    echo "Vous bénéficiez du tarif orange.\n";
-    if ($fid >= 1) {
-        echo "Vous pouvez passer au tarif vert.\n";
-    }
-} else if (($age < 25 and $temps >= 2 and $acc == 0) or ($age >= 25 and $temps < 2 and $acc == 0)) {
-    echo "Vous bénéficiez du tarif rouge.\n";
-    if ($fid >= 1) {
-        echo "Vous pouvez passer au tarif orange.\n";
-    }
-} else if ($age >= 25 and $temps >= 2 and $acc == 0) {
-    echo "Vous bénéficiez du tarif vert.\n";
-    if ($fid >= 1) {
-        echo "Vous pouvez passer au tarif bleu.\n";
-    }
-} else if ($age >= 25 and $temps >= 2 and $acc == 1) {
-    echo "Vous bénéficiez du tarif orange.\n";
-    if ($fid >= 1) {
-        echo "Vous pouvez passer au tarif vert.\n";       
-    }
-} else if ($age >= 25 and $temps >= 2 and $acc == 2) {
-    echo "Vous bénéficiez du tarif rouge";
-    if ($fid >= 1) {
-        echo "Vous pouvez passer au tarif orange.\n";
-    }
+if ($age >= 25) {
+    $niveau = $niveau + 1;
+}
+if ($temps >= 2) {
+    $niveau = $niveau + 1;
+}
+
+$niveau = $niveau - $accident;
+
+if ($niveau >= 0 && $fidelite >= 1) {
+    $niveau = $niveau + 1;
+}
+
+if ($niveau < 0) {
+    echo " Vous n'êtes pas assurable.\n";
+} else if ($niveau = 0) {
+    echo "Le contrat rouge est fait pour vous.\n";
+} else if ($niveau = 1) {
+    echo "Le contrat orange est fait pour vous.\n";
+} else if ($niveau = 1) {
+    echo "Le contrat vers est fait pour vous.\n";
 } else {
-    echo "Aucun tarif n'est disponible pour votre situation, vous êtes refusé.\n";
+    echo "Le contrat bleu est fait pour vous.\n";
 }
