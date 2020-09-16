@@ -23,10 +23,15 @@ $prc4 = $votes4 * 100 / $total;
 /* Conditions pour check les différents cas de figure*/
 if ($prc1 >= 50) {
     echo "Le premier candidat est élu.";
-} else if ($prc2 >= 50 or $prc3 >= 50 or $prc4 = 50) {
+} else if ($prc2 >= 50 or $prc3 >= 50 or $prc4 >= 50) {
     echo "Le premier candidat est battu.";
 } else if ($prc1 > $prc2 and $prc1 > $prc3 and $prc1 > $prc4) {
     echo "Le premier candidat est favorable au second tour.";
-} else {
+} else if ($prc1<12.5) {
+    echo "Le premier candidat n'est pas qualifié au second tour.";
+}
+else {
     echo "Le premier candidat est défavorable au second tour.";
 }
+
+/*****Ajouter une condition (cf. exo 4.6)***** */
