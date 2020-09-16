@@ -1,10 +1,19 @@
 <?php
 /* Requêtes pour définir le nombre de votes pour chaques candidats*/
-$votes1 = readline("Combien de votes a eu le premier candidat ?");
-$votes2 = readline("Combien de votes a eu le second candidat ?");
-$votes3 = readline("Combien de votes a eu le troisième candidat ?");
-$votes4 = readline("Combien de votes a eu le quatrième candidat ?");
-/*calcul du total des votes*/
+echo "Merci d'entrer des nombres de votes valides.\n";
+$votes1 = readline("Combien de votes a eu le premier candidat ?\n");
+$votes2 = readline("Combien de votes a eu le second candidat ?\n");
+$votes3 = readline("Combien de votes a eu le troisième candidat ?\n");
+$votes4 = readline("Combien de votes a eu le quatrième candidat ?\n");
+/*Vérification des données entrées*/
+while (ctype_alpha($votes1) or ctype_alpha($votes2) or ctype_alpha($votes3) or ctype_alpha($votes4) or $votes1 < 0 or $votes2 < 0 or $votes3 < 0 or $votes4 < 0) {
+    echo "Merci d'entrer des nombres de votes valides.\n";
+    $votes1 = readline("Combien de votes a eu le premier candidat ?\n");
+    $votes2 = readline("Combien de votes a eu le second candidat ?\n");
+    $votes3 = readline("Combien de votes a eu le troisième candidat ?\n");
+    $votes4 = readline("Combien de votes a eu le quatrième candidat ?\n");
+}
+/*Calcul du total des votes*/
 $total = $votes1 + $votes2 + $votes3 + $votes4;
 /*calcul du pourcentage de voix pour chacun des candidats*/
 $prc1 = $votes1 * 100 / $total;
