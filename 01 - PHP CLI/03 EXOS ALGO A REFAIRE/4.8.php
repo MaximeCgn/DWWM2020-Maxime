@@ -1,4 +1,5 @@
 <?php
+/*lIGNE 16*/
 /*Requête auprès de l'utilisateur pour définir $jr,$mois et $an*/
 $jr = readline("Entrez un jour(exemple:18)");
 $mois = readline("Entrez un mois (exemple:4)");
@@ -12,7 +13,7 @@ if (ctype_alpha($jr)) {
     echo "Merci d'entrer des nombres.";
 } else if ($an % 4 != 0 and $an % 400 != 0 and $mois == 2 and $jr > 28) {
     echo "Cette date n'est pas valide";
-} else if ($an % 4 == 0 and $an % 400 == 0 and $mois == 2 and $jr > 29) {
+} else if ($mois == 2 and $jr > 29) {
     echo "Cette date n'est pas valide";
 } else if ($mois > 12 or $mois <= 0) {
     echo "Cette date n'est pas valide";
