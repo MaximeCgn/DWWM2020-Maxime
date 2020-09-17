@@ -1,4 +1,14 @@
 <?php
+/*Fonction pour l'affichage du tableau*/
+
+function affichageTableau($tableau)
+{
+    for ($i = 0; $i < 9; $i++) {
+        echo "[", $tableau[$i], "]" . "\t";
+    }
+    return $tableau;
+}
+
 $somme = 0;
 for ($i = 0; $i < 9; $i++) {
     $c = $i + 1;
@@ -8,10 +18,12 @@ for ($i = 0; $i < 9; $i++) {
         $somme = $somme + $note;
     } while (ctype_alpha($note));
     $tableau[$i] = $note;
+
 }
+
 /*Affichage du tableau*/
-var_dump($tableau);
+affichageTableau($tableau);
 /*Calcul de la moyenne*/
 $moy = $somme / 9;
 
-echo "La moyenne de cet élève est de $moy";
+echo "\nLa moyenne de cet élève est de $moy";
