@@ -17,13 +17,11 @@ while ($error == 0) {
 
 for ($x = 1; $x <= $nbr; $x++) { /* Boucle pour calculer la factorielle de $nbr et afficher ce calcul*/
     $produit = $produit * $x;
-    if ($x<$nbr) {
-        echo $x,"x";
-    }
-    else {
-        echo $x,"=",$produit;
+    if ($x < $nbr) {
+        echo $x, "x";
+    } else {
+        echo $x, "=", $produit;
     }
 }
-
 
 echo "\nLa factorielle de ", $nbr, " est :", $produit, "\n";
