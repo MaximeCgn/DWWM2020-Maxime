@@ -47,7 +47,7 @@ return $tableau;
 }
 // ----------------------------------
 /*Fonction pour demander à l'utilisateur combien de valeurs il veut entrer*/
-function nombreValeurs()
+function nombreValeursDansTableau()
 {
     do {
         $nbr = readline("Nombre de valeurs que vous voulez vous entrer :");
@@ -59,7 +59,7 @@ function nombreValeurs()
 }
 // ----------------------------------
 /*Fonction pour que l'utilisateur entre des valeurs numérique avec verif*/
-function valeurs($val) {
+function valeursARentrerDansTableau($val) {
     for ($i = 0; $i < $val; $i++) {
         $c = $i + 1;
         do {

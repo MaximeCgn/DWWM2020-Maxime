@@ -1,12 +1,4 @@
 <?php
-
-function affichageTableau($tableau)
-{
-    for ($i = 0; $i < count($tableau); $i++) {
-        echo "[", $tableau[$i], "]" . "\t";
-    }
-    return $tableau;
-}
 /*Fonction pour demander à l'utilisateur combien de valeurs il veut entrer*/
 function nombreValeurs()
 {
@@ -19,8 +11,8 @@ function nombreValeurs()
     return $nbr;
 }
 /*Fonction pour que l'utilisateur entre ces valeurs*/
-function valeurs($val)
-{
+
+function valeurs($val) {
     for ($i = 0; $i < $val; $i++) {
         $c = $i + 1;
         do {
@@ -28,15 +20,31 @@ function valeurs($val)
             if (ctype_alpha($valeur)) {
                 echo "Merci d'entrer un chiffre.\n";
             }
-        } while (ctype_alpha($valeur));
-        $tableau[$i] = $valeur;
+        
+        $tableau[$i] = $valeur;   
+        } while (ctype_alpha($valeur)); 
     }
     return $tableau;
+    }
+/*Fonction pour affiche le tableau*/
+function affichageTableau($tableau)
+{
+        foreach ($tableau as $element) {
+            echo "[",$element,"]","\t";
+        }
+    return $tableau;
 }
+
 $nb = nombreValeurs();
 $tableau = valeurs($nb);
 affichageTableau($tableau);
-/*Ajout de +1 la l'emplacement de la valeur max pour ne pas commencer de compter a partir de 0*/
-$posMax = (array_search(max($tableau), $tableau)) +1;
-
-echo "\nLa plus haute valeur de ce tableau est : ", max($tableau), "\nElle se trouve en position :", $posMax;
+/*Calcul de la moyenne*/
+$Moy=array_sum($tableau)/$nb;
+echo "\nLe moyenne est de $Moy";
+echo "\nCes notes sont au dessus de la moyenne : ";
+/*Boucle pour afficher les notes au dessus de la moyenne*/
+for ($i=0;$i<$nb;$i++) {
+    if ($tableau[$i]>$Moy){
+        echo $tableau[$i]."\t";
+    }
+}
