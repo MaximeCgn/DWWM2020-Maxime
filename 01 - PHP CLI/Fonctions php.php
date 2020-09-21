@@ -32,7 +32,7 @@ for ($i = 0; $i < 9; $i++) {
 // --------------------------------
 /*Créer des tableaux avec taille inconnue*/
 function créationTableauTailleInconnue($val) {
-    $val=nombreValeurs();
+    $val=nombreValeursDansTableau();
 for ($i = 0; $i < $val; $i++) {
     $c = $i + 1;
     do {
