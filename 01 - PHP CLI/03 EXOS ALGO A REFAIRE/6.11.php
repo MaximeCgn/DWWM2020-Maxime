@@ -14,6 +14,11 @@ $nb2 = nombreValeursDansTableau();
 $tableau2 = créationTableauTailleInconnue($nb2);
 echo "\nVoici le second tableau :\n";
 affichageTableauForeach($tableau2);
-/*Calcul et affichage du troisième tableau, qui multiplie les éléments du tableau 1 par ceux du tableau 2, puis qui additionne le tout*/
-echo "\nLe Schtroumpf sera de : ".array_sum($tableau1)*array_sum($tableau2);
+/*Création du troisième tableau calculant le produit de chaque éléments du tableau 1 avec ceux du tableau 2*/
+for ($i=0;$i<$nb1;$i++) {
+    for ($j=0;$j<$nb2;$j++) {
+        $tableau3[]=$tableau1[$i]*$tableau2[$j];
+    }
+}
 
+echo "Le schtroumpf sera de :". array_sum($tableau3);
