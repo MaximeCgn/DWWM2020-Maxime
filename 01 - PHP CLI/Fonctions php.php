@@ -13,7 +13,7 @@ function affichageTableau($tableau)
 function affichageTableauForeach($tableau)
 {
     foreach ($tableau as $element) {
-        echo $element;
+        echo "[".$element."]\t";
     }
 return $tableau;
 }
