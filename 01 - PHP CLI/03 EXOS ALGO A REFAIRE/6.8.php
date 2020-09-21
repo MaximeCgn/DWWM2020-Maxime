@@ -2,7 +2,7 @@
 
 include "../Fonctions php.php";
 
-$nb=nombreValeursDAnsTableau();
+$nb=nombreValeursDansTableau();
 $tableau=créationTableauTailleInconnue($nb);
 
 for ($i=0;$i<$nb;$i++) {
