@@ -87,3 +87,12 @@ do {
 } while ($valeor !=0);
 }
 // ----------------------------------
+/*Créer un tableau avec des entiers aléatoires*/
+function creerTableauRand($nb)
+{
+    for ($i = 0; $i < $nb; $i++) {
+        $tab[] = rand(1, 100);
+    }
+    return $tab;
+}
+// ----------------------------------
