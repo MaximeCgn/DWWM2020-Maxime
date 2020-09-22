@@ -5,7 +5,7 @@
     echo "Entrez 9 valeurs :\n";
     $tableau=creationTableau();
 
-    arsort($tableau);
+    $tableau=array_reverse($tableau);
 
     echo "Voici votre tableau à l'envers :\n";
 
