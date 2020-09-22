@@ -10,7 +10,7 @@ echo "\n";
 $remove = readline("En quelle position se trouve la case que vous voulez supprimer :\n");
 $remove = $remove - 1;
 
-unset($tableau[$remove]);
+array_splice($tableau,$remove,1);
 
 
 affichageTableauForeach($tableau);
