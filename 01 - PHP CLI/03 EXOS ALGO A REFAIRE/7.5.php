@@ -1,5 +1,14 @@
 <?php
 
-$mot=readline("Quel mot voulez vous chercher ?");
+require "../Fonctions php.php";
 
-array_search($mot,$dico);
+for ($i = 0; $i < 100; $i++) {
+    $tableau[] = rand(1, 100);
+}
+
+sort($tableau);
+
+$mot=readline("Quel nombre voulez vous chercher ?");
+$pos = array_search($mot,$tableau)+1;
+
+echo "Ce chiffre se trouve à la position :". $pos;
