@@ -84,7 +84,7 @@ do {
             $tableau[]=$valeur;
         }
     } while (ctype_alpha($valeur));
-} while ($valeor !=0);
+} while ($valeur !=0);
 }
 // ----------------------------------
 /*Créer un tableau avec des entiers aléatoires*/
