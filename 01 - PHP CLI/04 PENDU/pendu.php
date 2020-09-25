@@ -38,5 +38,4 @@ require "fonction pendu.php";
 // $t[1] =  'O' ;
 // Echo "Cette méthode doit donner 1 et ca donne " . testerGagner(2, $t)."\n";
 
-
-LancerPartie();
+lancerPartie();
