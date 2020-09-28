@@ -26,6 +26,9 @@ function coderMot($mot)
 /*-----------------------------------*/
 /**Cherche les occurrences d'une lettre dans un tableau, cette méthode retourne les positions dans un tableau
  *
+ * @param [char] $lettre    Entre une lettre pour la tester
+ * @param [array] $tab      Tableau dans lequel la lettre doit entrer
+ * @param [int] $depart     Case à laquelle le test doit démarrer
  */
 function testerLettre($lettre, $tab, $depart)
 {
@@ -181,7 +184,7 @@ function DessinerPendu($nbErreur)
 
 /*-----------------------------------*/
 /** méthode qui renvoi un mot en le choisissant au hasard parmi une liste de mots
- * @param  [int]   Nombre aléatoire pour sortir un mot du dico
+ * @param  [int] void  Nombre aléatoire pour sortir un mot du dico
  */
 function dico()
 {
@@ -973,6 +976,7 @@ function choisirMot()
 /*-----------------------------------*/
 /**
  * méthode qui lance et gère une partie
+ * @param mixed void Lance une partie
  */
 function lancerPartie()
 {
