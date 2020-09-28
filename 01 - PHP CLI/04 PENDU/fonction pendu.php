@@ -27,7 +27,7 @@ function coderMot($mot)
 /**Cherche les occurrences d'une lettre dans un tableau, cette méthode retourne les positions dans un tableau
  *
  * @param [char] $lettre    Entre une lettre pour la tester
- * @param [array] $tab      Tableau dans lequel la lettre doit entrer
+ * @param array $tab      Tableau dans lequel la lettre doit entrer
  * @param [int] $depart     Case à laquelle le test doit démarrer
  */
 function testerLettre($lettre, $tab, $depart)
@@ -999,7 +999,6 @@ function lancerPartie()
             $listeMauvaisesLettres[] = $lettre;
         }
         $motCode = ajouterLesLettres($lettre, $motCode, $position);
-        echo
         afficherMauvaisesLettres($listeMauvaisesLettres);
         $gagne = testerGagner($nbErreur, $motCode);
         echo "\n";
