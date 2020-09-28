@@ -1,6 +1,19 @@
 <?php
+do {
+    $diff = readline("Choisissez la difficulté : 1 | 2 | 3 : ");
+    if (($diff != 1) && ($diff != 2) && ($diff != 3)) {
+        echo "\nMerci d'entrer une difficulté valide.\n";
+    }
+} while (($diff != 1) && ($diff != 2) && ($diff != 3));
 
-require "fonction pendu.php";
+if ($diff == 1) {
+    include "fonction pendu facile.php";
+} else if ($diff == 2) {
+    include "fonction pendu moyen.php";
+} else {
+    include "fonction pendu difficile.php";
+}
+lancerPartie();
 
 // $t = array['B', 'O', 'N', 'J', 'O', 'U', 'R'];
 // echo "Cette méthode doit donner B O N J O U R et ca donne : " ; afficherTableau($t);
@@ -37,5 +50,3 @@ require "fonction pendu.php";
 // Echo "Cette méthode doit donner 0 et ca donne " . testerGagner(3, $t)."\n";
 // $t[1] =  'O' ;
 // Echo "Cette méthode doit donner 1 et ca donne " . testerGagner(2, $t)."\n";
-
-lancerPartie();
