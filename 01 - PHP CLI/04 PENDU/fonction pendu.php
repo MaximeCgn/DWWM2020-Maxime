@@ -40,7 +40,10 @@ function testerLettre($lettre, $tab, $depart)
 }
 /*-----------------------------------*/
 /**méthode qui modifie le tableau passé en paramètre en affectant la lettre à la position passée en paramètre
- *
+ * 
+ *  @param [char] $lettre   lettre à placer
+ *  @param [tableau] $tab   tableau dans lequel placer la lettre
+ *  @param [int] $position  position à laquelle se trouve la lettre dans le tableau
  */
 function ajouterUneLettre($lettre, $tab, $position)
 {
@@ -50,7 +53,9 @@ function ajouterUneLettre($lettre, $tab, $position)
 
 /*-----------------------------------*/
 /**méthode qui appelle la méthode ajouterUneLettre pour toutes les valeurs contenues dans la liste en paramètre
- *
+ * @param [char] $lettre    lettre à placer dans le tableau
+ * @param [tableau] $tab    tableau dans lequel placer des lettres
+ * @param [int] $listePosition  Position ou placer les lettres
  */
 
 function ajouterLesLettres($lettre, $tab, $listePosition)
@@ -63,7 +68,7 @@ function ajouterLesLettres($lettre, $tab, $listePosition)
 
 /*-----------------------------------*/
 /**méthode qui permet d'afficher les caractères contenus dans la liste passée en paramètre à l'écran
- *
+ *  @param [char] $listeLettres   Liste des mauvaises lettres
  */
 function afficherMauvaisesLettres($listeLettres)
 {
@@ -74,7 +79,7 @@ function afficherMauvaisesLettres($listeLettres)
 
 /*-----------------------------------*/
 /**\\méthode qui permet de dessiner le pendu en fonction du nombre d’erreur
- *
+ * @param [int] $nbErreur  Nombre d'erreurs
  */
 function DessinerPendu($nbErreur)
 {
@@ -176,7 +181,7 @@ function DessinerPendu($nbErreur)
 
 /*-----------------------------------*/
 /** méthode qui renvoi un mot en le choisissant au hasard parmi une liste de mots
- *
+ * @param  [int]   Nombre aléatoire pour sortir un mot du dico
  */
 function dico()
 {
@@ -923,7 +928,7 @@ function dico()
 
 /*-----------------------------------*/
 /**méthode qui demande une lettre à l’utilisateur, elle vérifie que le caractère saisi est une lettre et le renvoi en majuscule.
- *
+ * @param [char] $lettre    lettre que l'utilisateur va entrer
  */
 function demanderLettre()
 {
@@ -937,6 +942,8 @@ function demanderLettre()
 /*-----------------------------------*/
 /**
  * méthode qui renvoi 1 si la partie est gagné, -1 si la partie est perdu, 0 si la partie continue. Elle reçoit en paramètre le nombre d’erreurs et le tableau contenant le mot composé
+ * @param int $nbErreur   Nombre d'erreurs
+ * @param array $tab      Tableau dans lequel se trouve le jeu
  */
 function testerGagner($nberreur, $tab)
 {
@@ -951,6 +958,12 @@ function testerGagner($nberreur, $tab)
     }
 }
 /*-----------------------------------*/
+/**
+ * methode qui permet de choisir un mot aléatoire
+ * 
+ *@param int $nombre    Sort un nombre pour choisir un mot aléatoire
+ * @return void
+ */
 function choisirMot()
 {
     $dico = dico();
