@@ -43,7 +43,7 @@ function testerLettre($lettre, $tab, $depart)
 }
 /*-----------------------------------*/
 /**méthode qui modifie le tableau passé en paramètre en affectant la lettre à la position passée en paramètre
- * 
+ *
  *  @param [char] $lettre   lettre à placer
  *  @param [tableau] $tab   tableau dans lequel placer la lettre
  *  @param [int] $position  position à laquelle se trouve la lettre dans le tableau
@@ -963,7 +963,7 @@ function testerGagner($nberreur, $tab)
 /*-----------------------------------*/
 /**
  * methode qui permet de choisir un mot aléatoire
- * 
+ *
  *@param int $nombre    Sort un nombre pour choisir un mot aléatoire
  * @return void
  */
@@ -981,6 +981,7 @@ function choisirMot()
 function lancerPartie()
 {
     $mot = choisirMot();
+    echo $mot;
     $motCode = coderMot($mot);
     $nbErreur = 0;
     $motTableau = str_split($mot);
@@ -989,25 +990,26 @@ function lancerPartie()
     do {
         afficherTableau($motCode);
         $lettre = demanderLettre();
-        // while (in_array($lettre,$listeMauvaisesLettres)==true) {
-        //     echo "Vous avez déjà donné cette lettre";
-        //     $lettre=demanderLettre();
-        // }
+        while (in_array($lettre, $listeMauvaisesLettres) === true) {
+            echo "Vous avez déjà donné cette lettre";
+            $lettre = demanderLettre();
+        }
         $position = testerLettre($lettre, $motTableau, 0);
         if (empty($position)) {
             $nbErreur++;
             $listeMauvaisesLettres[] = $lettre;
         }
+        while (in_array($lettre, $motCode) === true) {
+            echo "Vous avez déjà donné cette lettre";
+            $lettre = demanderLettre();
+        }
         $motCode = ajouterLesLettres($lettre, $motCode, $position);
-        // while (in_array($lettre,$motCode)==true) {
-        //     echo "Vous avez déjà donné cette lettre";
-        //     $lettre=demanderLettre();
-        // }
+
         afficherMauvaisesLettres($listeMauvaisesLettres);
         $gagne = testerGagner($nbErreur, $motCode);
         echo "\n";
         DessinerPendu($nbErreur);
-        
+
     } while ($gagne == 0);
     if ($gagne == 1) {
         echo "Vous avez gagné. \nLe mot était $mot";
