@@ -999,10 +999,15 @@ function lancerPartie()
             $listeMauvaisesLettres[] = $lettre;
         }
         $motCode = ajouterLesLettres($lettre, $motCode, $position);
+        // while (in_array($lettre,$motCode)==true) {
+        //     echo "Vous avez déjà donné cette lettre";
+        //     $lettre=demanderLettre();
+        // }
         afficherMauvaisesLettres($listeMauvaisesLettres);
         $gagne = testerGagner($nbErreur, $motCode);
         echo "\n";
         DessinerPendu($nbErreur);
+        
     } while ($gagne == 0);
     if ($gagne == 1) {
         echo "Vous avez gagné. \nLe mot était $mot";
