@@ -1085,26 +1085,28 @@ function lancerPartie($diff)
             do {
                 afficherTableau($motCode);
                 $lettre = demanderLettre();
-                $position = testerLettre($lettre, $motTableau, 0);
-                if (!empty($position)) {
-                    if (count(testerLettre($lettre, $motCode, 0)) == count($position)) {
+                $positions = testerLettre($lettre, $motTableau, 0);
+                if (!empty($positions)) { /*Insère une lettre aléatoire s'il en existe plusieurs dans le tableau*/
+                    if (count(testerLettre($lettre, $motCode, 0)) == count($positions)) {
 
                         $listeMauvaisesLettres[] = $lettre;
                         $nbErreur += 1;
 
                     } else {
-                        $position[0] = $position[rand(0, count($position) - 1)];
+                        $position[0] = $positions[rand(0, count($positions) - 1)];
                         while ($motCode[$position[0]] == $lettre) {
-                            $position[0] = $position[rand(0, count($position) - 1)];
+                            $position[0] = $positions[rand(0, count($positions) - 1)];
                         }
+                        var_dump($position);
                         $motCode = ajouterLesLettres($lettre, $motCode, $position);
                     }
                 } else {
                     $listeMauvaisesLettres[] = $lettre;
                     $nbErreur += 1;
                     $essais -= 1;
+                    echo "Nombre de vies restantes : $essais\n";
                 }
-                echo "Nombre de vies restantes : $essais\n";
+
                 afficherMauvaisesLettres($listeMauvaisesLettres);
                 $gagne = testerGagner($nbErreur, $motCode);
                 echo "\n";
@@ -1125,27 +1127,28 @@ function lancerPartie($diff)
             do {
                 afficherTableau($motCode);
                 $lettre = demanderLettre();
-                $position = testerLettre($lettre, $motTableau, 0);
-                if (!empty($position)) {
-                    if (count(testerLettre($lettre, $motCode, 0)) == count($position)) {
+                $positions = testerLettre($lettre, $motTableau, 0);
+                if (!empty($positions)) { /*Insère une lettre aléatoire s'il en existe plusieurs dans le tableau*/
+                    if (count(testerLettre($lettre, $motCode, 0)) == count($positions)) {
 
                         $listeMauvaisesLettres[] = $lettre;
                         $nbErreur += 1;
 
                     } else {
-                        $position[0] = $position[rand(0, count($position) - 1)];
+                        $position[0] = $positions[rand(0, count($positions) - 1)];
                         while ($motCode[$position[0]] == $lettre) {
-                            $position[0] = $position[rand(0, count($position) - 1)];
+                            $position[0] = $positions[rand(0, count($positions) - 1)];
                         }
+                        var_dump($position);
                         $motCode = ajouterLesLettres($lettre, $motCode, $position);
                     }
                 } else {
                     $listeMauvaisesLettres[] = $lettre;
                     $nbErreur += 1;
                     $essais -= 1;
+                    echo "Nombre de vies restantes : $essais\n";
                 }
 
-                echo "Nombre de vies restantes : $essais\n";
                 afficherMauvaisesLettres($listeMauvaisesLettres);
                 $gagne = testerGagner($nbErreur, $motCode);
                 echo "\n";
