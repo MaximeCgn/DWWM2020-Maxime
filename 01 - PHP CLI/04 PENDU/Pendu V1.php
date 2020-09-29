@@ -960,6 +960,11 @@ function ajouterLesLettres($val, $tab, $tabpos, $niveau)
             return -1; // plus de place pour la lettre
         case 3:
             // on place les lettres aléatoirement
+            do {
+            $posRandom=$tabpos[rand(0,count($tabpos)-1)];
+            }while ($tab[$posRandom]==$val);
+            $tab=ajouterUneLettre($val,$tab,$posRandom);
+            return $tab ;
     }
     return -1;
 }
@@ -1135,7 +1140,7 @@ function lancerPartie($niveau)
         }
 
         $gagne = testerGagner($nbErreur, $motCode); // on teste l'état de la partie
-        echo chr(27) . chr(91) . 'H' . chr(27) . chr(91) . 'J'; //permet de vider l'écran
+        //echo chr(27) . chr(91) . 'H' . chr(27) . chr(91) . 'J'; //permet de vider l'écran
     } while ($gagne == 0);
     if ($gagne == 1)
     {
