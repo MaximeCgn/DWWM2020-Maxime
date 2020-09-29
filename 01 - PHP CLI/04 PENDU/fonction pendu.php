@@ -15,12 +15,32 @@ function afficherTableau($tab)
  * Remplace les les lettres du tableau par des underscore
  * @param array $t tableau contenant un underscore par case.
  */
-function coderMot($mot)
+function coderMot($mot, $diff)
 {
     $tab = str_split($mot);
-    for ($i = 0; $i < count($tab); $i++) {
-        $tab[$i] = "_";
+    switch ($diff) {
+        case 1:
+            for ($i = 1; $i < count($tab) - 1; $i++) {
+                $tab[$i] = "_";
+            }
+            break;
+        case 2:
+            for ($i = 0; $i < count($tab); $i++) {
+                $tab[$i] = "_";
+            }
+            break;
+        case 3:
+            for ($i = 0; $i < count($tab); $i++) {
+                $tab[$i] = "_";
+            }
+            break;
+        case 4:
+            for ($i = 0; $i < count($tab); $i++) {
+                $tab[$i] = "_";
+            }
+            break;
     }
+
     return $tab;
 }
 /*-----------------------------------*/
@@ -950,7 +970,7 @@ function demanderLettre()
  */
 function testerGagner($nberreur, $tab)
 {
-    if ($nberreur >= 8) {
+    if ($nberreur >= 9) {
         return -1;
     } else {
         if (in_array("_", $tab) === false) {
@@ -976,41 +996,164 @@ function choisirMot()
 /*-----------------------------------*/
 /**
  * méthode qui lance et gère une partie
- * @param mixed void Lance une partie
+ * @param int $diff change la difficulté de la partie et la lance
  */
-function lancerPartie()
+function lancerPartie($diff)
 {
-    $mot = choisirMot();
-    echo $mot;
-    $motCode = coderMot($mot);
-    $nbErreur = 0;
-    $motTableau = str_split($mot);
-    $listeMauvaisesLettres = [];
-    $gagne = 0;
-    do {
-        afficherTableau($motCode);
-        $lettre = demanderLettre();
-        while (in_array($lettre, $listeMauvaisesLettres) === true) {
-            echo "Vous avez déjà donné cette lettre";
-            $lettre = demanderLettre();
-        }
-        $position = testerLettre($lettre, $motTableau, 0);
-        if (empty($position)) {
-            $nbErreur++;
-            $listeMauvaisesLettres[] = $lettre;
-        }
-        while (in_array($lettre, $motCode) === true) {
-            echo "Vous avez déjà donné cette lettre";
-            $lettre = demanderLettre();
-        }
-        $motCode = ajouterLesLettres($lettre, $motCode, $position);
+    switch ($diff) {
+        case 1: /*Difficulté facile*/
+            echo "\nVous avez choisi la difficulté facile, c'est pathétique, jouez maintenant.\nVous avez 10 vies.\n";
+            $mot = choisirMot();
+            $motCode = coderMot($mot, $diff);
+            $nbErreur = -1;
+            $motTableau = str_split($mot);
+            $listeMauvaisesLettres = [];
+            $tableauFacile =
+            $gagne = 0;
+            $essais = 10;
+            do {
+                afficherTableau($motCode);
+                $lettre = demanderLettre();
+                while ((in_array($lettre, $listeMauvaisesLettres) === true) || (in_array($lettre, $motCode) === true)) {
+                    echo "Vous avez déjà donné cette lettre";
+                    $lettre = demanderLettre();
+                }
+                $tabFacile = array_slice($motCode, 1, count($motCode) - 2);
+                $position = testerLettre($lettre, $motTableau, 0);
+                if (empty($position)) {
+                    $essais = $essais - 1;
+                    $nbErreur++;
+                    $listeMauvaisesLettres[] = $lettre;
+                    echo "Nombres de chances restantes : $essais \n";
+                }
+                $motCode = ajouterLesLettres($lettre, $motCode, $position);
 
-        afficherMauvaisesLettres($listeMauvaisesLettres);
-        $gagne = testerGagner($nbErreur, $motCode);
-        echo "\n";
-        DessinerPendu($nbErreur);
+                afficherMauvaisesLettres($listeMauvaisesLettres);
+                $gagne = testerGagner($nbErreur, $tabFacile);
+                echo "\n";
+                DessinerPendu($nbErreur);
 
-    } while ($gagne == 0);
+            } while ($gagne == 0);
+            break;
+        case 2: /*Difficulté moyenne*/
+            echo "\nVous avez choisi la difficulté moyenne, décevant.\nVous avez 9 vies.\n";
+            $mot = choisirMot();
+            $motCode = coderMot($mot, $diff);
+            $nbErreur = 0;
+            $motTableau = str_split($mot);
+            $listeMauvaisesLettres = [];
+            $gagne = 0;
+            $essais = 9;
+            do {
+                afficherTableau($motCode);
+                $lettre = demanderLettre();
+                while (in_array($lettre, $listeMauvaisesLettres) === true) {
+                    echo "Vous avez déjà donné cette lettre";
+                    $lettre = demanderLettre();
+                }
+                $position = testerLettre($lettre, $motTableau, 0);
+                if (empty($position)) {
+                    $nbErreur++;
+                    $listeMauvaisesLettres[] = $lettre;
+                    $essais -= 1;
+                    echo "Nombres de vies restantes : $essais" . "\n";
+                }
+                while (in_array($lettre, $motCode) === true) {
+                    echo "Vous avez déjà donné cette lettre";
+                    $lettre = demanderLettre();
+                }
+                $motCode = ajouterLesLettres($lettre, $motCode, $position);
+
+                afficherMauvaisesLettres($listeMauvaisesLettres);
+                $gagne = testerGagner($nbErreur, $motCode);
+                echo "\n";
+                DessinerPendu($nbErreur);
+
+            } while ($gagne == 0);
+
+            break;
+        case 3: /*Difficulté difficile*/
+            echo "Vous avez choisi la difficulté difficile. Voilà un vrai challenge.\nVous avez 7 vies.\n";
+            $mot = choisirMot();
+            echo $mot;
+            $motCode = coderMot($mot, $diff);
+            $nbErreur = 2;
+            $motTableau = str_split($mot);
+            $listeMauvaisesLettres = [];
+            $gagne = 0;
+            $essais = 7;
+            do {
+                afficherTableau($motCode);
+                $lettre = demanderLettre();
+                $position = testerLettre($lettre, $motTableau, 0);
+                if (!empty($position)) {
+                    if (count(testerLettre($lettre, $motCode, 0)) == count($position)) {
+
+                        $listeMauvaisesLettres[] = $lettre;
+                        $nbErreur += 1;
+
+                    } else {
+                        $position[0] = $position[rand(0, count($position) - 1)];
+                        while ($motCode[$position[0]] == $lettre) {
+                            $position[0] = $position[rand(0, count($position) - 1)];
+                        }
+                        $motCode = ajouterLesLettres($lettre, $motCode, $position);
+                    }
+                } else {
+                    $listeMauvaisesLettres[] = $lettre;
+                    $nbErreur += 1;
+                    $essais -= 1;
+                }
+                echo "Nombre de vies restantes : $essais\n";
+                afficherMauvaisesLettres($listeMauvaisesLettres);
+                $gagne = testerGagner($nbErreur, $motCode);
+                echo "\n";
+                DessinerPendu($nbErreur);
+
+            } while ($gagne == 0);
+            break;
+        case 4: /*Difficulté hardcore*/
+            echo "Vous avez choisi la difficulté harcore, t'es complètement taré.\nVous n'avez que 3 vies.\n";
+            $mot = choisirMot();
+            echo $mot;
+            $motCode = coderMot($mot, $diff);
+            $nbErreur = 6;
+            $motTableau = str_split($mot);
+            $listeMauvaisesLettres = [];
+            $gagne = 0;
+            $essais = 3;
+            do {
+                afficherTableau($motCode);
+                $lettre = demanderLettre();
+                $position = testerLettre($lettre, $motTableau, 0);
+                if (!empty($position)) {
+                    if (count(testerLettre($lettre, $motCode, 0)) == count($position)) {
+
+                        $listeMauvaisesLettres[] = $lettre;
+                        $nbErreur += 1;
+
+                    } else {
+                        $position[0] = $position[rand(0, count($position) - 1)];
+                        while ($motCode[$position[0]] == $lettre) {
+                            $position[0] = $position[rand(0, count($position) - 1)];
+                        }
+                        $motCode = ajouterLesLettres($lettre, $motCode, $position);
+                    }
+                } else {
+                    $listeMauvaisesLettres[] = $lettre;
+                    $nbErreur += 1;
+                    $essais -= 1;
+                }
+
+                echo "Nombre de vies restantes : $essais\n";
+                afficherMauvaisesLettres($listeMauvaisesLettres);
+                $gagne = testerGagner($nbErreur, $motCode);
+                echo "\n";
+                DessinerPendu($nbErreur);
+
+            } while ($gagne == 0);
+            break;
+    }
     if ($gagne == 1) {
         echo "Vous avez gagné. \nLe mot était $mot";
     } else {
