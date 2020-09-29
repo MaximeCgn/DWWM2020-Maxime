@@ -1075,7 +1075,6 @@ function lancerPartie($diff)
         case 3: /*Difficulté difficile*/
             echo "Vous avez choisi la difficulté difficile. Voilà un vrai challenge.\nVous avez 7 vies.\n";
             $mot = choisirMot();
-            echo $mot;
             $motCode = coderMot($mot, $diff);
             $nbErreur = 2;
             $motTableau = str_split($mot);
@@ -1117,7 +1116,6 @@ function lancerPartie($diff)
         case 4: /*Difficulté hardcore*/
             echo "Vous avez choisi la difficulté harcore, t'es complètement taré.\nVous n'avez que 3 vies.\n";
             $mot = choisirMot();
-            echo $mot;
             $motCode = coderMot($mot, $diff);
             $nbErreur = 6;
             $motTableau = str_split($mot);
