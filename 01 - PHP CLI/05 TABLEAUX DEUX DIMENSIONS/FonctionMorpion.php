@@ -1,6 +1,6 @@
 <?php
 /**
- * Méthode pour tester si un joueur a terminé la partie
+ * vérifie si le joueur qui vient de jouer à gagner.Renvoi 1 si la partie est gagnée, -1 si le tableau est plein, 0 si la partie est toujours en cours
  *
  * @param array $plateau Plateau de jeu dans lequel se trouve les symboles des joueurs
  * @param int $alignementPourGagner Nombre d'alignement de symboles nécessaire pour gagner
@@ -17,7 +17,7 @@ function testerGagne($plateau, $alignementPourGagner, $positions, $symbole)
     $sommeDiagonaleDescendante = compteAlignes($plateau, $positions, -1, -1, $symbole) + compteAlignes($plateau, $positions, 1, 1, $symbole) + 1; //Demande à compteAlignes de compter l'alignement sur la diagonale descendante, j'ajoute +1 puisqu'il ne compte pas le dernier symbole ajouté
     if (($sommeLigne >= $alignementPourGagner) || ($sommeColonne >= $alignementPourGagner) || ($sommeDiagonaleMontante >= $alignementPourGagner) || ($sommeDiagonaleDescendante >= $alignementPourGagner)) {
         return 1; //Si l'une des variables est égale ou supérieure au nombre de symbole qu'il faut pour gagner, la partie s'arrête, et le joueur gagne
-    } else if (plateauPlein($plateau) == true) {
+    } else if (plateauPlein($plateau)) {
         return -1; //Sinon si le plateau est plein, la partie s'arrête, il n'y a aucun vainqueur
     } else {
         return 0; //Sinon, la partie continue
