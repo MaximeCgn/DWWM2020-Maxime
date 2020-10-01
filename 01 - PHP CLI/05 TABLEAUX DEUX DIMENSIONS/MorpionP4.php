@@ -251,20 +251,20 @@ function selectionPosition($plateau, $symbole, $jeu)
             return $positions;
             break;
         case "P":
-                do//boucle pour verifier si les position existe dans le plateau
+            do//boucle pour verifier si les position existe dans le plateau
+            {
+
+                do// boucle pour la saisie et verifier si la chaine est bien alpha numerique de 2 ou 3 caractères
                 {
 
-                        do// boucle pour la saisie et verifier si la chaine est bien alpha numerique de 2 ou 3 caractères
-                        {
+                    $chaine = readline("$symbole veuillez saisir la colonne : ");
 
-                            $chaine = readline("$symbole veuillez saisir la position de votre pion: ");
+                } while (strlen($chaine) > 1 || strlen($chaine) == 0 || !ctype_alpha($chaine));
 
-                        } while (strlen($chaine) > 2 || strlen($chaine) ==  0|| !ctype_alpha($chaine));
-                    
-                    $positions = conversionPosition($chaine,"P");
-                    $case=trouverCase($plateau,$positions);
+                $positions = conversionPosition($chaine, "P");
+                $case = trouverCase($plateau, $positions);
 
-                } while ($case == -1);
+            } while ($case == -1);
             return $case;
             break;
     }
@@ -324,7 +324,7 @@ function compteAlignes($plateau, $positions, $directionX, $directionY, $symbole)
  * @param char $symbole
  * @return void
  */
-function testerGagne($plateau, $alignementPourGagner, $positions, $symbole,$jeu)
+function testerGagne($plateau, $alignementPourGagner, $positions, $symbole, $jeu)
 {
     //X = Lignes Y = Colonnes
     $sommeLigne = compteAlignes($plateau, $positions, 1, 0, $symbole) + compteAlignes($plateau, $positions, -1, 0, $symbole) + 1; //Demande à compteAlignes de compter l'alignement sur la ligne, j'ajoute +1 puisqu'il ne compte pas le dernier symbole ajouté
@@ -333,7 +333,7 @@ function testerGagne($plateau, $alignementPourGagner, $positions, $symbole,$jeu)
     $sommeDiagonaleDescendante = compteAlignes($plateau, $positions, -1, -1, $symbole) + compteAlignes($plateau, $positions, 1, 1, $symbole) + 1; //Demande à compteAlignes de compter l'alignement sur la diagonale descendante, j'ajoute +1 puisqu'il ne compte pas le dernier symbole ajouté
     if (($sommeLigne >= $alignementPourGagner) || ($sommeColonne >= $alignementPourGagner) || ($sommeDiagonaleMontante >= $alignementPourGagner) || ($sommeDiagonaleDescendante >= $alignementPourGagner)) {
         return 1; //Si l'une des variables est égale ou supérieure au nombre de symbole qu'il faut pour gagner, la partie s'arrête, et le joueur gagne
-    } else if (plateauPlein($plateau,$jeu)) {
+    } else if (plateauPlein($plateau, $jeu)) {
         return -1; //Sinon si le plateau est plein, la partie s'arrête, il n'y a aucun vainqueur
     } else {
         return 0; //Sinon, la partie continue
@@ -350,8 +350,8 @@ function lancerPartie()
     //msg de bienvenue
     echo "\n\n\t\t*****\tMORPION OU PUISSANCE 4\t*****\t\t\n\n";
     do {
-    $jeu = strtoupper(readline("A quel jeu voulez vous jouer ? (M pour Morpion | P pour Puissance 4) "));
-    } while (($jeu!="M") && ($jeu!="P"));
+        $jeu = strtoupper(readline("A quel jeu voulez vous jouer ? (M pour Morpion | P pour Puissance 4) "));
+    } while (($jeu != "M") && ($jeu != "P"));
     //initialisation
     do {
 
@@ -385,7 +385,7 @@ function lancerPartie()
         afficheTableau($plateau, $jeu);
         $positions = selectionPosition($plateau, $symboles[$joueurEnCours], $jeu);
         $plateau = remplirTableau($plateau, $symboles[$joueurEnCours], $positions);
-        $testGagner = testerGagne($plateau, $alignementPourGagner, $positions, $symboles[$joueurEnCours],$jeu);
+        $testGagner = testerGagne($plateau, $alignementPourGagner, $positions, $symboles[$joueurEnCours], $jeu);
         echo chr(27) . chr(91) . 'H' . chr(27) . chr(91) . 'J'; //permet de vider l'écran
     } while ($testGagner == 0);
     if ($testGagner == 1) {
@@ -433,8 +433,8 @@ function trouverCase($plateau, $numCol)
 {
     for ($i = (count($plateau) - 1); $i >= 0; $i--) {
         if ($plateau[$i][$numCol] == ".") {
-            $tabPos[0]=$i;
-            $tabPos[1]=$numCol;
+            $tabPos[0] = $i;
+            $tabPos[1] = $numCol;
             return $tabPos;
         }
     }
