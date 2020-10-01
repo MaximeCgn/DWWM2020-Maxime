@@ -349,7 +349,9 @@ function lancerPartie()
 {
     //msg de bienvenue
     echo "\n\n\t\t*****\tMORPION OU PUISSANCE 4\t*****\t\t\n\n";
+    do {
     $jeu = strtoupper(readline("A quel jeu voulez vous jouer ? (M pour Morpion | P pour Puissance 4) "));
+    } while (($jeu!="M") && ($jeu!="P"));
     //initialisation
     do {
 
