@@ -253,6 +253,7 @@ function selectionPosition($plateau, $symbole, $jeu)
         case "P":
             do//boucle pour verifier si les position existe dans le plateau
             {
+                do {
 
                 do// boucle pour la saisie et verifier si la chaine est bien alpha numerique de 2 ou 3 caractères
                 {
@@ -262,8 +263,9 @@ function selectionPosition($plateau, $symbole, $jeu)
                 } while (strlen($chaine) > 1 || strlen($chaine) == 0 || !ctype_alpha($chaine));
 
                 $positions = conversionPosition($chaine, "P");
+                
+            }while ($numCol>=count($plateau[0]));
                 $case = trouverCase($plateau, $positions);
-
             } while ($case == -1);
             return $case;
             break;
