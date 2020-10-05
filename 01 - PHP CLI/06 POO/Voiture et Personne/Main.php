@@ -1,5 +1,7 @@
 <?php
 //Faire en sorte qu'une personne ait une voiture (require les class)
+require "Personne.Class.php";
+require "Voiture.Class.php";
 $v1 = new Personne("Cugny","Maxime",22);
 $v2 = new Personne("cUGNY","maxime",21);
 
