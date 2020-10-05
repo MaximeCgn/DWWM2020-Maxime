@@ -1,54 +1,38 @@
 <?php
 
-require "Voiture.Class.php";
-
-Class Personne
+class Personne
 {
     //ATTRIBUTS
-    private $_mere;
-    private $_pere;
-    private $_voiture;
+    private $_nom;
+    private $_prenom;
 
     //ASSESSEURS
 
-    public function getMere()
+    public function getNom()
     {
-        return $this->_mere;
+        return $this->_nom;
     }
 
-    public function setMere($mere)
+    public function setNom($nom)
     {
-        $this->_mere = $mere;
+        $this->_nom = $nom;
     }
 
-    public function getPere()
+    public function getPrenom()
     {
-        return $this->_pere;
+        return $this->_prenom;
     }
 
-    public function setPere($pere)
+    public function setPrenom($prenom)
     {
-        $this->_pere = $pere;
+        $this->_prenom = $prenom;
     }
-
-    public function getVoiture()
-    {
-        return $this->_voiture;
-    }
-
-    public function setVoiture($voiture)
-    {
-        $this->_voiture = $voiture;
-    }
-
     //CONSTRUCTEUR
 
-    public function __construct (String $mere, String $pere, Array $voiture)
+    public function __construct(String $nom, String $prenom)
     {
-        $this->setMere($mere);
-        $this->setPere($pere);
-        $this->setVoiture($voiture);
+        $this->setNom($nom);
+        $this->setPrenom($prenom);
     }
-
 
 }
