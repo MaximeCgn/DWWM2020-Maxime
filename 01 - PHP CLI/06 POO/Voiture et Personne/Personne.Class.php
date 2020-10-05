@@ -6,6 +6,7 @@ class Personne
     private $_nom;
     private $_prenom;
     private $_age;
+    private $_voiture;
 
     //Constructeur
     public function __construct(String $n, String $p, Int $a, Voiture $v)
@@ -32,6 +33,10 @@ class Personne
     {
         return $this->_age;
     }
+    public function getVoiture()
+    {
+        return $this->_voiture;
+    }
 
     //SETTER
 
@@ -49,12 +54,16 @@ class Personne
     {
         $this->_age = $a > 0 ? $a : null;
     }
+    public function setVoiture(Voiture $voiture)
+    {
+        $this->_voiture = $voiture;
+    }
 
     //toString
 
     public function toString()
     {
-        return $reponse = "Le nom de la personne est $this->_nom. Son prénom est $this->_prenom. Il a $this->_age ans";
+        return $reponse = "Le nom de la personne est $this->_nom. Son prénom est $this->_prenom. Il a $this->_age ans.Sa voiture est une ". $his->getVoiture->getMarque;
     }
 
     //equalsTo
@@ -77,4 +86,5 @@ class Personne
             return -1;
         }
     }
+
 }

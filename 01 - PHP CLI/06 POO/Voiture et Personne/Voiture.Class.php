@@ -43,7 +43,7 @@ class Voiture
     }
     public function setKm(Int $km)
     {
-        $this->_km = $km > 0 ? $mod : null;
+        $this->_km = $km > 0 ? $km : null;
     }
 
     //toString
