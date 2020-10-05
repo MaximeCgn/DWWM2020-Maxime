@@ -8,11 +8,12 @@ class Personne
     private $_age;
 
     //Constructeur
-    public function __construct(String $n, String $p, Int $a)
+    public function __construct(String $n, String $p, Int $a, Voiture $v)
     {
         $this->setNom($n);
         $this->setPrenom($p);
         $this->setAge($a);
+        $this->setVoiture($v);
     }
 
     //Assesseurs

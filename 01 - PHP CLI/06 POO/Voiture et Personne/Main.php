@@ -4,6 +4,7 @@ require "Personne.Class.php";
 require "Voiture.Class.php";
 $v1 = new Personne("Cugny","Maxime",22);
 $v2 = new Personne("cUGNY","maxime",21);
+$p1= new Voiture ("cugny","maxime",22,)
 
 echo $v1->toString()."\n";
 echo $v2->toString()."\n";
