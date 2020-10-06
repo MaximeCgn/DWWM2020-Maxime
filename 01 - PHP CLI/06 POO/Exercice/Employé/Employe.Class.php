@@ -95,16 +95,30 @@ class Employe
 
     /*****************Autres Méthodes***************** */
 
-    public function anciennete()
+    public function anciennete() //Methode qui calcule et renvoi l'ancienneté
+
     {
-        $date=new DateTime('now');
-        $diff=$date->diff($this->getDateDEmbauche());
-        return $diff->format("%Y")*1;
+        $date = new DateTime('now');
+        $diff = $date->diff($this->getDateDEmbauche());
+        return $diff->format("%Y") * 1;
     }
 
-    public function prime()
+    private function primeSalaire() //Méthode qui permet de calculer la prime sur le salaire annuel
+
     {
-        
+        return ($this->getSalaire() * 0.05);
+    }
+
+    private function primeAnciennete() //Méthode qui permet de calculer la prime d'ancienneté
+
+    {
+        return ($this->getSalaire() * 0.02 * $this->anciennete());
+    }
+
+    public function prime() //Méthode qui permet de calculer la prime totale
+
+    {
+        return $this->primeSalaire() + $this->primeAnciennete();
     }
 
 }
