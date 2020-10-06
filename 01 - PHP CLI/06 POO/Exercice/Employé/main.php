@@ -39,8 +39,8 @@ foreach ($listeEmploye as $elt) { //Affichage des employés dans l'entreprise av
     echo $elt->toString() . "\n";
 }
 $masseSalariale=0;
-foreach ($listeEmploye as $key) {//Calcul de la masse Salariale
-    $masseSalariale+=$key->getSalaire()*1000+$key->prime();
+foreach ($listeEmploye as $key) {
+    $masseSalariale+=$key->masseSalariale();
 }
 echo "\n********************\n";
 echo "\nLa masse salariale de l'entreprise est de $masseSalariale";

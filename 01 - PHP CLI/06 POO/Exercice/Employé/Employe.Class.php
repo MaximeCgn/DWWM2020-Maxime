@@ -165,4 +165,9 @@ class Employe
         }
     }
 
+    public function masseSalariale()
+    {
+        return $this->getSalaire()*1000+$this->prime();
+    }
+
 }
