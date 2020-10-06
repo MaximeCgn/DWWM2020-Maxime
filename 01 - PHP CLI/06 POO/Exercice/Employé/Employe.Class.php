@@ -11,6 +11,7 @@ class Employe
     private $_salaire;
     private $_service;
     private static $_nbrEmploye;
+    private $_agence;
 
     /*****************Accesseurs***************** */
 
@@ -84,6 +85,16 @@ class Employe
         self::$_nbrEmploye = $nbrEmploye;
     }
 
+    public function getAgence()
+    {
+        return $this->_agence;
+    }
+
+    public function setAgence($agence)
+    {
+        $this->_agence = $agence;
+    }
+
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
@@ -135,7 +146,7 @@ class Employe
 
     public function toString()
     {
-        return "\nNom :" . $this->getNom() . "\nPrénom :" . $this->getPrenom() . "\nDate d'embauche :" . $this->getDateDEmbauche()->format('Y-m-d') . "\nFonction :" . $this->getFonction() . "\nSalaire annuel :" . $this->getSalaire() . "K\nService :" . $this->getService();
+        return "\nNom :" . $this->getNom() . "\nPrénom :" . $this->getPrenom() . "\nDate d'embauche :" . $this->getDateDEmbauche()->format('Y-m-d') . "\nFonction :" . $this->getFonction() . "\nSalaire annuel :" . $this->getSalaire() . "K\nService :" . $this->getService().$this->getAgence()->toString();
 
     }
 
