@@ -10,6 +10,7 @@ class Employe
     private $_fonction;
     private $_salaire;
     private $_service;
+    private static $_nbrEmploye;
 
     /*****************Accesseurs***************** */
 
@@ -73,6 +74,16 @@ class Employe
         $this->_service = $service;
     }
 
+    public static function getNbrEmploye()
+    {
+        return self::$_nbrEmploye;
+    }
+
+    public static function setNbrEmploye($nbrEmploye)
+    {
+        self::$_nbrEmploye = $nbrEmploye;
+    }
+
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
@@ -81,6 +92,7 @@ class Employe
         {
             $this->hydrate($options);
         }
+        self::$_nbrEmploye++;
     }
     public function hydrate($data)
     {
@@ -106,19 +118,25 @@ class Employe
     private function primeSalaire() //Méthode qui permet de calculer la prime sur le salaire annuel
 
     {
-        return ($this->getSalaire()*1000 * 0.05);
+        return ($this->getSalaire() * 1000 * 0.05);
     }
 
     private function primeAnciennete() //Méthode qui permet de calculer la prime d'ancienneté
 
     {
-        return ($this->getSalaire()*1000 * 0.02 * $this->anciennete());
+        return ($this->getSalaire() * 1000 * 0.02 * $this->anciennete());
     }
 
     public function prime() //Méthode qui permet de calculer la prime totale
 
     {
         return $this->primeSalaire() + $this->primeAnciennete();
+    }
+
+    public function toString()
+    {
+        return "\nNom :" . $this->getNom() . "\nPrénom :" . $this->getPrenom() . "\nDate d'embauche :" . $this->getDateDEmbauche()->format('Y-m-d') . "\nFonction :" . $this->getFonction() . "\nSalaire annuel :" . $this->getSalaire() . "K\nService :" . $this->getService();
+
     }
 
 }
