@@ -12,6 +12,7 @@ class Employe
     private $_service;
     private static $_nbrEmploye;
     private $_agence;
+    private $_enfants;
 
     /*****************Accesseurs***************** */
 
@@ -72,7 +73,7 @@ class Employe
 
     public function setService($service)
     {
-        $this->_service =ucfirst($service);
+        $this->_service = ucfirst($service);
     }
 
     public static function getNbrEmploye()
@@ -93,6 +94,16 @@ class Employe
     public function setAgence($agence)
     {
         $this->_agence = $agence;
+    }
+
+    public function getEnfants()
+    {
+        return $this->_enfants;
+    }
+
+    public function setEnfants($enfants)
+    {
+        $this->_enfants = $enfants;
     }
 
     /*****************Constructeur***************** */
@@ -146,28 +157,31 @@ class Employe
 
     public function toString()
     {
-        return "\nNom :" . $this->getNom() . "\nPrénom :" . $this->getPrenom() . "\nDate d'embauche :" . $this->getDateDEmbauche()->format('Y-m-d') . "\nFonction :" . $this->getFonction() . "\nSalaire annuel :" . $this->getSalaire() . "K\nService :" . $this->getService().$this->getAgence()->toString();
+        return "\nNom :" . $this->getNom() . "\nPrénom :" . $this->getPrenom() . "\nDate d'embauche :" . $this->getDateDEmbauche()->format('Y-m-d') . "\nFonction :" . $this->getFonction() . "\nSalaire annuel :" . $this->getSalaire() . "K\nService :" . $this->getService() . $this->getAgence()->toString()/*. $this->getEnfants()->toString()*/;
 
     }
 
-    function compare(Employe $obj1,Employe $obj2) //Fonction pour placer le service dans l'ordre alphabetique
+    public static function compare(Employe $obj1, Employe $obj2) //Fonction pour placer le service dans l'ordre alphabetique
+
     {
-        if ($obj1->getService()==$obj2->getService())
-        {
+        if ($obj1->getService() == $obj2->getService()) {
             return 0;
-        }
-        else if ($obj1->getService()<$obj2->getService())
-        {
+        } else if ($obj1->getService() < $obj2->getService()) {
             return -1;
-        }
-        else {
+        } else {
             return 1;
         }
     }
 
     public function masseSalariale()
     {
-        return $this->getSalaire()*1000+$this->prime();
+        return $this->getSalaire() * 1000 + $this->prime();
     }
 
+    public function chequesVacances()
+    {
+        return $this->anciennete()>=1 ? true : false;
+    }
+
+    
 }

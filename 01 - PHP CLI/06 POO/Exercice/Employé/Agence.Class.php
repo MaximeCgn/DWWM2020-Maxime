@@ -8,6 +8,7 @@ class Agence
     private $_adresse;
     private $_codePostal;
     private $_ville;
+    private $_restauration;
 
     /*****************Accesseurs***************** */
 
@@ -48,6 +49,15 @@ class Agence
     {
         $this->_ville = $ville;
     }
+    public function getRestauration()
+    {
+        return $this->_restauration;
+    }
+
+    public function setRestauration($restauration)
+    {
+        $this->_restauration = $restauration;
+    }
     /*****************Constructeur***************** */
 
     public function __construct(array $options = [])
@@ -72,7 +82,7 @@ class Agence
 
     public function toString()
     {
-        return "\nNom de l'agence :". $this->getNom()."\nAdresse :". $this->getAdresse(). "\nCode postal :".$this->getCodePostal()."\nVille :".$this->getVille();
+        return "\n\nNom de l'agence :" . $this->getNom() . "\nAdresse :" . $this->getAdresse() . "\nCode postal :" . $this->getCodePostal() . "\nVille :" . $this->getVille()."\nRestauration :".$this->getRestauration();
     }
 
 }
