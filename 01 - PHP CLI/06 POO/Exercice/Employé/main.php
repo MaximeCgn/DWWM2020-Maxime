@@ -12,12 +12,12 @@ $emp3 = new Employe(["nom" => "Arrouss", "prenom" => "Sofiane", "dateDEmbauche" 
 $emp4 = new Employe(["nom" => "Courquin", "prenom" => "Pierre", "dateDEmbauche" => new DateTime('2006-09-12'), "fonction" => "Secrétaire", "salaire" => 27.4, "service" => "Comptabilité"]);
 $emp5 = new Employe(["nom" => "Rjeb", "prenom" => "Zied", "dateDEmbauche" => new DateTime('1968-12-28'), "fonction" => "Webdesigner", "salaire" => 30, "service" => "Informatique"]);
 
-$dateAuj = new DateTime('now');
+$dateAuj = new DateTime('2020-12-30');
 // echo "Le transfert de la prime de " . $emp1->prime()/ $emp1->anciennete() . " a été effectué auprès de votre banque";
 $jourDePrime=(new DateTime())->setDate($dateAuj->format('Y'),11,30);
 if ($jourDePrime<$dateAuj)
 {
-    echo "Le transfert de la prime de " . $emp1->prime()/ $emp1->anciennete() . " a été effectué auprès de votre banque";
+    echo "Le transfert de la prime de " .$emp1->prime(). " a été effectué auprès de votre banque";
 }
 else {
     echo "Le transfert n'a pas été effectué";
