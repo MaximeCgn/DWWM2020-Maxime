@@ -72,7 +72,7 @@ class Employe
 
     public function setService($service)
     {
-        $this->_service = $service;
+        $this->_service =ucfirst($service);
     }
 
     public static function getNbrEmploye()
