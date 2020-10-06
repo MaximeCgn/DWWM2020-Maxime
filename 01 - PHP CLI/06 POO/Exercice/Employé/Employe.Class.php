@@ -106,13 +106,13 @@ class Employe
     private function primeSalaire() //Méthode qui permet de calculer la prime sur le salaire annuel
 
     {
-        return ($this->getSalaire() * 0.05);
+        return ($this->getSalaire()*1000 * 0.05);
     }
 
     private function primeAnciennete() //Méthode qui permet de calculer la prime d'ancienneté
 
     {
-        return ($this->getSalaire() * 0.02 * $this->anciennete());
+        return ($this->getSalaire()*1000 * 0.02 * $this->anciennete());
     }
 
     public function prime() //Méthode qui permet de calculer la prime totale

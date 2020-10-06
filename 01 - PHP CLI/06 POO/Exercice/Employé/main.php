@@ -17,10 +17,10 @@ $annee = $dateAuj->format('Y');
 $datePrime = new DateTime('30-11-' . $annee);
 
 if ($datePrime->format('m') > $dateAuj->format('m')) {
-    echo "Le transfert de la prime de " . $emp1->prime() * 1000 / $emp1->anciennete() . " a été effectué auprès de votre banque";
+    echo "Le transfert de la prime de " . $emp1->prime()/ $emp1->anciennete() . " a été effectué auprès de votre banque";
 } else if ($datePrime->format('m') == $dateAuj->format('m')) {
     if ($datePrime->format('d') == $dateAuj->format('d')) {
-        echo "Le transfert de la prime de " . $emp1->prime() * 1000 / $emp1->anciennete() . " a été effectué auprès de votre banque";
+        echo "Le transfert de la prime de " . $emp1->prime()/ $emp1->anciennete() . " a été effectué auprès de votre banque";
     } else {
         echo "Le transfert de la prime n'a pas encore effectué";
     }
