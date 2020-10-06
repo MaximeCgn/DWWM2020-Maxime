@@ -13,15 +13,12 @@ $emp4 = new Employe(["nom" => "Courquin", "prenom" => "Pierre", "dateDEmbauche" 
 $emp5 = new Employe(["nom" => "Rjeb", "prenom" => "Zied", "dateDEmbauche" => new DateTime('1968-12-28'), "fonction" => "Webdesigner", "salaire" => 30, "service" => "Informatique"]);
 
 $dateAuj = new DateTime('now');
-$annee = $dateAuj->format('Y');
-$datePrime = new DateTime('30-11-' . $annee);
-
-if ($datePrime->format('m') > $dateAuj->format('m')) {
+// echo "Le transfert de la prime de " . $emp1->prime()/ $emp1->anciennete() . " a été effectué auprès de votre banque";
+$jourDePrime=(new DateTime())->setDate($dateAuj->format('Y'),11,30);
+if ($jourDePrime<$dateAuj)
+{
     echo "Le transfert de la prime de " . $emp1->prime()/ $emp1->anciennete() . " a été effectué auprès de votre banque";
-} else if ($datePrime->format('m') == $dateAuj->format('m')) {
-    if ($datePrime->format('d') == $dateAuj->format('d')) {
-        echo "Le transfert de la prime de " . $emp1->prime()/ $emp1->anciennete() . " a été effectué auprès de votre banque";
-    } else {
-        echo "Le transfert de la prime n'a pas encore effectué";
-    }
+}
+else {
+    echo "Le transfert n'a pas été effectué";
 }
