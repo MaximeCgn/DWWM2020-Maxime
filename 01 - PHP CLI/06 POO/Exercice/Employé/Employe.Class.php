@@ -150,4 +150,19 @@ class Employe
 
     }
 
+    function compare(Employe $obj1,Employe $obj2) //Fonction pour placer le service dans l'ordre alphabetique
+    {
+        if ($obj1->getService()==$obj2->getService())
+        {
+            return 0;
+        }
+        else if ($obj1->getService()<$obj2->getService())
+        {
+            return -1;
+        }
+        else {
+            return 1;
+        }
+    }
+
 }

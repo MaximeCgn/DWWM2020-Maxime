@@ -20,40 +20,27 @@ $dateAuj = new DateTime('2020-12-30');
 $jourDePrime = (new DateTime())->setDate($dateAuj->format('Y'), 11, 30);
 for ($i = 0; $i < count($listeEmploye); $i++) {
     if ($jourDePrime < $dateAuj) {
-        echo "\nLe transfert de la prime de " . $listeEmploye[$i]->prime() . " a été effectué auprès de votre banque";
+        echo "\nLe transfert pour  de la prime de " . $listeEmploye[$i]->prime() . " a été effectué auprès de votre banque";
     } else {
-        echo "\nLe transfert n'a pas été effectué";
+        echo "\nLe transfert pour n'a pas été effectué";
     }
 }
-echo "\n\nIl y a " . Employe::getNbrEmploye() . " employé(s) dans l'entreprise\n";
+echo "\n\nIl y a " . Employe::getNbrEmploye() . " employé(s) dans l'entreprise\n";//Nombre d'employés dans l'entreprise
 
 asort($listeEmploye);
 
-foreach ($listeEmploye as $elt) {
+foreach ($listeEmploye as $elt) {//Affichage des employés dans l'entreprise avec leurs informations
     echo $elt->toString() . "\n";
 }
 
-function compare(Employe $obj1,Employe $obj2)
-    {
-        if ($obj1->getService()==$obj2->getService())
-        {
-            return 0;
-        }
-        else if ($obj1->getService()<$obj2->getService())
-        {
-            return -1;
-        }
-        else {
-            return 1;
-        }
-    }
 echo "\n********************\n";
-usort($listeEmploye,"compare");
-foreach ($listeEmploye as $elt) {
+usort($listeEmploye,array("Employe","compare"));
+foreach ($listeEmploye as $elt) { //Affichage des employés dans l'entreprise avec leurs informations
     echo $elt->toString() . "\n";
 }
 $masseSalariale=0;
-foreach ($listeEmploye as $key) {
+foreach ($listeEmploye as $key) {//Calcul de la masse Salariale
     $masseSalariale+=$key->getSalaire()*1000+$key->prime();
 }
-echo "La masse salariale de l'entreprise est de $masseSalariale";
+echo "\n********************\n";
+echo "\nLa masse salariale de l'entreprise est de $masseSalariale";
