@@ -46,13 +46,11 @@ echo "\n********************\n";
 usort($listeEmploye, array("Employe", "compare"));
 foreach ($listeEmploye as $elt) { //Affichage des employés dans l'entreprise avec leurs informations
     echo "\n--------------------\n" . $elt->toString() . "\n";
-    $cheques=$elt->tableauChequesNoel();
-    $nbrCheques=array_count_values($cheques);
-    foreach ($nbrCheques as $prix=>$occurence) {
-        echo "Vous disposez de ".$occurence." chèque(s) de ".$prix."€";
+    $cheques = $elt->tableauChequesNoel();
+    $nbrCheques = array_count_values($cheques);
+    foreach ($nbrCheques as $prix => $occurence) {
+        echo "Vous disposez de " . $occurence . " chèque(s) de " . $prix . "€";
     }
-
-
 }
 
 $masseSalariale = 0;

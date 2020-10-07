@@ -155,7 +155,8 @@ class Employe
         return $this->primeSalaire() + $this->primeAnciennete();
     }
 
-    public function toString()
+    public function toString() //Affichage de toutes les informations
+
     {
         return "\nNom :" . $this->getNom()
         . "\nPrénom :" . $this->getPrenom()
@@ -232,17 +233,18 @@ class Employe
         return $ageEnfants;
     }
 
-    public function tableauChequesNoel()
+    public function tableauChequesNoel() //Création du tableau avec le nombre de chèques disponible par employé
+
     {
         if ($this->chequesNoel() == true) {
             $ageEnfants = $this->ageEnfants();
             foreach ($ageEnfants as $key) {
                 if ($key >= 0 && $key <= 10) {
-                    $cheques[]=20;
+                    $cheques[] = 20;
                 } else if ($key >= 11 && $key <= 15) {
-                    $cheques[]=30;
+                    $cheques[] = 30;
                 } else if ($key >= 16 && $key <= 18) {
-                    $cheques[]=50;
+                    $cheques[] = 50;
                 }
             }
             return $cheques;
