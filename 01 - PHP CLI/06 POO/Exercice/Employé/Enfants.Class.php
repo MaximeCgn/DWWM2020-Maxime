@@ -59,13 +59,7 @@ class Enfants
         return $diff->format("%Y") * 1;
     }
 
-    public function afficheEnfant()
-    {
-
-    }
-
-    public function toString()
-    {
-
+    public function toString(){
+        return "\nPrénom :".$this->getPrenom()."\nDate de naissance :".$this->getDateNaissance()->format('Y-m-d');
     }
 }

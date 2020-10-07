@@ -12,7 +12,7 @@ class Employe
     private $_service;
     private static $_nbrEmploye;
     private $_agence;
-    private $_enfants;
+    private $_enfants = [];
 
     /*****************Accesseurs***************** */
 
@@ -157,7 +157,15 @@ class Employe
 
     public function toString()
     {
-        return "\nNom :" . $this->getNom() . "\nPrénom :" . $this->getPrenom() . "\nDate d'embauche :" . $this->getDateDEmbauche()->format('Y-m-d') . "\nFonction :" . $this->getFonction() . "\nSalaire annuel :" . $this->getSalaire() . "K\nService :" . $this->getService() . $this->getAgence()->toString()/*. $this->getEnfants()->toString()*/;
+        return "\nNom :" . $this->getNom()
+        . "\nPrénom :" . $this->getPrenom()
+        . "\nDate d'embauche :" . $this->getDateDEmbauche()->format('Y-m-d')
+        . "\nFonction :" . $this->getFonction()
+        . "\nSalaire annuel :" . $this->getSalaire()
+        . "K\nService :" . $this->getService()
+        . $this->getAgence()->toString()
+        . $this->chequesVacances()
+        . $this->afficheEnfant();
 
     }
 
@@ -173,15 +181,73 @@ class Employe
         }
     }
 
-    public function masseSalariale()
+    public function masseSalariale() //Calcule la masse salariale
+
     {
         return $this->getSalaire() * 1000 + $this->prime();
     }
 
-    public function chequesVacances()
+    public function chequesVacances() //Renvoie si oui ou non un employé peut disposer de chèques vacances
+
     {
-        return $this->anciennete()>=1 ? true : false;
+        return $this->anciennete() >= 1 ? "\n\n" . $this->getNom() . " " . $this->getPrenom() . " peut disposer de chèques vacances\n" : "\n\n" . $this->getNom() . " " . $this->getPrenom() . " ne peut pas disposer de chèques vacances\n";
+
     }
 
-    
+    private function afficheEnfant()
+    {
+        $info = "";
+        foreach ($this->getEnfants() as $key) { //Affiche les enfants d'un employé
+            $info .= $key->toString();
+        }
+        return $info;
+    }
+
+    private function chequesNoel()
+    {
+
+        if (empty($this->getEnfants())) { //Si l'employé n'a pas d'enfant, renvoie false
+            return false;
+        } else {
+            $ageEnfants = $this->ageEnfants();
+            $compteur = 0;
+            foreach ($ageEnfants as $key) {
+                if ($key > 18) {
+                    $compteur++; //Ajoute +1 au compteur si un enfant a + de 18 ans
+                }
+                if ($compteur >= count($ageEnfants)) { //Si le compteur = au nombre d'enfant, return false
+                    return false;
+                }
+                return true;
+            }
+        }
+    }
+
+    private function ageEnfants() //Place l'age des enfants d'un employé dans un tableau
+
+    {
+        foreach ($this->getEnfants() as $key) {
+            $ageEnfants[] = $key->age();
+        }
+        return $ageEnfants;
+    }
+
+    public function tableauChequesNoel()
+    {
+        if ($this->chequesNoel() == true) {
+            $ageEnfants = $this->ageEnfants();
+            foreach ($ageEnfants as $key) {
+                if ($key >= 0 && $key <= 10) {
+                    $cheques[]=20;
+                } else if ($key >= 11 && $key <= 15) {
+                    $cheques[]=30;
+                } else if ($key >= 16 && $key <= 18) {
+                    $cheques[]=50;
+                }
+            }
+            return $cheques;
+        }
+        return [];
+    }
+
 }
