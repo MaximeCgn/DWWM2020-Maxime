@@ -131,12 +131,14 @@ class Produit
         "\nNumero :" . $this->getNumero() . "\n"
 		. "Designation :" . $this->getDesignation() . "\n"
 		. "Couleur :" . $this->getCouleur() . "\n"
-        . "Date de Validité :" . $this->getDateValidite()->format('Y-m-d') . "\n\n"
+        . "Date de Validité :" . $this->getDateValidite()->format('Y-m-d') . "\n"
+        . "Validité :". $this->affichagePerime() . "\n\n"
         . $this->getCategorie()->toString()
         . "Compteur :" . $this->getCompteur() . "\n"
 		. "Prix HT :" . $this->getPrixHT() . "\n"
 		. "Prix TTC :". $this->prixTTC(). "\n\n"
-		. $this->getLieuStockage()->tostring() . "\n"
+        . $this->getLieuStockage()->tostring() . "\n"
+        
         ;
     }
     /**
@@ -168,14 +170,20 @@ class Produit
 
     {
         $date = new DateTime('now');
-        if (getDateValidite() > $date) {
+        if ($this->getDateValidite() > $date) {
             return false;
         }
         return true;
     }
 
-    public function prixTTC()
+    public function prixTTC() //méthode pour afficher le prix TTC
     {
 		return $this->getPrixHT()*$this->getCategorie()->getTVA()+$this->getPrixHT();
+    }
+
+    public function affichagePerime()//Affichage si le produit est périmé ou non
+    {
+        return $this->estPerime()== false ? "Le produit est toujours valide\n" : "Le produit n'est plus valide\n";
+
     }
 }
