@@ -50,6 +50,9 @@
 		return " testtt : ".$this->getTesttt()	;
 	}
 
-	
+	public function manger()
+	{
+		echo "test";
+	}
 
 }
