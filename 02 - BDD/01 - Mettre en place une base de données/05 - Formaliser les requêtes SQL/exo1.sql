@@ -25,7 +25,7 @@ SELECT UPPER (nomClient)
 FROM clients;
 
 /* G */
-SELECT CONCAT(UPPER(LEFT(nomClient,1)), SUBSTRING(nomClient,2)) as "Nom du Client"
+SELECT CONCAT(UPPER(LEFT(nomClient,1)), LOWER(SUBSTRING(nomClient,2))) as "Nom du Client"
 FROM clients;
 
 /* H */
