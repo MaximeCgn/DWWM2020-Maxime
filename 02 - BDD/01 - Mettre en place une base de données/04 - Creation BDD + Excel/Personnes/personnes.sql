@@ -30,3 +30,6 @@ CHARSET = UTF8;
 
 ALTER TABLE personnes.numero ADD CONSTRAINT FK_numero_identite FOREIGN KEY (idIdentite) REFERENCES identite(idIdentite);
 ALTER TABLE personnes.mail ADD CONSTRAINT FK_mail_identite FOREIGN KEY (idIdentite) REFERENCES identite(idIdentite);
+
+SELECT colonne, colonne
+FROM table1 INNER JOIN table2 ON table1.idTable2 = table2.idTable2
