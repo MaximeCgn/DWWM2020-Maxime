@@ -2,12 +2,12 @@
 /* La colonne "Commande total" a été ajouté. Elle a été calculée en multipliant la quantite commandée par le prix de l'article commandée*/
 
 /* A */
-SELECT MAX(cde_total) as "Prix total maximum", UPPER(clients.nomClient) as "Nom du Client", CONCAT(UPPER(LEFT(clients.prenomClient,1)), LOWER(SUBSTRING(clients.prenomClient,2))) as "Prénom du Client"
-FROM commandes INNER JOIN clients ON commandes.idClient=clients.idClient
+SELECT MAX(commandes.quantiteCommande*articles.prixArticle) as "Prix total maximum", UPPER(clients.nomClient) as "Nom du Client", CONCAT(UPPER(LEFT(clients.prenomClient,1)), LOWER(SUBSTRING(clients.prenomClient,2))) as "Prénom du Client"
+FROM commandes INNER JOIN clients ON commandes.idClient=clients.idClient INNER JOIN articles ON commandes.idArticle = articles.idArticle
 
 /* B */
-SELECT FLOOR(AVG(cde_total)) as "Motant moyen des commandes", UPPER(clients.nomClient) as "Nom du Client", CONCAT(UPPER(LEFT(clients.prenomClient,1)), LOWER(SUBSTRING(clients.prenomClient,2))) as "Prénom du Client"
-FROM commandes INNER JOIN clients ON commandes.idClient=clients.idClient
+SELECT FLOOR(AVG(commandes.quantiteCommande*articles.prixArticle)) as "Motant moyen des commandes", UPPER(clients.nomClient) as "Nom du Client", CONCAT(UPPER(LEFT(clients.prenomClient,1)), LOWER(SUBSTRING(clients.prenomClient,2))) as "Prénom du Client"
+FROM commandes INNER JOIN clients ON commandes.idClient=clients.idClient INNER JOIN articles ON commandes.idArticle = articles.idArticle
 
 /* C */
 SELECT MIN(commandes.cde_total) as "Prix total minimum", UPPER(clients.nomClient) as "Nom du Client", CONCAT(UPPER(LEFT(clients.prenomClient,1)), LOWER(SUBSTRING(clients.prenomClient,2))) as "Prénom du Client"
@@ -18,13 +18,13 @@ SELECT COUNT(*) as "Nombre de commandes passées"
 FROM commandes
 
 /* E */
-SELECT FLOOR(AVG(cde_total)) as "Motant moyen des commandes", UPPER(clients.nomClient) as "Nom du Client", CONCAT(UPPER(LEFT(clients.prenomClient,1)), LOWER(SUBSTRING(clients.prenomClient,2))) as "Prénom du Client"
-FROM commandes INNER JOIN clients ON commandes.idClient=clients.idClient
+SELECT FLOOR(AVG(commandes.quantiteCommande*articles.prixArticle)) as "Motant moyen des commandes", UPPER(clients.nomClient) as "Nom du Client", CONCAT(UPPER(LEFT(clients.prenomClient,1)), LOWER(SUBSTRING(clients.prenomClient,2))) as "Prénom du Client"
+FROM commandes INNER JOIN clients ON commandes.idClient=clients.idClient INNER JOIN articles ON commandes.idArticle = articles.idArticle
 GROUP BY clients.idClient
 
 /* F */
-SELECT MAX(cde_total) as "Prix total maximum", UPPER(clients.nomClient) as "Nom du Client", CONCAT(UPPER(LEFT(clients.prenomClient,1)), LOWER(SUBSTRING(clients.prenomClient,2))) as "Prénom du Client"
-FROM commandes INNER JOIN clients ON commandes.idClient=clients.idClient
+SELECT MAX(commandes.quantiteCommande*articles.prixArticle) as "Prix total maximum", UPPER(clients.nomClient) as "Nom du Client", CONCAT(UPPER(LEFT(clients.prenomClient,1)), LOWER(SUBSTRING(clients.prenomClient,2))) as "Prénom du Client"
+FROM commandes INNER JOIN clients ON commandes.idClient=clients.idClient INNER JOIN articles ON commandes.idArticle = articles.idArticle
 GROUP BY clients.idClient
 
 /* G */
@@ -48,7 +48,7 @@ FROM commandes INNER JOIN articles ON commandes.idArticle=articles.idArticle
 GROUP BY articles.idArticle
 
 /* K */
-SELECT FLOOR(AVG(commandes.quantiteCommande)) as "Nombre moyen d'articles commandées",  UPPER(clients.nomClient) as "Nom du Client", CONCAT(UPPER(LEFT(clients.prenomClient,1)), LOWER(SUBSTRING(clients.prenomClient,2))) as "Prénom du Client", commandes.idClient, commandes.dateCommande as "Date de la commande"
+SELECT FLOOR(AVG(commandes.quantiteCommande)) as "Nombre moyen d'articles commandées",  UPPER(clients.nomClient) as "Nom du Client", CONCAT(UPPER(LEFT(clients.prenomClient,1)), LOWER(SUBSTRING(clients.prenomClient,2))) as "Prénom du Client", commandes.dateCommande as "Date de la commande"
 FROM commandes INNER JOIN clients ON commandes.idClient=clients.idClient
 GROUP BY clients.nomClient, clients.prenomClient, commandes.dateCommande
 
