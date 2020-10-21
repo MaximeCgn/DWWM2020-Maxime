@@ -121,4 +121,4 @@ INSERT INTO avoir_note (idAvoirNote,idEtudiant,idEpreuve,note) VALUES (null,17,3
     SELECT COUNT(idAvoirNote) FROM avoir_note WHERE idEpreuve=7 
 UDPATE avoir_note SET note = 07 WHERE idEpreuve = 7 AND idAvoirNote = (SELECT COUNT(idAvoirNote) FROM avoir_note WHERE idEpreuve=7)
 (SELECT COUNT(idEpreuve) FROM avoir_note WHERE idAvoirNote=COUNT(idAvoirNote))
-SELECT note FROM avoir_note WHERE idEpreuve = 7 AND idAvoirNote = 
+SELECT note FROM avoir_note WHERE idEpreuve = 7 AND idAvoirNote = (SELECT COUNT(idAvoirNote) from avoir_note LIMIT  38,41)
