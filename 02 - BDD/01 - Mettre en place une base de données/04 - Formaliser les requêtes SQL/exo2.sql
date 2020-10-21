@@ -50,7 +50,7 @@ GROUP BY articles.idArticle
 /* K */
 SELECT FLOOR(AVG(commandes.quantiteCommande)) as "Nombre moyen d'articles commandées",  UPPER(clients.nomClient) as "Nom du Client", CONCAT(UPPER(LEFT(clients.prenomClient,1)), LOWER(SUBSTRING(clients.prenomClient,2))) as "Prénom du Client", commandes.idClient, commandes.dateCommande as "Date de la commande"
 FROM commandes INNER JOIN clients ON commandes.idClient=clients.idClient
-GROUP BY clients.nomClient, clients.prenomClient
+GROUP BY clients.nomClient, clients.prenomClient, commandes.dateCommande
 
 /* L */
 SELECT COUNT(commandes.idCommande) as "Quantité commandée", commandes.dateCommande as "Date de la commande"
