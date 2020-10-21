@@ -14,7 +14,7 @@ SELECT MIN(commandes.cde_total) as "Prix total minimum", UPPER(clients.nomClient
 FROM commandes INNER JOIN clients ON commandes.idClient=clients.idClient
 
 /* D */
-SELECT SUM(commandes.quantiteCommande) as "Nombre de commandes passées"
+SELECT COUNT(*) as "Nombre de commandes passées"
 FROM commandes
 
 /* E */
