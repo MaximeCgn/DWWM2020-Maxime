@@ -118,11 +118,26 @@ INSERT INTO avoir_note (idAvoirNote,idEtudiant,idEpreuve,note) VALUES (null,4,7,
 INSERT INTO avoir_note (idAvoirNote,idEtudiant,idEpreuve,note) VALUES (null,17,3,15)
 
     /* J */
-UPDATE avoir_note SET note=07 WHERE idAvoirNote= (SELECT idAvoirNote FROM (SELECT * FROM avoir_note WHERE idEpreuve=7) as a LIMIT 2,1 )
-
+UPDATE avoir_note SET note=07 WHERE idEtudiant= 3 AND idEpreuve = 7
     /* K */
 
-UPDATE avoir_note SET note=note+1 WHERE idAvoirNote = (SELECT idAvoirNote FROM (SELECT * FROM avoir_note WHERE idEpreuve=7) as a LIMIT 0,1)
+UPDATE avoir_note SET note=note+1 WHERE idEtudiant=1 AND idEpreuve = 7
 
     /* L */
 DELETE FROM avoir_note WHERE idEpreuve=7
+DELETE FROM epreuves WHERE idEpreuve=7
+
+    /* M */
+/*On aurait pu changer le mode de restriction dans " ON DELETE" pour le mettre à "Cascade" */
+
+    /* N */
+SELECT idEtudiant from etudiants WHERE nomEtudiant="MARKE"
+SELECT matieres.idMatiere FROM matieres WHERE nomMatiere="BD"
+SELECT epreuves.idEpreuve FROM epreuves WHERE idMatiere = (SELECT matieres.idMatiere FROM matieres WHERE nomMatiere="BD")
+/*Réponse juste en dessous*/
+UPDATE avoir_note SET note=note-3 WHERE idEtudiant= (SELECT idEtudiant from etudiants WHERE nomEtudiant="MARKE") AND idEpreuve IN  (SELECT epreuves.idEpreuve FROM epreuves WHERE idMatiereEpreuve = (SELECT matieres.idMatiere FROM matieres WHERE nomMatiere="BD"))
+
+    /* O */
+
+
+    /* P */
