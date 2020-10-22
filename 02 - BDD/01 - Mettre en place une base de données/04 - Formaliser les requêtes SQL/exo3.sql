@@ -98,7 +98,7 @@ WHERE
             AND et.prenomEtudiant = "LUC"
     )
     /* F */
-ALTER TABLE etudiants ADD hobby varchar(20) not null 
+ALTER TABLE etudiants ADD hobby varchar(20) not null
 ALTER TABLE etudiants ADD CONSTRAINT df_hobby DEFAULT "SPORT" FOR hobby
 
     /* G */
@@ -118,7 +118,11 @@ INSERT INTO avoir_note (idAvoirNote,idEtudiant,idEpreuve,note) VALUES (null,4,7,
 INSERT INTO avoir_note (idAvoirNote,idEtudiant,idEpreuve,note) VALUES (null,17,3,15)
 
     /* J */
-    SELECT COUNT(idAvoirNote) FROM avoir_note WHERE idEpreuve=7 
-UDPATE avoir_note SET note = 07 WHERE idEpreuve = 7 AND idAvoirNote = (SELECT COUNT(idAvoirNote) FROM avoir_note WHERE idEpreuve=7)
-(SELECT COUNT(idEpreuve) FROM avoir_note WHERE idAvoirNote=COUNT(idAvoirNote))
-SELECT note FROM avoir_note WHERE idEpreuve = 7 AND idAvoirNote = (SELECT COUNT(idAvoirNote) from avoir_note LIMIT  38,41)
+UPDATE avoir_note SET note=07 WHERE idAvoirNote= (SELECT idAvoirNote FROM (SELECT * FROM avoir_note WHERE idEpreuve=7) as a LIMIT 2,1 )
+
+    /* K */
+
+UPDATE avoir_note SET note=note+1 WHERE idAvoirNote = (SELECT idAvoirNote FROM (SELECT * FROM avoir_note WHERE idEpreuve=7) as a LIMIT 0,1)
+
+    /* L */
+DELETE FROM avoir_note WHERE idEpreuve=7
