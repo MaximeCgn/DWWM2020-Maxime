@@ -165,8 +165,8 @@ WHERE dept.nom = "Distribution"
 
 /* 4 */
 SELECT employe.nom as "Nom de l'employé", employe.salaire as "Salaire de l'employé", (SELECT employe.nom FROM employe WHERE titre="Président") as "Nom du patron", (SELECT employe.salaire FROM employe WHERE titre="Président") as "Salaire du Patron" 
-FROM employe INNER JOIN dept ON employe.nodep=dept.nodept
-WHERE "Salaire de l'employé">"Salaire du Patron"
+FROM employe 
+WHERE salaire>(SELECT `salaire` FROM employe WHERE `titre`="président") 
 
 /* 5 */
 SELECT employe.nom, employe.titre
@@ -176,11 +176,37 @@ WHERE titre = (SELECT titre FROM employe WHERE nom="amartakaldire")
 /* 6 */
 SELECT employe.nom, employe.salaire, employe.nodep
 FROM employe
-WHERE 
+WHERE employe.salaire > (SELECT  min(employe.salaire) FROM employe WHERE nodep=31)
 ORDER BY employe.nodep, employe.salaire
 
+/* 7 */
+SELECT employe.nom, employe.salaire, employe.nodep
+FROM employe
+WHERE employe.salaire > (SELECT  max(employe.salaire) FROM employe WHERE nodep=31)
+ORDER BY employe.nodep, employe.salaire
+
+/* 8 */
+SELECT employe.nom, employe.titre
+FROM employe
+WHERE nodep=31 AND titre IN (SELECT titre FROM employe where nodep=32)
+
+/* 9 */
+SELECT employe.nom, employe.titre
+FROM employe
+WHERE nodep=31 AND titre NOT IN (SELECT titre FROM employe where nodep=32)
+
+/* 10 */
+SELECT employe.nom, employe.titre, employe.salaire
+FROM employe
+WHERE salaire = (SELECT employe.salaire FROM employe WHERE employe.nom="Fairent") AND titre = (SELECT employe.titre FROM employe WHERE employe.nom="Fairent")
+
+/* 11 */
+SELECT dept.nodept as "Numéro du département", dept.nom as "Nom du département", employe.nom as "Nom de l'employé"
+FROM employe RIGHT JOIN dept ON employe.nodep=dept.nodept
+ORDER BY dept.nodept
+
 /* 12 */
-SELECT titre, COUNT(*) as "Nombre d'employe pour chaque titre"
+SELECT titre, COUNT(*) as "Nombre d'employé pour chaque titre"
 FROM employe
 GROUP BY titre
 
@@ -195,12 +221,42 @@ FROM employe
 GROUP BY nodep
 HAVING COUNT(noemp)>=3
 
-/* 15  C FAUX JE SKIP*/
-SELECT UPPER(LEFT(nom,1)) as "Initile de l'employé"
-FROM employe
-GROUP BY nom
-HAVING COUNT("Initile de l'employé")>=3
+/* 15  */
+SELECT e.init as "Lettres qui sont initiales d'au moins trois employés"
+FROM (SELECT init ,COUNT(*) as occurence FROM (SELECT UPPER(LEFT(`nom`,1)) as init FROM `employe`) as i GROUP BY init) as e
+WHERE e.occurence>=3
 
 /* 16 */
 SELECT max(salaire) as "Salaire Maximum", min(salaire) as "Salaire minimum", (max(salaire)-min(salaire)) as "Ecart entre les deux"
 from employe
+
+/* 17 */
+SELECT COUNT(DISTINCT titre) as "Nombre de titres différents"
+FROM employe
+
+/* 18 */
+SELECT titre, COUNT(*) as "Nombre d'employé pour chaque titre"
+FROM employe
+GROUP BY titre
+
+/* 19 */
+SELECT dept.nom as "Nom de département", COUNT(employe.nom) as "Nombre employé"
+FROM dept LEFT JOIN employe ON dept.nodept=employe.nodep
+GROUP BY dept.nodept
+
+/* 20 */
+SELECT titre,moyennetitre.moyennesalaire
+FROM (SELECT titre, ROUND(AVG(salaire)) as moyennesalaire
+from employe
+GROUP BY titre) as moyennetitre
+WHERE moyennetitre.moyennesalaire>(SELECT ROUND(AVG(salaire),2) FROM employe Where titre = "représentant")
+/* 20.2 */
+SELECT titre,ROUND(AVG(salaire),2) as "Moyenne des salaires"
+FROM employe 
+GROUP BY titre 
+HAVING AVG(salaire)>(SELECT AVG(salaire) FROM employe WHERE titre="Représentant")
+
+
+/* 21 */
+SELECT COUNT(salaire) as "Salaires rensieignés", COUNT(tauxcom) as "Taux de commission renseignés"
+FROM employe
