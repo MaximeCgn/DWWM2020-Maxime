@@ -1,0 +1,35 @@
+*{
+    font-family: Helvetica;
+}
+
+/* Titre*/
+.rouj{
+    color : red;
+}
+
+.small
+{
+    font-size: small;
+}
+
+/*Contenu*/
+
+.alignement{
+    text-align: center;
+}
+
+.Degrade {
+    background:linear-gradient(rgb(247, 247, 247), rgb(208, 247, 177));
+    width: 25vw;
+    text-align: left;
+}
+
+
+.radio{
+    margin-left: 26%;
+}
+
+.gri{
+    color: rgb(177, 176, 176);
+}
+

@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+.flex{
+    display: flex;
+}
+
+.squareR{
+    background-color: red;
+    width: 30vw;
+    height: 70vh;
+}
+
+.squareG{
+    background-color: green;
+    width: 70vw;
+    height: 70vh;
+}
+
+.squareB{
+    background-color:blue;
+    width: 70vw;
+    height: 30vh;
+}
+
+.squareY{
+    background-color:yellow;
+    width: 30vw;
+    height: 30vh;
+}

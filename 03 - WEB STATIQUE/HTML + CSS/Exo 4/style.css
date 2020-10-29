@@ -1,0 +1,56 @@
+body{
+    margin : 0;
+    padding: 0;
+}
+
+header{
+    border : 1px black dashed;
+    margin: 2em;
+    padding: 2em;
+}
+
+.sidebar{
+    display: flex;
+}
+
+section{
+    border: 1px black dashed;
+    margin-left : 3em;
+    padding-right: 1em;
+    padding-left : 1em;
+    width : 70vw;
+}
+/*Fond gris + margin et padding pour les articles*/
+.fG{
+    background-color: rgb(230, 230, 230);
+    margin : 1em;
+    padding-top : 2em;
+    padding-bottom: 2em;
+}
+/*Tabulations + margin pour certains articles*/
+.tab{
+    border: 1px black dashed;
+    margin-left : 3em;
+    margin-right: 3em;
+    margin-top:2em;
+    padding-right: 1em;
+    padding-left : 1em;
+}
+
+/*Margin left pour les titre et paragraphes*/
+.mL{
+    margin-left: 1em;
+}
+
+
+/*Margin pour la seconde section*/
+.marging{
+    margin-top:1em;
+}
+
+nav{
+    border: 1px black dashed;
+    margin-left : 3em;
+    width : 15vw;
+    height: 25vh;
+}
