@@ -114,8 +114,33 @@ a{
 
 .bleu{
     color:rgb(83, 151, 214);
+
 }
 
-.blue{
-    width: 100%;
+/*Marge aux textes*/
+.blue,.lycan,.gromp,.corbin,.krugs,.red,.dragon,.nashor{
+    margin-left: 1em;
+    margin-right:1em;
+    
+}
+
+/*Redimensionner les images de monstres*/
+.redim{
+    width: 15%;
+    height: 14vh;
+    margin-bottom: 1em;
+}
+
+.epiques,.grands,.petits{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+}
+
+/*Centrer la carte dans "Monstres"*/
+.mapmonstres{
+    align-items: center;
 }
