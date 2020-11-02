@@ -72,11 +72,50 @@ a{
     justify-content: center;
 }
 
-/*Taille des images a 50%*/
-#tour, #inhib, #nexus{
+/*Taille des images*/
+#tour {
     width:50%;
 }
 
-.tour{
+#inhib,#nexus{
+    width:25%;
+}
+
+/*alignement des textes*/
+.tour,.nexus{
     align-items: center;
+}
+
+.inhib{
+    align-items: stretch;
+}
+
+.tour{
+    margin-left: 1em;
+}
+
+/*Décalage du texte pour la div tour*/
+.decalagetexte{
+    margin-left: 2em;
+}
+
+.monstres{
+    flex:2;
+}
+
+/*Attribution des couleurs pour la page Monstres*/
+.vert{
+    color:rgb(77, 170, 77);
+}
+
+.rouge{
+    color:rgb(199, 81, 81);
+}
+
+.bleu{
+    color:rgb(83, 151, 214);
+}
+
+.blue{
+    width: 100%;
 }
