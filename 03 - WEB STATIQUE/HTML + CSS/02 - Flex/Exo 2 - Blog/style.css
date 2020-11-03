@@ -7,8 +7,6 @@ body{
     color : white;
 }
 
-
-
 div{
     display: flex;
     flex : 1;
@@ -20,6 +18,12 @@ header, footer{
 
 a{
     color:white;
+    text-decoration: none;
+    transition: font-size .2s;
+}
+
+nav{
+    display:flex;
 }
 
 /*Alignement du titre dans le header*/
@@ -129,6 +133,8 @@ a{
     width: 15%;
     height: 14vh;
     margin-bottom: 1em;
+    transition: transform .2s;
+    padding-left: 2em;
 }
 
 .epiques,.grands,.petits{
@@ -143,4 +149,13 @@ a{
 /*Centrer la carte dans "Monstres"*/
 .mapmonstres{
     align-items: center;
+}
+
+/*Zoom sur les images dans l'onlget monstres*/
+.redim:hover{
+    transform: scale(1.2);
+}
+
+a:hover{
+    font-size: 2em;
 }
