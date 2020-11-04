@@ -2,7 +2,7 @@
 
 body{
     background-image: url("fond.jpg") ;
-    background-repeat: repeat;
+    background-size: 100%;
     padding:0;
     margin:0;
 }
@@ -45,6 +45,7 @@ aside{
     margin-left: 9em;
     margin-right:9em;
     flex-direction: column;
+    
 }
 
 .logo,.logo2{
@@ -102,7 +103,6 @@ aside{
     padding-top: 0.5em ;
     padding-bottom:0.5em;
     text-shadow: 2px 1px 2px black;
-    white-space:nowrap;
 }
 
 
@@ -164,4 +164,3 @@ aside{
     text-align: justify;
     padding: 0 1em;
 }
-
