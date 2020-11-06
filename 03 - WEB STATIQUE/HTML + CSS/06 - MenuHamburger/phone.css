@@ -1,0 +1,20 @@
+.menu{
+    flex-direction: column;
+    display:none;
+}
+
+.titre{
+    display: flex;
+}
+
+.sousmenu{
+    z-index: 2;
+}
+
+.tout{
+    flex-direction: column;
+}
+
+.tout:hover .menu {
+    display:flex;
+}
