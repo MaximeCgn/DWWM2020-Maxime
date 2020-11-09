@@ -319,14 +319,29 @@ class Employe
     public function afficheEmployeHTML()
     {
         $aff='';
-        $aff.='<div class=\"Employe\"><br>';
+        $aff.='<div class=\"Employe\">';
         $aff.= 'Nom de l\'employé :'.$this->getNom().'<br>';
         $aff.='Prénom de l\'employé :'.$this->getPrenom().'<br>';
         $aff.='Date d\'embauche :'.$this->getDateEmbauche()->format('Y-m-d').'<br>';
         $aff.='Fonction :'.$this->getFonction().'<br>';
         $aff.='Salaire annuel :' . $this->getSalaireAnnuel().'K<br>';
         $aff.='Service :'.$this->getService().'<br>';
+        $aff.='===Agence===<br>';
         $aff.=$this->getAgence()->afficheEmployeHTML();
+        $aff.='===Enfant(s)===<br>';
+        if (count($this->getEnfants()) > 0)
+        {
+            foreach ($this->getEnfants() as $enfant)
+            {
+                $aff .= $enfant->afficheEmployeHTML();
+            }
+        }
+        else
+        {
+            $aff .= "Pas d'enfant";
+        }
+        $aff.='<br><br>';
+        $aff.='</div>';
         return $aff;
     }
 

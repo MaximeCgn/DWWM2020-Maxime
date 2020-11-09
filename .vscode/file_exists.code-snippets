@@ -15,27 +15,15 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"phpdoctypehtml": {
-		"prefix": "PHPHTML",
+	"File_": {
+		"prefix": "ifinclude",
 		"body": [
-		  "<?php",
-		  "",
-		  "echo '<!doctype html>",
-		  "<html lang=\"fr\">",
-		  "<head>",
-		  "  <meta charset=\"utf-8\">",
-		  "  <title>Titre de la page</title>",
-		  "  <link rel=\"stylesheet\" href=\"style.css\">",
-		  "  <script src=\"script.js\"></script>",
-		  "</head>",
-		  "<body>';",
-		  "",
-		  "/*Code here*/",
-		  "",
-		  "echo'",
-		  "</body>",
-		  "</html>';"
+			" if (file_exists(\"./NOMDEFICHIER.php\")) {",
+			"        include(\"./NOMDEFICHIER.php\");",
+			"    } else {",
+			"        echo \"Erreur\";",
+			"    }"
 		],
-		"description": "phpdoctypehtml"
-	  }
+		"description": "File_"
+	}
 }

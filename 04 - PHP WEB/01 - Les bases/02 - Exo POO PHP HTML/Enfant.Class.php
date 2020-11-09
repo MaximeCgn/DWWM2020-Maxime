@@ -125,7 +125,8 @@ class Enfant
     {
         $aff='';
         $aff.='Nom de l\'enfant :'.$this->getNom().'<br>';
-        $aff.='Prénom de l
+        $aff.='Prénom de l\'enfant :'.$this->getPrenom().'<br>';
+        $aff.='Âge de l\'enfant :'.$this->getAge().'<br>';
         return $aff;
     }
 }

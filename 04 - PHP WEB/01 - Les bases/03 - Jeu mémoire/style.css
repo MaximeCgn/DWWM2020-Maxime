@@ -1,0 +1,37 @@
+/******Les bases******/
+body{
+    margin:0;
+    padding: 0;
+    background-color: rgb(50, 65, 75);
+}
+
+div{
+    display: flex;
+    flex:1;
+}
+
+img{
+    width: 100%;
+}
+
+/******Header et Footer******/
+.titre{
+    justify-content: center;
+}
+
+/*****Body******/
+.image{
+    margin:1.5em;
+}
+
+.imageHidden{
+    display:none;
+}
+
+.image:hover .imageHidden{
+    display:flex;
+}
+
+.image:hover .plage{
+    display:none;
+}
