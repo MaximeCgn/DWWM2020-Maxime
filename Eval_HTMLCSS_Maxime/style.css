@@ -1,0 +1,117 @@
+/******Les bases******/
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7efdf;
+}
+
+div {
+  display: flex;
+  flex: 1;
+}
+
+img {
+  width: 100%;
+}
+
+li {
+  color: #006633;
+}
+
+.blue {
+  color: #000066;
+  font-weight: 900;
+}
+
+.esp {
+  flex: 0.3;
+}
+
+.column {
+  flex-direction: column;
+}
+
+/******Header******/
+
+.titre {
+  justify-content: center;
+}
+
+/******Introduction******/
+
+.titreIntroduction {
+  margin: 1em;
+}
+
+.introductionTexte {
+  flex: 8;
+}
+
+.texteIntro {
+  flex: 3;
+  font-size: 1.2em;
+}
+
+.encadreIntro {
+  flex: 2;
+  border: solid 1px;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5em;
+}
+
+.listeEncadreIntro {
+  flex-direction: column;
+  padding: 1em;
+  padding-left: 2em;
+}
+
+/******Article******/
+
+.encadreArticle,
+.encadreArticleG2,
+.encadreArticleD {
+  background-color: #f1e3c7;
+  border: solid 2px;
+  border-color: #bb8c00;
+  flex: 0.5;
+  height: 30em;
+}
+
+.texteArticleG1 {
+  font-size: 1.3em;
+  padding-right: 1em;
+}
+
+.texteEncadreArticleG1,
+.encadreArticleD {
+  text-align: center;
+}
+
+.encadreArticleG2 {
+  flex: 1.5;
+  text-align: center;
+  margin-left: 1em;
+  flex-wrap: wrap;
+}
+
+.articleDroite {
+  padding-left: 1em;
+}
+
+.texteArticleG2 {
+  font-size: 1.3em;
+  padding-left: 1em;
+}
+
+.texteArticle {
+  font-size: 1.3em;
+}
+
+.encadreArticle{
+    flex-wrap: wrap;
+}
+

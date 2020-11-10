@@ -1,0 +1,12 @@
+div{
+    flex-direction: column;
+}
+
+.titre{
+    align-items: center;
+}
+
+body{
+    padding-left: 1em;
+    padding-right: 1em;
+}
