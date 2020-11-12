@@ -32,6 +32,9 @@ a{
 	color:var(--couleurPolice);
 }
 
+html{
+	scroll-behavior: smooth;
+}
 
 /******Header et Footer******/
 
@@ -109,15 +112,31 @@ align-content: center;
 	margin: 3em;;
 }
 
-.image{
+.encadre{
 	border: solid;
 }
 
-.texte{
-	flex:5;
+.texte,.texteListe{
+	flex:4;
 	text-align: justify;
 	font-size: 1.5em;
 	padding: 1em;
+	justify-content: center;
+	align-items: center;
+}
+
+.texteListe{
+	justify-content: left;
+}
+
+.texteEncadre{
+	text-align: center;
+}
+
+.logoFilm{
+	flex:3;
+	background-color: whitesmoke;
+	border: solid black 0.5em;
 }
 
 /***** Footer ******/

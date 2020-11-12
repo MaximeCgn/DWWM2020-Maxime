@@ -1,0 +1,242 @@
+<?php
+
+    if (file_exists("head.php")) {
+        include("head.php");
+    } else {
+        echo "erreur";
+    }
+    
+    if (file_exists("header.php")) {
+        include("header.php");
+    } else {
+        echo "erreur";
+    }if (file_exists("nav.php")) {
+        include("nav.php");
+    } else {
+        echo "erreur";
+    }
+
+    echo'
+
+<div class="introduction">
+    <h2><b><u>KILL BILL: VOLUME 1 et 2</u></b></h2>
+</div>
+
+<div class="contenu">
+    <div class="texte ">
+        <p>Kill Bill : Volume 1 (Kill Bill: Vol. 1) est un film américain réalisé par Quentin Tarantino, sorti en
+            2003.<br>
+
+            Conçu à l\'origine comme un seul film, il a été séparé en deux parties en raison de sa longueur (environ
+            quatre heures pour les deux volets réunis) pour former un diptyque. Kill Bill : Volume 2 sort ainsi
+            quelques mois plus tard en 2004.<br> La vengeance est le thème principal de ce film, qui comporte de
+            nombreux hommages au cinéma hongkongais d\'arts martiaux, au chanbara japonais, aux films d\'exploitation
+            et au western spaghetti. L\'histoire est présentée selon un style de narration non linéaire.
+        </p><br>
+
+    </div>
+    <div class="encadre colonne">
+        <div class="image">
+            <img src="IMG/killbill1.png" alt="killbill1">
+        </div>
+        <div class="texteEncadre"><b>Affiche minimaliste de Kill Bill</b></div>
+    </div>
+</div>
+
+<div class="introduction">
+    <h3><b><u>Synopsis</u></b></h3>
+</div>
+
+<div class="contenu">
+    <div class="texte ">
+        <p>Au cours d\'une cérémonie de mariage en plein désert, un commando fait irruption dans la chapelle et tire
+            sur les convives. Laissée pour morte, la Mariée enceinte retrouve ses esprits après un coma de quatre
+            ans. Celle qui a auparavant exercé les fonctions de tueuse à gages au sein du Détachement International
+            des Vipères Assassines n\'a alors plus qu\'une seule idée en tête : venger la mort de ses proches en
+            éliminant tous les membres de l\'organisation criminelle.</p><br>
+
+    </div>
+</div>
+
+<div class="introduction">
+    <h3><b><u>Distribution</u></b></h3>
+</div>
+
+<div class="contenu">
+    <div class="encadre colonne">
+        <div class="image">
+            <img src="IMG/killbill1.2.png" alt="killbill1.2">
+        </div>
+        <div class="texteEncadre"><b>Affiche minimaliste de Kill Bill : Volume 1</b></div>
+    </div>
+    <div class="texteListe ">
+        <p>
+        <ul>
+            <li>Uma Thurman : Beatrix Kiddo, alias La Mariée / Black Mamba</li>
+            <li>Lucy Liu : O-Ren Ishii, alias Cottonmouth</li>
+            <li>Vivica A. Fox : Vernita Green, alias Copperhead</li>
+            <li>Daryl Hannah : Elle Driver, alias California Mountain Snake</li>
+            <li>David Carradine : Bill, alias Snake Charmer</li>
+            <li>Michael Madsen : Budd, alias Sidewinder</li>
+            <li>Julie Dreyfus : Sofie Fatale</li>
+            <li>Chiaki Kuriyama : Gogo Yubari</li>
+            <li>Gordon Liu : Johnny Mo</li>
+            <li>Jun Kunimura : Boss Tanaka</li>
+        </ul>
+        </p><br>
+
+    </div>
+    <div class="logoFilm"><img src="IMG/logokillbill1.jpg" alt="logo"></div>
+
+</div>
+
+<div class="introduction">
+    <h2><b><u>BOULEVARD DE LA MORT</u></b></h2>
+</div>
+
+<div class="contenu">
+    <div class="texte ">
+        <p>Boulevard de la mort, ou À l\'épreuve de la mort au Québec, (Death Proof) est un film américain réalisé
+            par Quentin Tarantino, sorti en 2007. Avec Planète Terreur, il fait partie du double programme
+            Grindhouse mais est sorti seul dans plusieurs pays comme la France.<br>
+
+            Dans ce film construit en deux parties assez similaires, le réalisateur rend hommage aux films
+            d\'exploitation centrés sur les poursuites en voitures des années 1970 et les cascades sont réalisées à
+            la manière de ces films, sans l\'aide de l\'infographie.<br> Le film a été un échec commercial mais a
+            recueilli des critiques plutôt positives.
+        </p><br>
+
+    </div>
+    <div class="encadre colonne">
+        <div class="image">
+            <img src="IMG/deathproof.jpg" alt="deathproof">
+        </div>
+        <div class="texteEncadre"><b>Affiche minimaliste de Death Proof</b></div>
+    </div>
+</div>
+
+<div class="introduction">
+    <h3><b><u>Synopsis</u></b></h3>
+</div>
+
+<div class="contenu">
+    <div class="texte ">
+        <p>C\'est à la tombée du jour que Jungle Julia, la DJ la plus sexy d\'Austin, peut enfin se détendre avec ses
+            meilleures copines, Shanna et Arlene. Ce trio infernal, qui vit la nuit, attire les regards dans tous
+            les bars et dancings du Texas. L\'attention dont ces trois jeunes femmes sont l\'objet n\'est pas forcément
+            innocente.</p><br>
+
+    </div>
+</div>
+
+<div class="introduction">
+    <h3><b><u>Distribution</u></b></h3>
+</div>
+
+<div class="contenu">
+    <div class="encadre colonne">
+        <div class="image">
+            <img src="IMG/deathproof2.jpg" alt="deathproof2">
+        </div>
+        <div class="texteEncadre"><b>Affiche minimaliste de Death Proof</b></div>
+    </div>
+    <div class="texteListe ">
+        <p>
+        <ul>
+            <li>Kurt Russell : Stuntman Mike</li>
+            <li>Zoë Bell : Zoë</li>
+            <li>Rosario Dawson : Abernathy</li>
+            <li>Vanessa Ferlito : Arlene « Butterfly »</li>
+            <li>Sydney Tamiia Poitier : Jungle Julia</li>
+            <li>Tracie Thoms : Kim</li>
+            <li>Rose McGowan : Pam</li>
+            <li>Jordan Ladd : Shanna</li>
+            <li>Mary Elizabeth Winstead : Lee Montgomery</li>
+            <li>Quentin Tarantino : Warren, le barman</li>
+        </ul>
+        </p><br>
+
+    </div>
+    <div class="logoFilm"><img src="IMG/logodeathproof.png" alt="logo"></div>
+
+</div>
+
+<div class="introduction">
+    <h2><b><u>INGLORIOUS BASTERDS</u></b></h2>
+</div>
+
+<div class="contenu">
+    <div class="texte ">
+        <p>Inglourious Basterds ou Le Commando des bâtards au Québec, est un film de guerre uchronique
+            germano-américain écrit et réalisé par Quentin Tarantino, sorti en 2009.<br>
+
+            Le film est présenté en compétition officielle lors du Festival de Cannes 2009.<br>
+
+            L\'histoire se déroule en France durant la Seconde Guerre mondiale et narre la vengeance d\'une jeune
+            Juive, Shosanna Dreyfus (Mélanie Laurent), dont la famille a été assassinée par les nazis ainsi que les
+            plans d\'un commando de soldats juifs alliés menés par le lieutenant Aldo Raine (Brad Pitt), envoyés en
+            Europe occupée pour éliminer le plus de nazis possible, qu\'ils s\'appliquent à scalper, avant de
+            s\'attaquer avec succès à leurs dirigeants.
+        </p><br>
+
+    </div>
+    <div class="encadre colonne">
+        <div class="image">
+            <img src="IMG/ingloriousbasterds.jpg" alt="deathproof">
+        </div>
+        <div class="texteEncadre"><b>Affiche minimaliste d\'Inglorious Basterds</b></div>
+    </div>
+</div>
+
+<div class="introduction">
+    <h3><b><u>Synopsis</u></b></h3>
+</div>
+
+<div class="contenu">
+    <div class="texte ">
+        <p>Dans la France occupée de 1940, Shosanna Dreyfus assiste à l\'exécution de sa famille tombée entre les
+            mains du colonel nazi Hans Landa. Shosanna s\'échappe de justesse et s\'enfuit à Paris où elle se
+            construit une nouvelle identité en devenant exploitante d\'une salle de cinéma. Quelque part ailleurs en
+            Europe, le lieutenant Aldo Raine forme un groupe de soldats juifs américains pour mener des actions
+            punitives particulièrement sanglantes contre les nazis.</p><br>
+
+    </div>
+</div>
+
+<div class="introduction">
+    <h3><b><u>Distribution</u></b></h3>
+</div>
+
+<div class="contenu">
+    <div class="encadre colonne">
+        <div class="image">
+            <img src="IMG/ingloriousbasterds2.jpg" alt="deathproof2">
+        </div>
+        <div class="texteEncadre"><b>Affiche minimaliste d\'Inglorious Basterds</b></div>
+    </div>
+    <div class="texteListe ">
+        <p>
+        <ul>
+            <li>Kurt Russell : Stuntman Mike</li>
+            <li>Zoë Bell : Zoë</li>
+            <li>Rosario Dawson : Abernathy</li>
+            <li>Vanessa Ferlito : Arlene « Butterfly »</li>
+            <li>Sydney Tamiia Poitier : Jungle Julia</li>
+            <li>Tracie Thoms : Kim</li>
+            <li>Rose McGowan : Pam</li>
+            <li>Jordan Ladd : Shanna</li>
+            <li>Mary Elizabeth Winstead : Lee Montgomery</li>
+            <li>Quentin Tarantino : Warren, le barman</li>
+        </ul>
+        </p><br>
+
+    </div>
+    <div class="logoFilm"><img src="IMG/logobasterds.jpg" alt="logo"></div>
+
+</div>';
+
+    if (file_exists("footer.php")) {
+        include("footer.php");
+    } else {
+        echo "erreur";
+    }
