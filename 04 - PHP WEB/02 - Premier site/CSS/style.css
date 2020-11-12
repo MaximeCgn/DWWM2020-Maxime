@@ -1,0 +1,126 @@
+/****  GENERAL ****/
+:root{
+	--couleurHeader : #2a4144;
+	--couleurNav: linear-gradient(#2a4144 60%,#1a2225);
+	--couleurFond: #1a2225;
+	--couleurPolice: #FCFAF1;
+}
+
+body {
+	margin : 0;
+	padding : 0;
+	background-color: var(--couleurFond);
+	font-family: Helvetica, Arial, sans-serif;
+	color:var(--couleurPolice);
+}
+
+div,header, footer, nav, article {
+	display : flex;
+	flex : 1;
+}
+
+img, video {
+	width : 100%;
+}
+
+.colonne{
+	flex-direction: column;
+}
+
+a{
+	text-decoration: none;
+	color:var(--couleurPolice);
+}
+
+
+/******Header et Footer******/
+
+header{
+	background: var(--couleurHeader);
+}
+
+
+.titre{
+	justify-content: center;
+	align-items: center;
+	flex:10;
+}
+
+
+/****** Menu ******/
+.menu{
+    display: flex;
+    justify-content: center;
+    -moz-user-select: none;
+	-webkit-user-select: none;
+	
+}
+
+.avecEnfant{
+	position: relative;
+	flex : 0.1;
+}
+
+.sousmenu{
+	background-color:var(--couleurHeader);
+    justify-content: flex-start;
+    display: none;
+    position: absolute;
+    flex-flow: column wrap;
+    border: rgb(255, 255, 255) 1px solid;
+    margin-top: 1.5em;
+}
+
+.avecEnfant:hover .sousmenu{
+    display: flex;
+}
+
+.bouton2:hover{
+    color:rgb(255, 255, 255);
+    background-color: rgb(67, 108, 124);
+}
+
+.bouton{
+background-color:var(--couleurHeader);
+border: rgb(255, 255, 255) 1px solid;
+border-radius: 0.2em;
+padding-top: 0.5em;
+padding-bottom: 0.5em;
+white-space: nowrap;
+justify-content: flex-start;
+align-content: center;
+}
+
+.centrer{
+    justify-content: center;
+}
+
+/****** Introduction ******/
+
+.introduction{
+	justify-content: center;
+	flex : 1.6;
+	align-items: center;
+}
+
+/****** Contenu ******/
+
+.contenu{
+	margin: 3em;;
+}
+
+.image{
+	border: solid;
+}
+
+.texte{
+	flex:5;
+	text-align: justify;
+	font-size: 1.5em;
+	padding: 1em;
+}
+
+/***** Footer ******/
+footer{
+	border-top: solid;
+}
