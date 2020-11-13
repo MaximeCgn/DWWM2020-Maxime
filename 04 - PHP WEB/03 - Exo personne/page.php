@@ -12,7 +12,7 @@
         echo "erreur";
     }
 
-    echo '<div class="line"';
+    echo '<div class="line">';
     $compteur = 0 ;
     for ($i=0;$i<count($p);$i++)
     {
