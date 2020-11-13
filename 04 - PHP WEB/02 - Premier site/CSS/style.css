@@ -19,6 +19,11 @@ div,header, footer, nav, article {
 	flex : 1;
 }
 
+nav{
+	position: sticky;
+	top:0;
+}
+
 img, video {
 	width : 100%;
 }
