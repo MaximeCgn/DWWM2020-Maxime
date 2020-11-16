@@ -1,0 +1,74 @@
+/*******Les bases*******/
+:root{
+    --couleurFondTitre:#00C6BB;
+    --couleurFond:#212121;
+    --couleurFondContenu:#CBEAE7;
+    --couleurPolice:whitesmoke;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    background-color:var(--couleurFond);
+}
+
+div,a{
+    display: flex;
+    flex:1;
+}
+
+.colonne{
+    flex-direction: column;
+}
+
+.cache{
+    display:none;
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+/*******Contenu*******/
+.titre{
+    background-color: var(--couleurFondTitre);
+    border: solid whitesmoke 1px;
+    color : var(--couleurPolice);
+    justify-content: center;
+    padding: 1em;
+}
+
+.agence,.service,.prenom,.nom{
+    border: solid whitesmoke 1px;
+    justify-content: center;
+    padding: 1em;
+    background-color: var(--couleurFondContenu);
+}
+
+/*******Détails*******/
+.titreDetail{
+    justify-content: center;
+    color:var(--couleurPolice);
+    font-size: 2em;
+}
+
+.titrePanneau{
+    border:solid white 2px;
+    border-radius: 1em;
+    color:var(--couleurPolice);
+    background-color: var(--couleurFondTitre) ;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    z-index: 100;
+}
+
+.contenuPanneau{
+    border: solid white 2px;
+    border-radius:1em;
+    color:var(--couleurPolice);
+    background-color: var(--couleurFondContenu);
+    color:black;
+    margin-left: -1vw;
+}
