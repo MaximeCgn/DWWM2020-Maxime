@@ -38,9 +38,16 @@ echo "Vous êtes connecté à la base de données";
 // var_dump($requete);
 
 /******Requete d'ajout parametre******/
-$etudiant=new Etudiant(["nomEtudiant"=>"Cugny","prenomEtudiant"=>"Maxime","adresseEtudiant"=>"38 rue Pierre puis","villeEtudiant"=>"Calais"]);
+// $etudiant=new Etudiant(["nomEtudiant"=>"Cugny","prenomEtudiant"=>"Maxime","adresseEtudiant"=>"38 rue Pierre puis","villeEtudiant"=>"Calais"]);
 
-$requete=$db->prepare('INSERT INTO etudiants(nomEtudiant,prenomEtudiant,adresseEtudiant,villeEtudiant VALUES(:nomEtudiant,:prenomEtudiant,:adresseEtudiant,:villeEtudiant)');
+// $requete=$db->prepare('INSERT INTO etudiants(nomEtudiant,prenomEtudiant,adresseEtudiant,villeEtudiant) VALUES(:nomEtudiant,:prenomEtudiant,:adresseEtudiant,:villeEtudiant)');
 
-$reponse=$requete->execute();
-var_dump($reponse);
+// $requete->bindValue(':nomEtudiant',$etudiant->getNomEtudiant());
+// $requete->bindValue(':prenomEtudiant',$etudiant->getPrenomEtudiant());
+// $requete->bindValue(':adresseEtudiant',$etudiant->getAdresseEtudiant());
+// $requete->bindValue(':villeEtudiant',$etudiant->getVilleEtudiant());
+
+// $reponse=$requete->execute();
+// var_dump($reponse);
+
+/******Requete d'ajout composee******/
