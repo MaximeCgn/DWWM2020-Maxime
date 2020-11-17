@@ -1,50 +1,60 @@
 <?php
 
- Class Produits {
+ Class Etudiants {
 	/***************************************** Attributs **********************************************/
 
-	private $_idProduit ;
-	private $_libelleProduit ;
-	private $_prix ;
-	private $_dateDePeremption ;
+	private $_idEtudiant ;
+	private $_nomEtudiant ;
+	private $_prenomEtudiant ;
+	private $_adresseEtudiant ;
+	private $_villeEtudiant ;
 
 	/***************************************** Accesseurs **********************************************/
 	
-	public function getIdProduit()
+	public function getIdEtudiant()
 	{
-		return $this->_idProduit;
+		return $this->_idEtudiant;
 	}
 
-	public function setIdProduit($idProduit)
+	public function setIdEtudiant($idEtudiant)
 	{
-		$this->_idProduit = $idProduit;
+		$this->_idEtudiant = $idEtudiant;
 	}
-	public function getLibelleProduit()
+	public function getNomEtudiant()
 	{
-		return $this->_libelleProduit;
-	}
-
-	public function setLibelleProduit($libelleProduit)
-	{
-		$this->_libelleProduit = $libelleProduit;
-	}
-	public function getPrix()
-	{
-		return $this->_prix;
+		return $this->_nomEtudiant;
 	}
 
-	public function setPrix($prix)
+	public function setNomEtudiant($nomEtudiant)
 	{
-		$this->_prix = $prix;
+		$this->_nomEtudiant = $nomEtudiant;
 	}
-	public function getDateDePeremption()
+	public function getPrenomEtudiant()
 	{
-		return $this->_dateDePeremption;
+		return $this->_prenomEtudiant;
 	}
 
-	public function setDateDePeremption($dateDePeremption)
+	public function setPrenomEtudiant($prenomEtudiant)
 	{
-		$this->_dateDePeremption = $dateDePeremption;
+		$this->_prenomEtudiant = $prenomEtudiant;
+	}
+	public function getAdresseEtudiant()
+	{
+		return $this->_adresseEtudiant;
+	}
+
+	public function setAdresseEtudiant($adresseEtudiant)
+	{
+		$this->_adresseEtudiant = $adresseEtudiant;
+	}
+	public function getVilleEtudiant()
+	{
+		return $this->_villeEtudiant;
+	}
+
+	public function setVilleEtudiant($villeEtudiant)
+	{
+		$this->_villeEtudiant = $villeEtudiant;
 	}
 
 	/***************************************** Constructeur **********************************************/
@@ -76,7 +86,7 @@
 	* @return String
 	*/
 	public function toString(){
-		return " idProduit : ".$this->getIdProduit()	." libelleProduit : ".$this->getLibelleProduit()	." prix : ".$this->getPrix()	." dateDePeremption : ".$this->getDateDePeremption()	;
+		return " idEtudiant : ".$this->getIdEtudiant()	." nomEtudiant : ".$this->getNomEtudiant()	." prenomEtudiant : ".$this->getPrenomEtudiant()	." adresseEtudiant : ".$this->getAdresseEtudiant()	." villeEtudiant : ".$this->getVilleEtudiant()	;
 	}
 
 	/**

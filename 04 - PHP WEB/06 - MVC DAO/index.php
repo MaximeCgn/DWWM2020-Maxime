@@ -3,44 +3,35 @@
 include "PHP/VIEW/Head.php";
 include "PHP/VIEW/Header.php";
 
-/* Test Manager */
-
-// on teste la recherche par ID
-echo 'recherche id = 1' . '<br>';
+// Recherche par ID : ÇA FONCTIONNE
+echo 'recherche id = 1'.'<br>';
 $p = ProduitsManager::findById(1);
 var_dump($p);
 
-// on teste l'ajout
-echo "ajout d'un produit" . '<br>';
-$pNew = new Produits(["libelleProduit" => "cahier", "prix" => 5, "dateDePeremption" => '2020-12-31']);
-ProduitsManager::add($pNew);
+//Test d'ajout : ÇA FONCTIONNE
+echo "Ajout d'un produit".'<br>';
+$p2=new Produits (["libelleProduit"=>"cahier","prix"=>5,"dateDePeremption"=>"2020-12-31"]);
+ProduitsManager::add($p2);
 
-//on affiche la liste des produits
-echo "Liste des articles" . '<br>';
-$tableau = ProduitsManager::getList();
-foreach ($tableau as $unProduit)
+//Test affichage liste produits : ÇA FONCTIONNE
+echo "Liste des articles" .'<br>';
+$tableau=ProduitsManager::getList();
+foreach($tableau as $unProduit)
 {
-    echo $unProduit->toString() . '<br>';
+    echo $unProduit->toString().'<br>';
 }
 
-// on teste la mise à jour
-echo "on met à jour l'id 1" . '<br>';
-$p->setLibelleProduit($p->getLibelleProduit() . 'sss');
+//Test des mises à jour : ÇA FONCTIONNE
+$p = ProduitsManager::findById(1);
+echo "Update de l'id 1".'<br>';
+$p->setLibelleProduit($p->getLibelleProduit().'OUI');
 ProduitsManager::update($p);
-$pRecharge = ProduitsManager::findById(1);
+$pRecharge=ProduitsManager::findById(1);
 var_dump($pRecharge);
 
-// on teste la suppression
-echo "on supprime un article" . '<br>';
-$pSuppr = ProduitsManager::findById(3);
-ProduitsManager::delete($pSuppr);
-
-//on affiche la liste des produits
-echo "liste des articles" . '<br>';
-$tableau = ProduitsManager::getList();
-foreach ($tableau as $unProduit)
-{
-    echo $unProduit->toString() . '<br>';
-}
+//Test de la suppression : ÇA FONCTIONNE
+echo "On supprime un article".'<br>';
+$pSup=ProduitsManager::findById(3);
+ProduitsManager::delete($pSup);
 
 include "PHP/VIEW/Footer.php";
