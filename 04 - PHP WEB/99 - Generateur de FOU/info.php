@@ -46,11 +46,45 @@ function demandeNomProjet($path)
     return $nomprojet;
 }
 
+/**
+ * Demande le nom de la base de données
+ *
+ * @return string $nomDB Retourne le nom de la base de données
+ */
 function demandeNomDB()
 {
     do {
         $nomDB=readline("Donnez le nom de votre base de données : ");
-        echo strlen($nomprojet) < 1 ? "Vous devez donner un nom à votre base de données\n" : "";
-    } while (strlen($nomprojet) < 1);
+        echo strlen($nomDB) < 1 ? "Vous devez donner un nom à votre base de données\n" : "";
+    } while (strlen($nomDB) < 1);
     return $nomDB;
+}
+
+/**
+ * Demande à l'utilisateur le nom des tables et les insères dans un tableau
+ *
+ * @return array $nomTable Tableau remplit du nom des tables
+ */
+function demandeTable()
+{
+    do {
+        $nbrTable=readline("Donnez le nombre de tables que vous voulez : ");
+        echo !ctype_digit($nbrTable) ? "Vous devez donner un nombre de tables valide !\n" : "";
+    } while (!ctype_digit($nbrTable));
+
+    for ($i=1;$i<=$nbrTable;$i++)
+    {
+        do{
+            $nomTempo=readline("Donnez le nom de la table n°".$i);
+            echo strlen($nomTempo) < 1 ? "Vous devez donner un nom à votre table\n" : "";
+        } while (strlen($nomTempo) < 1);
+
+        $nomTable[]=$nomTempo;
+    }
+    return $nomTable;
+}
+
+function demandeColonne($nomTable)
+{
+    SELECT TABLE_NAME,COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA="baseproduits" and TABLE_NAME="produits"
 }
