@@ -32,6 +32,7 @@ if ($choix == false) {
     mkdir($path . '/' . $nomprojet . '/HTML', 0777, true);
     mkdir($path . '/' . $nomprojet . '/CSS', 0777, true);
     mkdir($path . '/' . $nomprojet . '/JS', 0777, true);
+    mkdir($path . '/' . $nomprojet . '/SQL', 0777, true);
     mkdir($path . '/' . $nomprojet . '/PHP', 0777, true);
     mkdir($path . '/' . $nomprojet . '/PHP' . '/MODEL', 0777, true);
     mkdir($path . '/' . $nomprojet . '/PHP' . '/VIEW', 0777, true);
@@ -76,6 +77,7 @@ if ($choix == false) {
     mkdir('./' . $nomprojet . '/HTML', 0777, true);
     mkdir('./' . $nomprojet . '/CSS', 0777, true);
     mkdir('./' . $nomprojet . '/JS', 0777, true);
+    mkdir('./' . $nomprojet . '/SQL', 0777, true);
     mkdir('./' . $nomprojet . '/PHP', 0777, true);
     mkdir('./' . $nomprojet . '/PHP' . '/MODEL', 0777, true);
     mkdir('./' . $nomprojet . '/PHP' . '/VIEW', 0777, true);
@@ -141,13 +143,13 @@ if (is_dir($repository)) {
         . '<head>' . "\n"
         . "\t" . '<meta charset="utf-8">' . "\n"
         . "\t" . '<title><?php echo $titre ?></title>' . "\n"
-        . "\t" . '<link rel="stylesheet" href="./CSS/style.css">' . "\n"
+        . "\t" . '<link rel="stylesheet" href="CSS/style.css">' . "\n"
         . "\t" . '<script src="./JS/script.js"></script>' . "\n"
         . '</head>' . "\n";
 
     $INDEXPHP_snippet = '<?php'
         . "\n" . '$titre = "Ton titre infobulle";'
-        . "\n" . 'include (\'head.php\');';
+        . "\n" . 'include (\'./PHP/VIEW/head.php\');';
 
 // ECRITURE DU TEXTE CONTENU DANS LES VARIABLES CI-DESSUS
     fputs($HTML_file, $HTML_snippet);

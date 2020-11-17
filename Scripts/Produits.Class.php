@@ -1,50 +1,50 @@
 <?php
 
- Class Etudiant {
+ Class Produits {
 	/***************************************** Attributs **********************************************/
 
-	private $_nomEtudiant ;
-	private $_prenomEtudiant ;
-	private $_adresseEtudiant ;
-	private $_villeEtudiant ;
+	private $_idProduit ;
+	private $_libelleProduit ;
+	private $_prix ;
+	private $_dateDePeremption ;
 
 	/***************************************** Accesseurs **********************************************/
 	
-	public function getNomEtudiant()
+	public function getIdProduit()
 	{
-		return $this->_nomEtudiant;
+		return $this->_idProduit;
 	}
 
-	public function setNomEtudiant($nomEtudiant)
+	public function setIdProduit($idProduit)
 	{
-		$this->_nomEtudiant = $nomEtudiant;
+		$this->_idProduit = $idProduit;
 	}
-	public function getPrenomEtudiant()
+	public function getLibelleProduit()
 	{
-		return $this->_prenomEtudiant;
-	}
-
-	public function setPrenomEtudiant($prenomEtudiant)
-	{
-		$this->_prenomEtudiant = $prenomEtudiant;
-	}
-	public function getAdresseEtudiant()
-	{
-		return $this->_adresseEtudiant;
+		return $this->_libelleProduit;
 	}
 
-	public function setAdresseEtudiant($adresseEtudiant)
+	public function setLibelleProduit($libelleProduit)
 	{
-		$this->_adresseEtudiant = $adresseEtudiant;
+		$this->_libelleProduit = $libelleProduit;
 	}
-	public function getVilleEtudiant()
+	public function getPrix()
 	{
-		return $this->_villeEtudiant;
+		return $this->_prix;
 	}
 
-	public function setVilleEtudiant($villeEtudiant)
+	public function setPrix($prix)
 	{
-		$this->_villeEtudiant = $villeEtudiant;
+		$this->_prix = $prix;
+	}
+	public function getDateDePeremption()
+	{
+		return $this->_dateDePeremption;
+	}
+
+	public function setDateDePeremption($dateDePeremption)
+	{
+		$this->_dateDePeremption = $dateDePeremption;
 	}
 
 	/***************************************** Constructeur **********************************************/
@@ -76,7 +76,7 @@
 	* @return String
 	*/
 	public function toString(){
-		return " nomEtudiant : ".$this->getNomEtudiant()	." prenomEtudiant : ".$this->getPrenomEtudiant()	." adresseEtudiant : ".$this->getAdresseEtudiant()	." villeEtudiant : ".$this->getVilleEtudiant()	;
+		return " idProduit : ".$this->getIdProduit()	." libelleProduit : ".$this->getLibelleProduit()	." prix : ".$this->getPrix()	." dateDePeremption : ".$this->getDateDePeremption()	;
 	}
 
 	/**
