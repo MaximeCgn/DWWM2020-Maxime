@@ -7,19 +7,20 @@ echo '<div class="contenu colonne">
     <div class="espace"></div>
     <div>
     <div></div>
-    <a href="ajouter.php"><div class="ajouter">Ajouter un produit</div></a>
+    <a href="./PHP/VIEW/ajouter.php"><div class="ajouter">Ajouter un produit</div></a>
     <div></div>
     </div>
     
     <div class="liste colonne">';
 foreach ($produits as $unProduit) {
     
-    echo '<div class="produit">
+    echo '
+    <div class="produit">
                     <div class="libelle">' . $unProduit->getLibelleProduit() . '</div>
                     <div></div>
-                    <a href="details.php"><div class="details">Details</div></a>
-                    <a href="modifier.php"><div class="modifier">Modifier</div></a>
-                    <a href="supprimer.php"><div class="supprimer">Supprimer</div></a>
+                    <a href="./PHP/VIEW/details.php?id='.$unProduit->getIdProduit().'"><div class="details">Details</div></a>
+                    <a href="./PHP/VIEW/modifier.php?id='.$unProduit->getIdProduit().'"><div class="modifier">Modifier</div></a>
+                    <a href="./PHP/VIEW/supprimer.php?id='.$unProduit->getIdProduit().'"><div class="supprimer">Supprimer</div></a>
             </div>';
 }
 echo '</div>
