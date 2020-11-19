@@ -1,5 +1,4 @@
 <?php
-
 class DbConnect
 {
     private static $db;
@@ -12,7 +11,7 @@ class DbConnect
     public static function init()
     {
         try {
-            self::$db = new PDO('mysql:host=localhost;dbname=exercice3;charset=utf8', 'exercice3', 'exercice3');
+            self::$db = new PDO('mysql:host=localhost;dbname=baseproduits;charset=utf8', 'root', '');
         } catch (Exception $e) {
             die('Erreur :' . $e->getMessage());
         }
