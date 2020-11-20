@@ -17,7 +17,7 @@ echo '<input type="text" class="libelle listeDetail" name="libelleProduit" value
 echo '<div class="titre liste"><h2>Prix du produit</h2></div>';
 echo '<input type="text" class="libelle listeDetail" name="prix" value="' . $id->getPrix() . '"/>';
 echo '<div class="titre liste"><h2>Date de péremption du produit</h2></div>';
-echo '<input type="text" class="libelle listeDetail" name="dateDePeremption" value="' . $id->getDateDePeremption() . '"/>';
+echo '<input type="date" class="libelle listeDetail" name="dateDePeremption" value="' . $id->getDateDePeremption() . '"/>';
 echo '<a href="../../index.php"><div class="return">RETOUR</div></a>';
 echo '<input type="submit" class="ajouter PadMarg" name="submit" value="MODIFIER"/>';
 echo '</form>';

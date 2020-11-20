@@ -13,7 +13,7 @@ echo '<input type="text" class="libelle listeDetail" name="libelleProduit" place
 echo '<div class="titre liste"><h2>Prix du produit</h2></div>';
 echo '<input type="text" class="libelle listeDetail" name="prix" placeholder ="Prix du produit"/>';
 echo '<div class="titre liste"><h2>Date de péremption du produit</h2></div>';
-echo '<input type="text" class="libelle listeDetail" name="dateDePeremption" placeholder ="Date de péremption du produit (AAAA-MM-JJ)"/>';
+echo '<input type="date" class="libelle listeDetail" name="dateDePeremption" placeholder ="Date de péremption du produit (AAAA-MM-JJ)"/>';
 echo '<a href="../../index.php"><div class="return">RETOUR</div></a>';
 echo '<input type="submit" class="ajouter PadMarg" name="submit" value="AJOUTER"/>';
 echo '</form>';
