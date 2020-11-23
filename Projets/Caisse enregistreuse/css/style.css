@@ -1,0 +1,52 @@
+/*****LES BASES*****/
+:root{
+    --couleurFond: #2c383d;
+    --couleurPolice: whitesmoke;
+    --couleurPoliceHeader: #2c383d;
+    --couleurFondHeader: #E8E8E8;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--couleurFond);
+    color : var(--couleurPolice);
+    font-family: Helvetica, Arial,sans-serif;
+}
+
+div,header,input{
+    display: flex;
+    flex:1;
+}
+
+img{
+    width: 100%;
+}
+
+.colonne{
+    flex-direction: column;
+}
+
+.alignCenter{
+    align-items: center;
+}
+
+.justCenter{
+    justify-content: center;
+}
+
+/***** Header ******/
+
+header{
+    background-color: var(--couleurFondHeader);
+    color : var(--couleurPoliceHeader);
+}
+
+.titre{
+    flex:8;
+}
+
+/****** Footer ******/
+
+/***** Contenu *****/
+
