@@ -6,10 +6,10 @@ USE caisseenregistreuse;
 
 
 #------------------------------------------------------------
-# Table: User
+# Table: Users
 #------------------------------------------------------------
 
-CREATE TABLE User(
+CREATE TABLE Users(
         idUser      Int  Auto_increment PRIMARY KEY NOT NULL ,
         identifiant Varchar (50) NOT NULL ,
         motDePasse  Varchar (50) NOT NULL ,
@@ -28,20 +28,20 @@ CREATE TABLE Tva(
 
 
 #------------------------------------------------------------
-# Table: Categorie
+# Table: Categories
 #------------------------------------------------------------
 
-CREATE TABLE Categorie(
+CREATE TABLE Categories(
         idCategorie      Int  Auto_increment  PRIMARY KEY  NOT NULL ,
         libelleCategorie Varchar (50) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 #------------------------------------------------------------
-# Table: Article
+# Table: Articles
 #------------------------------------------------------------
 
-CREATE TABLE Article(
+CREATE TABLE Articles(
         idArticle      Int  Auto_increment  PRIMARY KEY  NOT NULL ,
         libelleArticle Varchar (50) NOT NULL ,
         prixHt         Float NOT NULL ,
@@ -53,33 +53,33 @@ CREATE TABLE Article(
 
 
 #------------------------------------------------------------
-# Table: Caisse
+# Table: Caisses
 #------------------------------------------------------------
 
-CREATE TABLE Caisse(
+CREATE TABLE Caisses(
         idCaisse    Int  Auto_increment  PRIMARY KEY  NOT NULL ,
         nomCaisse   Varchar (50) NOT NULL ,
-        totalCaisse Int NOT NULL ,
+        totalCaisse float NOT NULL ,
         date        Date NOT NULL ,
         idUser      Int NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 #------------------------------------------------------------
-# Table: ModePaiement
+# Table: ModePaiements
 #------------------------------------------------------------
 
-CREATE TABLE ModePaiement(
+CREATE TABLE ModePaiements(
         idModePaiement   Int  Auto_increment PRIMARY KEY  NOT NULL ,
         typePaiement Varchar (50) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 #------------------------------------------------------------
-# Table: Ticket
+# Table: Tickets
 #------------------------------------------------------------
 
-CREATE TABLE Ticket(
+CREATE TABLE Tickets(
         idTicket   Int  Auto_increment PRIMARY KEY  NOT NULL ,
         prixHT     Float NOT NULL ,
         date       Date NOT NULL ,
@@ -88,10 +88,10 @@ CREATE TABLE Ticket(
 
 
 #------------------------------------------------------------
-# Table: LigneTicket
+# Table: LigneTickets
 #------------------------------------------------------------
 
-CREATE TABLE ligneTicket(
+CREATE TABLE ligneTickets(
         idLigneTicket Int  Auto_increment PRIMARY KEY NOT NULL ,
         quantite  Int NOT NULL ,
         prixHt  float NOT NULL ,
@@ -102,10 +102,10 @@ CREATE TABLE ligneTicket(
 
 
 #------------------------------------------------------------
-# Table: Paiement
+# Table: Paiements
 #------------------------------------------------------------
 
-CREATE TABLE Paiement(
+CREATE TABLE Paiements(
         idPaiement  Int  Auto_increment  PRIMARY KEY  NOT NULL ,
         idModePaiement Int NOT NULL ,
         idTicket   Int NOT NULL ,
@@ -114,26 +114,26 @@ CREATE TABLE Paiement(
 
 
 
-ALTER TABLE `article`
-  ADD CONSTRAINT `fk_article_tva` FOREIGN KEY (`idTva`) REFERENCES `Tva` (`idTva`);
+ALTER TABLE `articles`
+  ADD CONSTRAINT `fk_articles_tva` FOREIGN KEY (`idTva`) REFERENCES `Tva` (`idTva`);
 
-ALTER TABLE `article`
-  ADD CONSTRAINT `fk_article_categorie` FOREIGN KEY (`idCategorie`) REFERENCES `Categorie` (`idCategorie`);
+ALTER TABLE `articles`
+  ADD CONSTRAINT `fk_articles_categories` FOREIGN KEY (`idCategorie`) REFERENCES `Categories` (`idCategorie`);
 
-ALTER TABLE `caisse`
-  ADD CONSTRAINT `fk_caisse_user` FOREIGN KEY (`idUser`) REFERENCES `User` (`idUser`);
+ALTER TABLE `caisses`
+  ADD CONSTRAINT `fk_caisses_users` FOREIGN KEY (`idUser`) REFERENCES `Users` (`idUser`);
 
-ALTER TABLE `ligneTicket`
-  ADD CONSTRAINT `fk_ligneTicket_ticket` FOREIGN KEY (`idTicket`) REFERENCES `Ticket` (`idTicket`);
+ALTER TABLE `ligneTickets`
+  ADD CONSTRAINT `fk_ligneTickets_tickets` FOREIGN KEY (`idTicket`) REFERENCES `Tickets` (`idTicket`);
 
-ALTER TABLE `ligneTicket`
-  ADD CONSTRAINT `fk_ligneTicket_article` FOREIGN KEY (`idArticle`) REFERENCES `Article` (`idArticle`);
+ALTER TABLE `ligneTickets`
+  ADD CONSTRAINT `fk_ligneTickets_articles` FOREIGN KEY (`idArticle`) REFERENCES `Articles` (`idArticle`);
 
-ALTER TABLE `paiement`
-  ADD CONSTRAINT `fk_paiement_ModePaiement` FOREIGN KEY (`idModePaiement`) REFERENCES `ModePaiement` (`idModePaiement`);
+ALTER TABLE `paiements`
+  ADD CONSTRAINT `fk_paiements_ModePaiements` FOREIGN KEY (`idModePaiement`) REFERENCES `ModePaiements` (`idModePaiement`);
 
-ALTER TABLE `paiement`
-  ADD CONSTRAINT `fk_paiement_Ticket` FOREIGN KEY (`idTicket`) REFERENCES `Ticket` (`idTicket`);
+ALTER TABLE `paiements`
+  ADD CONSTRAINT `fk_paiements_Ticket` FOREIGN KEY (`idTicket`) REFERENCES `Tickets` (`idTicket`);
 
 
 
