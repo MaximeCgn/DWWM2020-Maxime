@@ -20,6 +20,7 @@ function afficherPage($page)
 
     include 'PHP/VIEW/head.php';
     include 'PHP/VIEW/header.php';
+    include 'PHP/VIEW/nav.php';
     include $chemin.$nom.'.php';
     include 'PHP/VIEW/footer.php';
 }
@@ -31,6 +32,9 @@ $routes=[
     "liste"=>["PHP/VIEW/", "listeProduit", "Liste de produits"],
     "traitement"=>["PHP/VIEW/","traitement","Traitement d'un produit"],
     "formulaire"=>["PHP/VIEW/","formulaire","Formulaire"],
+    "listeCategories"=>["PHP/VIEW/","listeCategories","Liste des catégories"],
+    "traitementCateg"=>["PHP/VIEW/","traitementCateg","Traitement des catégories"],
+    "formulaireCateg"=>["PHP/VIEW/","formulaireCateg","Formulaire des catégories"]
 ];
 
 if(isset($_GET["page"]))

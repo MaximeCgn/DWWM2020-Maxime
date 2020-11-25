@@ -2,6 +2,7 @@
 
 $typeForm = $_GET["typeForm"];
 if ($typeForm == "ajouter") {
+    $listeCateg=CategoriesManager::getList();
     echo '<div></div>';
     echo '<div class="titre liste"><h1>Ajouter un produit</h1></div>';
     echo '<div></div>';
@@ -13,6 +14,13 @@ if ($typeForm == "ajouter") {
     echo '<input type="text" class="libelle listeDetail" name="prix" placeholder ="Prix du produit"/>';
     echo '<div class="titre liste"><h2>Date de péremption du produit</h2></div>';
     echo '<input type="date" class="libelle listeDetail" name="dateDePeremption" placeholder ="Date de péremption du produit (AAAA-MM-JJ)"/>';
+    echo '<div class="titre liste"><h2>Catégorie du produit</h2></div>';
+    echo '<select class="libelle listeDetail" name="idCategorie">';
+    foreach($listeCateg as $uneCategorie)
+    {
+        echo '<option value="'.$uneCategorie->getIdCategorie().'">'.$uneCategorie->getLibelleCategorie().'</option>';
+    }
+    echo '</select>';
     echo '<a href="index.php"><div class="return">RETOUR</div></a>';
     echo '<input type="submit" class="ajouter PadMarg" name="submit" value="AJOUTER"/>';
     echo '</form>';
@@ -20,7 +28,7 @@ if ($typeForm == "ajouter") {
 } else if ($typeForm == "modifier") {
     $idRecherche = $_GET['id'];
     $id = ProduitsManager::findById($idRecherche);
-
+    $listeCateg=CategoriesManager::getList();
     echo '<div></div>';
     echo '<div class="titre liste"><h1>Modifier un produit</h1></div>';
     echo '<div></div>';
@@ -33,6 +41,17 @@ if ($typeForm == "ajouter") {
     echo '<input type="text" class="libelle listeDetail" name="prix" value="' . $id->getPrix() . '"/>';
     echo '<div class="titre liste"><h2>Date de péremption du produit</h2></div>';
     echo '<input type="date" class="libelle listeDetail" name="dateDePeremption" value="' . $id->getDateDePeremption() . '"/>';
+    echo '<div class="titre liste"><h2>Catégorie du produit</h2></div>';
+    echo '<select class="libelle listeDetail" name="idCategorie">';
+    foreach($listeCateg as $uneCategorie)
+    {
+        $sel="";
+        if ($uneCategorie->getIdCategorie()==$id->getIdCategorie()){
+            $sel="selected";
+        }
+        echo '<option value="'.$uneCategorie->getIdCategorie().'"'.$sel.'>'.$uneCategorie->getLibelleCategorie().'</option>';
+    }
+    echo '</select>';
     echo '<a href="index.php"><div class="return">RETOUR</div></a>';
     echo '<input type="submit" class="ajouter PadMarg" name="submit" value="MODIFIER"/>';
     echo '</form>';
@@ -40,6 +59,7 @@ if ($typeForm == "ajouter") {
 } else if ($typeForm == "details") {
     $idRecherche = $_GET['id'];
     $id = ProduitsManager::findById($idRecherche);
+    $listeCateg=CategoriesManager::getList();
     echo '<div></div>';
     echo '<div class="titre liste"><h1>Détails du produit</h1></div>';
     echo '<div></div>';
@@ -48,6 +68,17 @@ if ($typeForm == "ajouter") {
     echo '<div class="libelle listeDetail">Libellé : ' . $id->getLibelleProduit() . '</div>';
     echo '<div class="libelle listeDetail">Prix : ' . $id->getPrix() . '€</div>';
     echo '<div class="libelle listeDetail">Date de Peremption : ' . $id->getDateDePeremption() . '</div>';
+    echo '<div class="titre liste"><h2>Catégorie du produit</h2></div>';
+    echo '<select class="libelle listeDetail" name="idCategorie" disabled>';
+    foreach($listeCateg as $uneCategorie)
+    {
+        $sel="";
+        if ($uneCategorie->getIdCategorie()==$id->getIdCategorie()){
+            $sel="selected";
+        }
+        echo '<option value="'.$uneCategorie->getIdCategorie().'"'.$sel.'>'.$uneCategorie->getLibelleCategorie().'</option>';
+    }
+    echo '</select>';
     echo '<div></div>';
     echo '<a href="index.php"><div class="return">RETOUR</div></a>';
     echo '</div>';
