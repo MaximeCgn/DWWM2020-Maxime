@@ -1,0 +1,32 @@
+Sur ce projet, j'ai premièrement créé le Git pour l'équipe avec laquelle je travaillais .
+
+Suite au MCD/MLD créé par mes collègues, je me suis occupé du Script SQL qui en découlait (création de la base + insertion de données).
+
+Une fois nos tâches respectives terminées, nous avons, en groupe, créé la maquette de l'application qui nous a permis de créé le squelette et la structure visuelle de celle ci.
+
+Ensuite la phase de réalisation a pu commencer, et j'ai commencé par créer le DbConnect qui nous a permis de nous connecter à la base de données précédemment créé. Pendant que mon équipe créait les objets et les managers, je me suis occupé de la création de l'index contenant les routes de l'application. Une fois leurs objets et managers terminés, j'ai commencé à tester toutes les fonctions présentes dans deux managers afin de m'assurer de la fiabilité de ceux-ci.
+
+Suite à ça, nous avons pu commencer les formulaires, les traitements et les listes pour chaque table. Nous étions 5 pour 6 tables, donc nous avions chacun une table à faire et la personne en avant pouvait s'occuper de la dernière.
+
+Je me suis chargé des table "Visiteurs" et "Conventions".
+
+La liste affiche simplement les données, avec des options comme : La  visualisation des détails, la possibilité de modifier les données, la possibilité de supprimer des données ou d'en ajouter.
+
+Une fois ces taches terminées pour chacun d'entre nous, l'application était terminée.
+---
+Nous avons donc utilisé :
+
+Github.
+
+Jmerise pour le MCD/MLD.
+
+StarUML pour le diagramme de classe.
+
+Le langage SQL pour le script.
+
+Le langage HTML et CSS afin de créer la maquette.
+
+Le langage PHP pour les créations de classes, de manager et du contenu des pages.
+---
+J'ai travaillé avec Cédric Pietka, Sofiane Aarouss, Bryan Hovelynck, et Steeven Gheeraert.
+---
