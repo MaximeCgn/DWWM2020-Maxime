@@ -14,6 +14,7 @@ spl_autoload_register("ChargerClasse");
 
 DbConnect::init();
 
+session_start();
 
 function afficherPage($page)
 {
@@ -23,11 +24,14 @@ function afficherPage($page)
 
     include 'PHP/VIEW/head.php';
     include 'PHP/VIEW/header.php';
+    if (!empty($_SESSION)){
+        include 'PHP/VIEW/navConnect.php';
+    }else {
     include 'PHP/VIEW/nav.php';
+    }
     include $chemin.$nom.'.php';
     include 'PHP/VIEW/footer.php';
 }
-
 
 
 $routes=[
@@ -53,7 +57,8 @@ $routes=[
     "formulaireUtilisateurs"=>["PHP/VIEW/","formulaireUtilisateurs","Formulaire des Utilisateurs"],
     "traitementUtilisateurs"=>["PHP/VIEW/", "traitementUtilisateurs","Traitement des utilisateurs"],
     "traitementConnexion"=>["PHP/VIEW/", "traitementConnexion","Traitement des connexions"],
-    "formulaireConnexions"=>["PHP/VIEW/","formulaireConnexions","Formulaire des connexions"]
+    "formulaireConnexions"=>["PHP/VIEW/","formulaireConnexions","Formulaire des connexions"],
+    "traitementDeconnexion"=>["PHP/VIEW/","traitementDeconnexion","Traitement des deconnexions"]
 ];
 
 if(isset($_GET["page"]))

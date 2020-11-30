@@ -13,7 +13,7 @@ echo '<form method="POST" action="index.php?page=traitementConnexion">
                 </div>
                 <div>
                 <div class="espace"></div>
-                <input class="libelle" type="text" name="pseudoUtilisateur" placeholder="Pseudo Utilisateur"/>
+                <input class="libelle" type="text" name="pseudoUtilisateur" placeholder="Pseudo Utilisateur" required/>
                 <div class="espace"></div>
                 </div>
             </div>
@@ -22,7 +22,7 @@ echo '<form method="POST" action="index.php?page=traitementConnexion">
                 </div>
                 <div>
                 <div class="espace"></div>
-                <input class="libelle" type="password" name="motDePasseUtilisateur" placeholder="Mot de passe Utilisateur"/>
+                <input class="libelle" type="password" name="motDePasseUtilisateur" placeholder="Mot de passe Utilisateur" required/>
                 <div class="espace"></div>
             </div>
         </div>
@@ -33,7 +33,7 @@ echo '<form method="POST" action="index.php?page=traitementConnexion">
         </div>
         <div>
         <div class="espace"></div>
-            <input type="submit" class="ajouter marginLight centre" name="submit" value="Ajouter"/>
+            <input type="submit" class="ajouter marginLight centre" name="submit" value="Connexion"/>
             <div class="espace"></div>
             </div>
         </div>
