@@ -19,5 +19,13 @@
         </div>
         <div>
             <div class="libelle"><a class="centre" href="index.php?page=traitementDeconnexion">Deconnexion</a></div>
+            <?php
+                if (isset($_SESSION['utilisateur']) && $_SESSION['utilisateur']->getRoleUtilisateur()=="administrateur")
+                {
+                    echo '
+                <div class="libelle"><a class="centre" href="index.php?page=pageAdmin">Admin</a></div>';
+                }
+            ?>
+            
         </div>
     </nav>

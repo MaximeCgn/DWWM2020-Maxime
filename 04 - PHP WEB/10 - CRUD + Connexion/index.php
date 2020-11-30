@@ -10,6 +10,13 @@ function ChargerClasse($classe)
         require "PHP/MODEL/" . $classe . ".Class.php";
     }
 }
+
+
+function crypte($mot)
+{
+    return md5(sha1($mot.md5($mot)).(strlen($mot)*pow(pi(),strlen($mot))).(strlen($mot)*sqrt(strlen($mot)*pi())));
+}
+
 spl_autoload_register("ChargerClasse");
 
 DbConnect::init();
@@ -58,7 +65,8 @@ $routes=[
     "traitementUtilisateurs"=>["PHP/VIEW/", "traitementUtilisateurs","Traitement des utilisateurs"],
     "traitementConnexion"=>["PHP/VIEW/", "traitementConnexion","Traitement des connexions"],
     "formulaireConnexions"=>["PHP/VIEW/","formulaireConnexions","Formulaire des connexions"],
-    "traitementDeconnexion"=>["PHP/VIEW/","traitementDeconnexion","Traitement des deconnexions"]
+    "traitementDeconnexion"=>["PHP/VIEW/","traitementDeconnexion","Traitement des deconnexions"],
+    "pageAdmin"=>["PHP/VIEW/","pageAdmin","Page administrateur"]
 ];
 
 if(isset($_GET["page"]))

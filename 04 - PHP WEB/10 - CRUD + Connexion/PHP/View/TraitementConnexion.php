@@ -3,7 +3,7 @@
 $p=UtilisateursManager::findByPseudo($_POST['pseudoUtilisateur']);
 if ($p !=false)
 {
-    if ($_POST['motDePasseUtilisateur']==$p->getMotDePasseUtilisateur())
+    if (crypte($_POST['motDePasseUtilisateur'])==$p->getMotDePasseUtilisateur())
     {
         echo "Connexion réussie";
         $_SESSION['utilisateur']=$p;
