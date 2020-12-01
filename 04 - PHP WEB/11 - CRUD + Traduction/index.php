@@ -19,6 +19,8 @@ function crypte($mot)
     return md5(sha1($mot.md5($mot)).(strlen($mot)*pow(pi(),strlen($mot))).(strlen($mot)*sqrt(strlen($mot)*pi())));
 }
 
+Parametre::init();
+
 DbConnect::init();
 
 session_start();
