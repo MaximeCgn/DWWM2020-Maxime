@@ -1,0 +1,27 @@
+div,input,body{
+    display:flex;
+    flex:1;
+}
+
+.espace{
+    flex:8;
+}
+
+div{
+    height:1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.colonne{
+    flex-direction: column;
+}
+
+.espaceV
+{
+    height:2em;
+}
+
+.submit{
+    max-width: 10em;
+}
