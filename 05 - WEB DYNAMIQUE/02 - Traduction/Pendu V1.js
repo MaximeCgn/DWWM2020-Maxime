@@ -890,10 +890,10 @@ function ajouterLesLettres(val, tab, tabpos, niveau) {
             // on place les lettres aléatoirement
             test = testerLettre(val, tab, 0);    //on cherche les lettres déjà placées dans le mot code
             var pos = tabpos.filter(x => test.indexOf(x) === -1);
-            if (!empty(pos))        //s'il reste des lettres à placer
+            if (pos.length>0)        //s'il reste des lettres à placer
             {
                 posetudie = pos[Math.floor(Math.random() * pos.length)];//on choisit une position au hasard
-                tab = ajouterUneLettre(val, tab, pos[posetudie]);
+                tab = ajouterUneLettre(val, tab, posetudie);
                 return tab;
             }
             else    //il n'y a plus de lettre à placer
@@ -960,6 +960,7 @@ function choisirMot(niv) {
 function demanderLettre() {
     do {
         var lettre = prompt("entrez une lettre : ").toUpperCase();
+        // var lettre = document.getElementById("rep").value;
     } while (!(/^[A-Z]$/i.test(lettre)) || lettre.length > 1); // ou utilisation de  while (!IntlChar::isalpha(lettre))
     return lettre;
 }
@@ -1065,10 +1066,12 @@ function lancerPartie(niveau) {
     }
     else {
         document.getElementById("result").innerHTML = ("Vous avez perdu. Le mot était " + motATrouver + "<br>");
+        var son= new Audio("AAAAAAAAAAAAAAAAAA.mp3");
+        son.play();
     }
+    
 }
-var son= new Audio();
-Audio.src=
+
 var image = document.createElement("img");
 var div = document.getElementById("pendu");
 div.appendChild(image);

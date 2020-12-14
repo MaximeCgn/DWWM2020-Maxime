@@ -1,0 +1,12 @@
+div,body,form,input{
+    display:flex;
+    flex:1;
+}
+
+.colonne{
+    flex-direction:column;
+}
+
+.espace{
+    flex:7;
+}
