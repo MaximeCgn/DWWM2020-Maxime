@@ -1,0 +1,12 @@
+#box{
+    background-color: red;
+    height:100px ;
+    width: 100px;
+    position: relative;
+    left : 16px;
+    top : 16px;
+}
+
+body{
+    background-color: rgb(36, 53, 61);
+}
