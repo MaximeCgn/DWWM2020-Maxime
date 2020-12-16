@@ -58,4 +58,21 @@ class SuivisManager
 		}
 		return $liste;
 	}
+
+	public static function findByMatiere($matiere)
+	{
+ 		$db=DbConnect::getDb();
+		$matiere = (int) $matiere;
+		$q=$db->query("SELECT * FROM suivis WHERE idMatiere LIKE ".$matiere);
+		$results = $q->fetch(PDO::FETCH_ASSOC);
+		if($results != false)
+		{
+			return new Suivis($results);
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
 }

@@ -1,36 +1,31 @@
 <?php
 /**On entre seulement si on est proviseur, sinon on est redirigé **/
 if (isset($_SESSION['user'])&& $_SESSION['user']->getRole()==2){
-$Utilisateur=UtilisateursManager::getList();
-
+$Matieres=MatieresManager::getList();
 echo'
 <div class="page colonne">
     <div class="form ">
             <div class="nav colonne">
                 <ul>Gestion de
-                    <a href="index.php?page=ListeEleves"><li>Elèves</li></a>
-                    <a href="index.php?page=ListeUtilisateur"><li>Enseignants</li></a>
+                    <a href="index.php?page=ListeMatieres"><li>Elèves</li></a>
+                    <a href="index.php?page=ListeEnseignants"><li>Enseignants</li></a>
                     <a href="index.php?page=ListeNotes"><li>Notes</li></a>
                     <a href="index.php?page=ListeMatieres"><li>Matières</li></a>
                 </ul>
             </div>
             <div class="colonne">
-            <a href="index.php?page=FormEnseignants&mode=ajout"><div class="bouton centrer ajouter">Ajouter</div></a>';
-            foreach ($Utilisateur as $unUtilisateur)
+            <a href="index.php?page=FormMatieres&mode=ajout"><div class="bouton centrer ajouter">Ajouter</div></a>';
+            foreach ($Matieres as $uneMatiere)
             {
-                $id=MatieresManager::findById($unUtilisateur->getIdMatiere());
                 echo '
                 <div class="ligne">
-                    <div>'.$id->getLibelleMatiere().'</div>
-                    <div>'.$unUtilisateur->getPseudo().'</div>
-                    <div>'.$unUtilisateur->getNomUtilisateur().'</div>
-                    <div>'.$unUtilisateur->getPrenomUtilisateur().'</div>
+                    <div>'.$uneMatiere->getLibelleMatiere().'</div>
                     <div class="petitLogo">
-                        <a href="index.php?page=FormEnseignants&mode=modifier&id='.$unUtilisateur->getIdUtilisateur().'"><img src="./IMG/modifier.png"></a>
+                        <a href="index.php?page=FormMatieres&mode=modifier&id='.$uneMatiere->getIdMatiere().'"><img src="./IMG/modifier.png"></a>
                     </div>
                     
                     <div class="petitLogo">
-                    <a href="index.php?page=ActionEnseignants&typeAction=supprimer&id='.$unUtilisateur->getIdUtilisateur().'"><img src="./IMG/supprimer.png"></a>
+                    <a href="index.php?page=ActionMatieres&typeAction=supprimer&id='.$uneMatiere->getIdMatiere().'"><img src="./IMG/supprimer.png"></a>
                     </div>
                 </div>';
             }

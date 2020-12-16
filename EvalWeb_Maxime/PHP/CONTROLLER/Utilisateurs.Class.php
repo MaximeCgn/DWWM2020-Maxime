@@ -13,8 +13,6 @@ class Utilisateurs
 	private $_role;
 	private $_idMatiere;
 
-	private $_matiere;
-
 	/***************** Accesseurs ***************** */
 
 
@@ -86,20 +84,6 @@ class Utilisateurs
 	public function setIdMatiere($idMatiere)
 	{
 		$this->_idMatiere=$idMatiere;
-	}
-	public function getMatiere()
-	{
-		return $this->_matiere;
-	}
-
-	public function setMatiere($matiere)
-	{
-		$this->_matiere = $matiere;
-	}
-
-	public function getLibMatiere()
-	{
-		return($this->getMatiere())->getLibelleMatiere();
 	}
 
 	/*****************Constructeur***************** */
