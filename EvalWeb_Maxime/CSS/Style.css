@@ -1,0 +1,143 @@
+/****  GENERAL ****/
+:root{
+	--header: #F8CEB1;
+	--bouton: #F2A16A;
+	--linearPage: linear-gradient(#F8CEB1,white);
+}
+
+a{
+	text-decoration: none;
+	color:black;
+}
+
+html, body {
+	margin : 0;
+	padding : 0;
+	font-family: Helvetica,Arial,sans-serif;
+}
+
+div, header, footer, nav, article,input,select {
+	display : flex;
+	flex : 1;
+}
+
+img, video {
+	width : 100%;
+}
+
+.colonne {
+	flex-direction : column;
+}
+
+.titre {
+	flex: 5;
+}
+
+.centrer{
+	justify-content: center;
+	align-items: center;
+}
+
+body{
+	background: var(--linearPage);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+/***HEADER***/
+.logo{
+	margin:1em;
+}
+
+.titreHeader{
+	flex:6;
+}
+
+.espaceH{
+	height: 3em;
+}
+
+.soustitre{
+	align-items: flex-start;
+}
+
+header{
+	border-bottom:white 1em solid;
+	background-color: var(--header);
+}
+
+input{
+	font-size:1em;
+}
+
+/***FOOTER***/
+footer{
+	border-top: 1em #F8CBAD solid;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	min-height: 4em;
+	background-color: white;
+}
+
+.footer{
+	visibility: hidden;
+}
+
+/**Contenu**/
+
+.page{
+	font-size: 1.5em;
+}
+
+.form{
+	margin-top: 5em;
+	margin-bottom: 5em;
+	flex:3;
+}
+
+.ligne{
+	padding: 1em;
+}
+
+.petitLogo{
+	flex:0.1;
+}
+
+.espacePL{
+	flex:0.3;
+}
+
+.nav{
+	margin-top: 3em;
+}
+
+.select{
+	margin:1em;
+}
+
+input,select{
+	min-height: 2em;
+}
+
+/**Bouton**/
+
+.bouton{
+	background-color: var(--bouton);
+	border: black 1px solid;
+	border-radius: 1em;
+	margin: 1em;
+	padding: 1em;
+}
+
+.connect{
+	flex:0.3;
+}
+
+.ajouter{
+	max-height: 1.5em;
+}
+
+.menuBouton{
+	margin-bottom: 3em;
+}
