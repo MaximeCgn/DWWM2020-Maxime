@@ -37,7 +37,7 @@ droite.addEventListener("mousedown",function(){
     box.style.left=mouv;
 })
 
-//sfrdfsdgfsddfs
+//Clavier
 document.addEventListener("keydown",(e)=>{
     if (e.key=="ArrowUp"){
         var top = window.getComputedStyle(box,null).top;
@@ -68,5 +68,14 @@ document.addEventListener("keydown",(e)=>{
 
 //LA SOURIS
 
+//OBSTACLES
 
+var obs = document.getElementsByClassName("obstacle")
 
+for (i=0;i<obs.length;i++)
+{
+    console.log(obs[i].offsetLeft);//Distance bord/gauche
+    console.log(obs[i].offsetTop);//Distance bord/haut
+    console.log(obs[i].offsetLeft+obs[i].offsetWidth);//Distance bord/droite
+    console.log(obs[i].offsetTop+obs[i].offsetWidth);//Distance bord/bas
+}
