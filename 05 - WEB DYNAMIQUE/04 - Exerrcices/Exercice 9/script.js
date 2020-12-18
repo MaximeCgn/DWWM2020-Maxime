@@ -48,19 +48,19 @@ document.addEventListener("keydown", (e) => {
             var boxPos = { x: box.offsetLeft, y: box.offsetTop, width: box.offsetWidth, height: box.offsetHeight };
             var obsPos = { x: obs[i].offsetLeft, y: obs[i].offsetTop, width: obs[i].offsetWidth, height: obs[i].offsetHeight };
 
-            if (boxPos.x < obsPos.x + obsPos.width && 
-                boxPos.x + boxPos.width > obsPos.x && 
-                boxPos.y-pas < obsPos.y + obsPos.height && 
+            if (boxPos.x < obsPos.x + obsPos.width &&
+                boxPos.x + boxPos.width > obsPos.x &&
+                boxPos.y - pas < obsPos.y + obsPos.height &&
                 boxPos.height + boxPos.y > obsPos.y) {
-                    console.log("aie");
-                    flag=true;
-            } 
-        }
-            if (flag==false){
-                box.style.top = mouv;
-                console.log("oui");
+                console.log("aie");
+                flag = true;
             }
-                
+        }
+        if (flag == false) {
+            box.style.top = mouv;
+            console.log("oui");
+        }
+
     } else if (e.key == "ArrowDown") {
         var top = window.getComputedStyle(box, null).top;
         var pos = parseInt(top.substring(0, top.indexOf("p")));
@@ -70,15 +70,15 @@ document.addEventListener("keydown", (e) => {
             var boxPos = { x: box.offsetLeft, y: box.offsetTop, width: box.offsetWidth, height: box.offsetHeight };
             var obsPos = { x: obs[i].offsetLeft, y: obs[i].offsetTop, width: obs[i].offsetWidth, height: obs[i].offsetHeight };
 
-            if (boxPos.x < obsPos.x + obsPos.width && 
-                boxPos.x + boxPos.width > obsPos.x && 
-                boxPos.y < obsPos.y + obsPos.height && 
-                boxPos.height+pas + boxPos.y > obsPos.y) {
-                    console.log("aie");
-                    flag=true;
-            } 
+            if (boxPos.x < obsPos.x + obsPos.width &&
+                boxPos.x + boxPos.width > obsPos.x &&
+                boxPos.y < obsPos.y + obsPos.height &&
+                boxPos.height + pas + boxPos.y > obsPos.y) {
+                console.log("aie");
+                flag = true;
+            }
         }
-        if (flag==false){
+        if (flag == false) {
             box.style.top = mouv;
             console.log("oui");
         }
@@ -91,15 +91,15 @@ document.addEventListener("keydown", (e) => {
             var boxPos = { x: box.offsetLeft, y: box.offsetTop, width: box.offsetWidth, height: box.offsetHeight };
             var obsPos = { x: obs[i].offsetLeft, y: obs[i].offsetTop, width: obs[i].offsetWidth, height: obs[i].offsetHeight };
 
-            if (boxPos.x-pas < obsPos.x + obsPos.width && 
-                boxPos.x + boxPos.width > obsPos.x && 
-                boxPos.y < obsPos.y + obsPos.height && 
+            if (boxPos.x - pas < obsPos.x + obsPos.width &&
+                boxPos.x + boxPos.width > obsPos.x &&
+                boxPos.y < obsPos.y + obsPos.height &&
                 boxPos.height + boxPos.y > obsPos.y) {
-                    console.log("aie");
-                    flag=true;
-            } 
+                console.log("aie");
+                flag = true;
+            }
         }
-        if (flag==false){
+        if (flag == false) {
             box.style.left = mouv;
             console.log("oui");
         }
@@ -113,15 +113,15 @@ document.addEventListener("keydown", (e) => {
             var boxPos = { x: box.offsetLeft, y: box.offsetTop, width: box.offsetWidth, height: box.offsetHeight };
             var obsPos = { x: obs[i].offsetLeft, y: obs[i].offsetTop, width: obs[i].offsetWidth, height: obs[i].offsetHeight };
 
-            if (boxPos.x < obsPos.x + obsPos.width && 
-                boxPos.x+pas + boxPos.width > obsPos.x && 
-                boxPos.y < obsPos.y + obsPos.height && 
+            if (boxPos.x < obsPos.x + obsPos.width &&
+                boxPos.x + pas + boxPos.width > obsPos.x &&
+                boxPos.y < obsPos.y + obsPos.height &&
                 boxPos.height + boxPos.y > obsPos.y) {
                 console.log("aie");
-                flag=true;
-            } 
+                flag = true;
+            }
         }
-        if (flag==false){
+        if (flag == false) {
             box.style.left = mouv;
             console.log("oui");
         }
@@ -130,7 +130,10 @@ document.addEventListener("keydown", (e) => {
 )
 
 //LA SOURIS
-    document.addEventListener("click",function())
+document.addEventListener("click", (e) => {
+    box.style.top = e.clientY + "px";
+    box.style.left = e.clientX + "px";
+})
 
 //OBSTACLES
 
