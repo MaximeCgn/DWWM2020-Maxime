@@ -9,67 +9,66 @@ var arr = document.getElementById("arr");
 var chrono = document.getElementById("timer");
 
 //CHEAT
-var keysPressed= {};
+var keysPressed = {};
 
-document.addEventListener('keydown',(e)=>{
-    keysPressed[e.key]= true;
+document.addEventListener('keydown', (e) => {
+    keysPressed[e.key] = true;
     console.log("text");
-    if (keysPressed['6'] && e.key=="9")
-    {
+    if (keysPressed['6'] && e.key == "9") {
         alert("Cheat enabled");
-        for (let i = obs.length-1;i>0;i--){
-            obs[i].className="invisible";
+        for (let i = obs.length - 1; i > 0; i--) {
+            obs[i].className = "invisible";
         }
     }
 
-    document.addEventListener('keyup',(e)=>{
+    document.addEventListener('keyup', (e) => {
         delete keysPressed[e.key];
     })
 })
 
 //TIMER
 var min = 0;
-var sec = 0 ;
-function timer(){
+var sec = 0;
+function timer() {
     sec++;
-    if(sec==60){
-        sec=0;
+    if (sec == 60) {
+        sec = 0;
         min++;
     }
-    if (min<10){
-        time="0"+min;
+    if (min < 10) {
+        time = "0" + min;
     }
-    else{
-        time=min;
+    else {
+        time = min;
     }
-    if(sec<10){
-        time+=":0"+sec
+    if (sec < 10) {
+        time += ":0" + sec
     }
-    else{
-        time+= ":"+sec
+    else {
+        time += ":" + sec
     }
-    chrono.innerHTML=time;
-    var horloge=setTimeout("timer()",1000);
+    chrono.innerHTML = time;
+    horloge = setTimeout("timer()", 1000);
 }
 
 //Clavier
-var drapo=true;
-var win=false;
+var drapo = true;
+var win = false;
 document.addEventListener("keydown", (e) => {
-    if (drapo==true){
-        drapo=false;
+    if (drapo == true) {
+        drapo = false;
         timer();
     }
 
-    
+
     //VERS LE HAUT
     if (e.key == "ArrowUp") {
         var top = window.getComputedStyle(box, null).top;
         var pos = parseInt(top.substring(0, top.indexOf("p")));
         var mouv = pos - pas + "px";
         var flag = false;
-        var i=0;
-        while (i < obs.length && flag==false) {
+        var i = 0;
+        while (i < obs.length && flag == false) {
             var boxPos = { x: box.offsetLeft, y: box.offsetTop, width: box.offsetWidth, height: box.offsetHeight };
             var obsPos = { x: obs[i].offsetLeft, y: obs[i].offsetTop, width: obs[i].offsetWidth, height: obs[i].offsetHeight };
 
@@ -91,7 +90,7 @@ document.addEventListener("keydown", (e) => {
                 boxPos.y - pas < obsPos.y + obsPos.height &&
                 boxPos.height + boxPos.y > obsPos.y) {
                 alert("GAGNÉ");
-                win=true;
+                win = true;
             }
         }
 
@@ -102,8 +101,8 @@ document.addEventListener("keydown", (e) => {
         var pos = parseInt(top.substring(0, top.indexOf("p")));
         var mouv = pos + pas + "px";
         var flag = false;
-        var i=0;
-        while (i < obs.length && flag==false){
+        var i = 0;
+        while (i < obs.length && flag == false) {
             var boxPos = { x: box.offsetLeft, y: box.offsetTop, width: box.offsetWidth, height: box.offsetHeight };
             var obsPos = { x: obs[i].offsetLeft, y: obs[i].offsetTop, width: obs[i].offsetWidth, height: obs[i].offsetHeight };
 
@@ -125,7 +124,7 @@ document.addEventListener("keydown", (e) => {
                 boxPos.y < obsPos.y + obsPos.height &&
                 boxPos.height + pas + boxPos.y > obsPos.y) {
                 alert("GAGNÉ");
-                win=true;
+                win = true;
             }
         }
 
@@ -135,8 +134,8 @@ document.addEventListener("keydown", (e) => {
         var pos = parseInt(left.substring(0, left.indexOf("p")));
         var mouv = pos - pas + "px";
         var flag = false;
-        var i=0;
-        while (i < obs.length && flag==false) {
+        var i = 0;
+        while (i < obs.length && flag == false) {
             var boxPos = { x: box.offsetLeft, y: box.offsetTop, width: box.offsetWidth, height: box.offsetHeight };
             var obsPos = { x: obs[i].offsetLeft, y: obs[i].offsetTop, width: obs[i].offsetWidth, height: obs[i].offsetHeight };
 
@@ -158,7 +157,7 @@ document.addEventListener("keydown", (e) => {
                 boxPos.y < obsPos.y + obsPos.height &&
                 boxPos.height + boxPos.y > obsPos.y) {
                 alert("GAGNÉ");
-                win=true;
+                win = true;
             }
         }
 
@@ -169,8 +168,8 @@ document.addEventListener("keydown", (e) => {
         var pos = parseInt(left.substring(0, left.indexOf("p")));
         var mouv = pos + pas + "px";
         var flag = false;
-        var i=0;
-        while (i < obs.length && flag==false) {
+        var i = 0;
+        while (i < obs.length && flag == false) {
             var boxPos = { x: box.offsetLeft, y: box.offsetTop, width: box.offsetWidth, height: box.offsetHeight };
             var obsPos = { x: obs[i].offsetLeft, y: obs[i].offsetTop, width: obs[i].offsetWidth, height: obs[i].offsetHeight };
 
@@ -192,23 +191,22 @@ document.addEventListener("keydown", (e) => {
                 boxPos.y < obsPos.y + obsPos.height &&
                 boxPos.height + boxPos.y > obsPos.y) {
                 alert("GAGNÉ");
-                win=true;
+                win = true;
             }
         }
 
-       if (win==true){
-        clearTimeout(horloge);
-    } 
     }
-    
-}
-)
+    if (win == true) {
+        clearTimeout(horloge);
+    }
+})
 
 //J'ai pas fait les collisions ici encore
-function deplaceSouris(e)
-{
+function deplaceSouris(e) {
+    if (!collisionObstacles(parseInt(e.clientY) + ecartY, parseInt(e.clientX) + ecartX)) {
     carre.style.top = parseInt(e.clientY) + ecartY + "px";
     carre.style.left = parseInt(e.clientX) + ecartX + "px";
+    }
 };
 
 var ecartY, ecartX;
@@ -216,22 +214,62 @@ var ecartY, ecartX;
 var carre = document.getElementById('box');
 var flagMouv = false;
 
-carre.addEventListener("mousedown", (e)=>
-{
-     ecartY = parseInt(window.getComputedStyle(carre).top) - parseInt(e.clientY);
-     ecartX = parseInt(window.getComputedStyle(carre).left) - parseInt(e.clientX);
+carre.addEventListener("mousedown", (e) => {
+    if (drapo == true) {
+        drapo = false;
+        timer();
+    }
+    ecartY = parseInt(window.getComputedStyle(carre).top) - parseInt(e.clientY);
+    ecartX = parseInt(window.getComputedStyle(carre).left) - parseInt(e.clientX);
     flagMouv = true;
 });
 
-document.addEventListener("mousemove", (e) =>
-{
-    if(flagMouv == true)
-    {
+document.addEventListener("mousemove", (e) => {
+    if (flagMouv == true) {
         deplaceSouris(e);
     }
 });
 
-carre.addEventListener("mouseup", (e) =>
-{
+carre.addEventListener("mouseup", (e) => {
     flagMouv = false;
 });
+
+//Gestion des collisions
+/**
+ * Méthode qui renvoi vrai s'il y a une collision avec l'obstacle
+ * @param {*} obstacle //obstacle fixe
+ * @param {*} posX //position en x souhaité
+ * @param {*} posY //position en y souhaité
+ */
+function collisionUnObstacle(obstacle, posX, posY) {
+    var styleObjet = window.getComputedStyle(carre);
+    var w = parseInt(styleObjet.width);
+    var h = parseInt(styleObjet.height);
+    var styleObstacle = window.getComputedStyle(obstacle);
+    var tob = parseInt(styleObstacle.top);
+    var lob = parseInt(styleObstacle.left);
+    var wob = parseInt(styleObstacle.width);
+    var hob = parseInt(styleObstacle.height);
+    if (posY < lob + wob && posY + w > lob && posX < tob + hob && posX + h > tob) {
+        console.log("collision n°" + compteurCollision + "  " + obstacle.id);
+        flagMouv = false;
+        compteurCollision++;
+        return true;
+    }
+    return false;
+}
+
+/**
+ * Méthode qui renvoi vrai s'il y a une collision avec l'un des obstacles
+ * @param {*} posX //position en x souhaité
+ * @param {*} posY //position en y souhaité
+ */
+function collisionObstacles(posX, posY) {
+    var pasCollision = true;
+    var listeObstacles = document.querySelectorAll('.obstacle');
+    //on teste pour chacun des obstacles
+    listeObstacles.forEach(function (obstacle) {
+        pasCollision = pasCollision && !collisionUnObstacle(obstacle, posX, posY);
+    });
+    return !pasCollision;
+}

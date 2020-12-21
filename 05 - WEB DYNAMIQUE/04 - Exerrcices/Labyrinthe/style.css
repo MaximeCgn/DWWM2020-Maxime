@@ -13,6 +13,7 @@ body{
 .invisible{
     background-color: black;
     position: absolute;
+    color:white;
 }
 
 /**Border et Box**/
