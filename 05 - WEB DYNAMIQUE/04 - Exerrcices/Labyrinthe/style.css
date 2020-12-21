@@ -1,0 +1,200 @@
+/***GENERAL***/
+
+body{
+    background-color: rgb(36, 53, 61);
+}
+
+.obstacle{
+    background-color: black;
+    position: absolute;
+    
+}
+
+/**Border et Box**/
+
+#top{
+    top:0;
+    left:0;
+    width: 95.6%;
+    height: 50px;
+}
+
+#left{
+    width: 50px;
+    top:0;
+    left:0;
+    height: 85vh;
+}
+
+#right{
+    
+    left:93%;
+    height:88vh;
+    width: 50px;
+}
+
+#bottom{
+    width: 95.6%;
+    height: 50px;
+    top : 85vh;
+    left:0;
+}
+
+#box{
+    background-color: red;
+    height:75px ;
+    width: 75px;
+    position: absolute;
+    left : 60px;
+    top : 55px;
+}
+
+#arr{
+    background-color: rgb(40, 201, 40);
+    height:75px ;
+    width: 75px;
+    position: absolute;
+    top : 72%;
+    left : 41%;
+}
+
+/**OBSTACLES**/
+
+#obs1{
+    width: 50%;
+    top : 140px;
+    height: 50px;
+}
+
+#obs2{
+    left:57%;
+    top:140px;
+    width: 30%;
+    height: 50px;
+}
+
+#obs3{
+    left:49%;
+    top:140px;
+    height: 190px;
+    width: 50px;
+}
+
+#obs4{
+    left: 75%;
+    top:140px;
+    height: 140px;
+    width: 50px;
+}
+
+ #obs5{
+    left: 75%;
+    top: 280px;
+    width: 230px;
+    height: 50px;
+}
+
+#obs6{
+    left: 57%;
+    top: 280px;
+    width: 245px;
+    height: 50px;
+}
+
+#obs7{
+    left: 67.2%;
+    top: 280px;
+    width: 50px;
+    height: 160px;
+}
+
+#obs8{
+    left: 150px;
+    top: 440px;
+    width: 1650px;
+    height: 50px;
+}
+
+#obs9{
+    left:150px ;
+    top: 280px;
+    width: 680px;
+    height: 50px;
+}
+
+#obs10{
+    left: 26%;
+    top: 280px;
+    width: 50px;
+    height: 420px;
+}
+
+#obs11{
+    left: 150px;
+    top: 440px;
+    width: 50px;
+    height: 265px;
+}
+
+#obs12{
+    left: 16.8%;
+    top: 580px;
+    width: 50px;
+    height: 256px;
+}
+
+#obs13{
+    left: 35%;
+    top: 580px;
+    width: 50px;
+    height: 265px;
+}
+
+#obs14{
+    left: 35%;
+    top: 580px;
+    width: 850px;
+    height: 50px;
+}
+
+#obs15{
+    left: 48%;
+    top: 580px;
+    width:50px;
+    height: 130px;
+}
+
+#obs16{
+    left: 85%;
+    top: 580px;
+    width:160px ;
+    height: 50px;
+}
+
+#obs17{
+    left: 85%;
+    top: 580px;
+    width: 50px;
+    height: 130px;
+}
+
+#obs18{
+    left: 70%;
+    top: 720px;
+    width: 50px;
+    height:100px ;
+} 
+
+#obs19{
+    left: 62.5%;
+    top: 580px;
+    width:50px;
+    height: 130px;
+} 
+
+#obs20{
+    left: 55%;
+    top: 720px;
+    width: 50px;
+    height:100px ;
+} 
