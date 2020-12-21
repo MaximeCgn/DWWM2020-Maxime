@@ -7,7 +7,12 @@ body{
 .obstacle{
     background-color: black;
     position: absolute;
-    
+    color:white;
+}
+
+.invisible{
+    background-color: black;
+    position: absolute;
 }
 
 /**Border et Box**/
@@ -198,3 +203,10 @@ body{
     width: 50px;
     height:100px ;
 } 
+
+/***TIMER***/
+#timer{
+    top:90%;
+    font-size: 1.5em;
+    display: flex;
+}
