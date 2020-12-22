@@ -2,7 +2,9 @@ var plages = document.getElementsByClassName("recto");
 var img = document.getElementsByClassName("verso");
 var nbrcp = document.getElementById("nbrcp");
 var chrono = document.getElementById("timer");
-var recom=document.getElementById("restart");
+var recom = document.getElementById("restart");
+var solution = document.getElementById("soluce");
+var cptPair = document.getElementById("paire");
 
 var drapo = true;
 var cpt = 0;
@@ -12,6 +14,7 @@ var rectoTemp = [];
 var min = 0;
 var sec = 0;
 var secTemp = 0;
+var compteCarte = 0;
 /***************************Fonctions********************************/
 /***Retourner les cartes***/
 function retourne(bool, verso, e) {
@@ -62,13 +65,21 @@ function timer() {
     horloge = setTimeout("timer()", 1000);
 }
 
-
 /***********************Evenements*********************/
-
-recom.addEventListener("click",function(){
+/***Restart***/
+recom.addEventListener("click", function () {
     document.location.reload();
 })
 
+/***Solution***/
+solution.addEventListener("click", function () {
+    for (let i = 0; i < plages.length; i++) {
+        plages[i].style.display = "none";
+        img[i].style.display = "flex";
+    }
+})
+
+/***Jeu***/
 for (let i in plages) {
     plages[i].addEventListener("click", (e) => {
         if (drapo == true) {
@@ -89,8 +100,19 @@ for (let i in plages) {
                 tab = [];
                 versoTemp = [];
                 rectoTemp = [];
+                compteCarte++;
+                if (compteCarte == 1) {
+                    cptPair.innerHTML = compteCarte + " paires trouvée"
+                }
+                else {
+                    cptPair.innerHTML = compteCarte + " paires trouvées"
+                }
+                if (compteCarte == 8) {
+                    alert("Vous avez gagné !");
+                    clearTimeout(horloge);
+                }
             } else {
-                time = setTimeout(retourne, 1000, false, verso, e)
+                time = setTimeout(retourne, 1000, false, verso, e);
             }
         }
     });

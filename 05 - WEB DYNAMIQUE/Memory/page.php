@@ -11,9 +11,12 @@ for ($i = 1; $i <= 8; $i++) {
 
 
 echo '
-<div id="nbrcp"></div>
+
 <button id="restart">Recommencer</button>
+<button id="soluce">Solution</button>
+<div id="nbrcp"></div>
 <div id="timer"></div>
+<div id="paire"></div>
 <div class="colonne">';
 for ($i = 1; $i <= 4; $i++) {
     echo '<div class="ligne">
@@ -25,8 +28,6 @@ for ($i = 1; $i <= 4; $i++) {
                 <img class="verso"  src="./images/' . $nb . '.jpg">
                 <img class ="recto"  src="./images/plage.jpg">
               </div>';
-        // unset($img[$key]);
-        // sort($img);
         array_splice($img,$key,1);
     }
     echo '<div class="espace"></div>
