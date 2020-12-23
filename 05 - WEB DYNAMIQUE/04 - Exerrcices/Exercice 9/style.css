@@ -10,3 +10,28 @@
 body{
     background-color: rgb(36, 53, 61);
 }
+
+.obstacle{
+    background-color: black;
+    height:100px ;
+    width: 300px;
+    position: relative;
+    
+}
+
+#un{
+    left : 64px;
+    top : 64px;
+}
+
+#deux{
+    left:300px;
+    top:300px;
+}
+
+#trois{
+    height:300px ;
+    width: 100px;
+    left:1000px;
+    top:-400px;
+}
