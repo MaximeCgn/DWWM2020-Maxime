@@ -11,13 +11,17 @@ for ($i = 1; $i <= 8; $i++) {
 
 
 echo '
-
+<div class="centrer">
 <button id="restart">Recommencer</button>
 <button id="soluce">Solution</button>
-<div id="joueur">Au joueur 1 de jouer.</div>
-<div id="nbrcp"></div>
-<div id="timer"></div>
-<div id="paire"></div>
+<div id="nbrcp"></div><br>
+<div id="timer"></div><br>
+<div id="paire"></div><br>
+<div id="joueur"></div><br><br>
+<div id="joueur1"></div>
+<div id="joueur2"></div>
+<div id="resultat"></div>
+</div>
 <div class="colonne">';
 for ($i = 1; $i <= 4; $i++) {
     echo '<div class="ligne">

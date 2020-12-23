@@ -2,67 +2,76 @@
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Helvetica;
-    background-color: rgb(40, 53, 65);
-    color:whitesmoke;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica;
+  background-color: rgb(40, 53, 65);
+  color: whitesmoke;
 }
 
-div,header,img {
-    display: flex;
-    flex: 1;
+div,
+header,
+img,
+button {
+  display: flex;
+  flex: 1;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 video {
-    width: 100%;
+  width: 100%;
 }
 
 header {
+  justify-content: center;
+  align-items: center;
+}
+
+.centrer{
     justify-content: center;
     align-items: center;
 }
 
-.colonne{
-    flex-direction: column;
+.colonne {
+  flex-direction: column;
 }
 
-.espace{
-    flex:3;
+.espace {
+  flex: 3;
 }
 
-.espaceV{
-    min-height: 2vh;
+.espaceV {
+  min-height: 2vh;
 }
 
 .titrePage {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-
 .img {
-    margin: 1em;
-    border-radius: 0.5em;
+  margin: 1em;
+  border-radius: 0.5em;
 }
 
 .verso {
-    display: none;
-    border-radius: 0.5em;
-}
-
-.versoCorrect {
-    border-radius: 0.5em;
+  display: none;
+  border-radius: 0.5em;
+  scale:1.1;
 }
 
 .recto {
-    border-radius: 0.5em;
+  border-radius: 0.5em;
 }
 
-
-
+.recto:hover {
+  transform: scale(1.2);
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
