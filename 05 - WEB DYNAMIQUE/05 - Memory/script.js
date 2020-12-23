@@ -6,10 +6,15 @@ var recom = document.getElementById("restart");
 var solution = document.getElementById("soluce");
 var cptPair = document.getElementById("paire");
 var tour = document.getElementById("joueur");
-var pl1 = document.getElementById("joueur1");
-var pl2 = document.getElementById("joueur2");
+var mode=confirm("Voulez vous jouer à deux joueurs ?");
+if(mode==true){
 var j1 = prompt("Nom du joueur 1:");
 var j2 = prompt("Nom du joueur 2:");
+
+var pl1 = document.getElementById("joueur1");
+var pl2 = document.getElementById("joueur2");
+}
+
 var result = document.getElementById("resultat");
 
 var debug = true;
@@ -76,6 +81,7 @@ function timer() {
 /***********************Evenements*********************/
 
 /**Premier joueur aléatoire**/
+if(mode==true){
 var rand = Math.floor(Math.random() * 100);
 if (rand % 2 != 0) {
   tour.innerHTML = "<h2>A " + j1 + " de jouer.</h2>";
@@ -83,11 +89,9 @@ if (rand % 2 != 0) {
   tour.innerHTML = "<h2>A " + j2 + " de jouer.</h2>";
   jeu++;
 }
-
-/**Affichage des points**/
 pl1.innerHTML = j1 + " a " + pt1 + " points.";
 pl2.innerHTML = j2 + " a " + pt2 + " points.";
-
+}
 /***Restart***/
 recom.addEventListener("click", function () {
   document.location.reload();
@@ -125,6 +129,7 @@ for (let i in plages) {
           versoTemp = [];
           rectoTemp = [];
           compteCarte++;
+          if(mode==true){
           if (jeu % 2 != 0) {
             pt1++;
             pl1.innerHTML = j1 + " a " + pt1 + " points.";
@@ -141,25 +146,36 @@ for (let i in plages) {
               win = true;
               clearTimeout(horloge);
             }
+        }
           }
           if (compteCarte == 1) {
-            cptPair.innerHTML = compteCarte + " paires trouvée";
+            cptPair.innerHTML = compteCarte + " paire trouvée";
           } else {
             cptPair.innerHTML = compteCarte + " paires trouvées";
           }
+          if(mode==true){
           if (compteCarte == 8 && win == false) {
             result.innerHTML = "<h1>Egalité !</h1>";
             clearTimeout(horloge);
           }
+        } else{
+            if (compteCarte == 8) {
+                result.innerHTML = "<h1>Gagné !</h1>";
+                clearTimeout(horloge);
+            }
+        }
+        //PRESK FINI FAIRE WIN CONDITION SOLO
         } else {
           debug = false;
           time = setTimeout(retourne, 1000, false, verso, e);
           jeu++;
+          if(mode==true){
           if (jeu % 2 != 0) {
             tour.innerHTML = "<h2>A " + j1 + " de jouer.</h2>";
           } else {
             tour.innerHTML = "<h2>A " + j2 + " de jouer.</h2>";
           }
+        }
         }
       }
     }

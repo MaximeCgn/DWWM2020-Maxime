@@ -12,15 +12,15 @@ for ($i = 1; $i <= 8; $i++) {
 
 echo '
 <div class="centrer">
-<button id="restart">Recommencer</button>
-<button id="soluce">Solution</button>
-<div id="nbrcp"></div><br>
-<div id="timer"></div><br>
-<div id="paire"></div><br>
-<div id="joueur"></div><br><br>
-<div id="joueur1"></div>
-<div id="joueur2"></div>
-<div id="resultat"></div>
+<button id="restart" class="centrer">Recommencer</button>
+<button id="soluce" class="centrer">Solution</button>
+<div id="nbrcp" class="centrer"></div><br>
+<div id="timer" class="centrer"></div><br>
+<div id="paire" class="centrer"></div><br>
+<div id="joueur" class="centrer"></div><br><br>
+<div id="joueur1" class="centrer"></div>
+<div id="joueur2" class="centrer"></div>
+<div id="resultat" class="centrer"></div>
 </div>
 <div class="colonne">';
 for ($i = 1; $i <= 4; $i++) {
