@@ -11,6 +11,7 @@ var win=["url(\"http://afpacentre/05%20-%20WEB%20DYNAMIQUE/06%20-%20Taquin/1.jpg
 
 /******************************Fonctions******************************/
 function deplace(e) {
+    testerGagner();
     var styleClique = window.getComputedStyle(e.target).backgroundImage;
     var styleVide = window.getComputedStyle(vide).backgroundImage;
     var xClique = parseInt(e.target.getAttribute("x"));
@@ -25,18 +26,19 @@ function deplace(e) {
         xVide = xClique;
         yVide = yClique;
         vide = document.getElementsByClassName("void")[0];
-        testerGagner();
+        
     } else {
         console.log("Non");
     }
 }
 
 function testerGagner(){
-    var cpt=0;
+    var cpt=1;
     for (let i=0;i<boutons.length;i++){
-        if (boutons[i].style.backgroundImage==win[i].style.backgroundImage){
+        if (window.getComputedStyle(boutons[i]).backgroundImage==win[i]){
             cpt++;
         }
+        console.log(cpt);
     }
     if (cpt==8){
         alert("OUIIIIII");
