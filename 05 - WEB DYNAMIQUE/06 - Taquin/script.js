@@ -11,7 +11,6 @@ var win=["url(\"http://afpacentre/05%20-%20WEB%20DYNAMIQUE/06%20-%20Taquin/1.jpg
 
 /******************************Fonctions******************************/
 function deplace(e) {
-    testerGagner();
     var styleClique = window.getComputedStyle(e.target).backgroundImage;
     var styleVide = window.getComputedStyle(vide).backgroundImage;
     var xClique = parseInt(e.target.getAttribute("x"));
@@ -61,6 +60,7 @@ for (let i=0;i<boutons.length;i++) {
     }
     boutons[i].addEventListener("click", (e) => {
         deplace(e);
+        testerGagner();
     });
 }
 boutons[pos].setAttribute("class","void");
