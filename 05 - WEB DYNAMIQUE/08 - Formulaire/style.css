@@ -1,0 +1,85 @@
+body{
+    background-color: rgb(42, 63, 80);
+    color: whitesmoke;
+    font-family: Helvetica, sans-serif;
+}
+
+div,input,body,form,fieldset,img{
+    display:flex;
+    flex:1;
+}
+
+img{
+    width: 100%;
+}
+
+.espace{
+    flex:0.5;
+}
+
+div{
+    height:1em;
+    justify-content: center;
+    align-items: center;
+}
+
+.pasCentrer{
+    justify-content: left;
+    align-items: left;
+}
+
+.colonne{
+    flex-direction: column;
+}
+
+.espaceV
+{
+    height:2em;
+}
+
+.submit{
+    max-width: 10em;
+}
+
+form{
+    flex-direction: column;
+    flex:4;
+}
+
+input[required] +div::before{
+    content: "*";
+    color: red;
+}
+
+fieldset{
+    background-color:  rgb(31, 46, 58);
+}
+
+.marge{
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.question{
+    flex: 0.06;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.taille{
+    flex: 0.05;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.cache{
+    position: absolute;
+    z-index: 1000;
+    margin-top:4em;
+    display:none;
+    white-space: nowrap;
+    color:black;
+    background-color: whitesmoke;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+}
