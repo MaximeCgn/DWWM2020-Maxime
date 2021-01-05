@@ -23,7 +23,7 @@
                     <div>
                         <h3>Nom :</h3>
                     </div>
-                        <input type="text" id="nom" title="3 caractères minimum, lettres uniquements" required />
+                        <input type="text" id="nom" title="3 caractères minimum, lettres uniquements" pattern="[A-Za-z-\'\- ]+" required />
                         <div class="question">
                             <img class="infoBulle" src="question.png">
                             <div class="cache" >Champ obligatoire, 3 caractères minimum, lettres uniquements.</div>
@@ -38,7 +38,7 @@
                     <div>
                         <h3>Date de naissance :</h3>
                     </div>
-                        <input type="date" id="ddn" required />
+                        <input type="date" id="ddn" title="Champ obligatoire" pattern="\d{4}$(\/)(((0)[0-9])|((1)[0-2]))(\/)([0-2][0-9]|(3)[0-1])" required />
                         <div class="question">
                             <img class="infoBulle" src="question.png">
                             <div class="cache" >Champ obligatoire.</div>
@@ -53,19 +53,34 @@
                     <div>
                         <h3>Code Postal :</h3>
                     </div>
-                        <input type="number" title="5 chiffres attendus" id="postal"  />
+                        <input type="number" title="5 chiffres attendus" pattern="\d{5}" id="postal"  />
                         <div class="question">
                             <img class="infoBulle" src="question.png">
-                            <div class="cache">Champ obligatoire, 5 chiffres attendus.</div>
+                            <div class="cache">5 chiffres attendus.</div>
                         </div>
                         <div class="taille">
                         <img src="" class="correct">
                         </div>
                         <div class="pasCentrer" id="erreurCP"></div>
                 </div>
+
+                <div class="marge">
+                    <div>
+                        <h3>Adresse mail :</h3>
+                    </div>
+                        <input type="text" title="Adresse mail attendue" id="email" pattern="[\w-.]+@[\w]+\.[\w]{2,4}"  required/>
+                        <div class="question">
+                            <img class="infoBulle" src="question.png">
+                            <div class="cache">Champ obligatoire, adresse mail correcte attendue</div>
+                        </div>
+                        <div class="taille">
+                        <img src="" class="correct">
+                        </div>
+                        <div class="pasCentrer" id="erreurMail"></div>
+                </div>
                 <div class="marge">
                     <div></div>
-                    <input type="submit" id="submit" disabled />
+                    <input type="submit" id="submit" />
                     <div></div>
                 </div>
             </form>
