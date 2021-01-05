@@ -23,7 +23,7 @@
                     <div>
                         <h3>Nom :</h3>
                     </div>
-                        <input type="text" id="nom" title="3 caractères minimum, lettres uniquements" pattern="[A-Za-z-\'\- ]+" required />
+                        <input type="text" id="nom" title="3 caractères minimum, lettres uniquements" pattern="[A-Za-z-']{3,}" required />
                         <div class="question">
                             <img class="infoBulle" src="question.png">
                             <div class="cache" >Champ obligatoire, 3 caractères minimum, lettres uniquements.</div>
@@ -53,7 +53,7 @@
                     <div>
                         <h3>Code Postal :</h3>
                     </div>
-                        <input type="number" title="5 chiffres attendus" pattern="\d{5}" id="postal"  />
+                        <input type="text" title="5 chiffres attendus" pattern="[0-9]{5}" id="postal"  />
                         <div class="question">
                             <img class="infoBulle" src="question.png">
                             <div class="cache">5 chiffres attendus.</div>
@@ -68,7 +68,7 @@
                     <div>
                         <h3>Adresse mail :</h3>
                     </div>
-                        <input type="text" title="Adresse mail attendue" id="email" pattern="[\w-.]+@[\w]+\.[\w]{2,4}"  required/>
+                        <input type="text" title="Adresse mail attendue" id="email" pattern="([a-z0-9]+)@([\da-z]+)\.([a-z\.]{2,4})$"  required/>
                         <div class="question">
                             <img class="infoBulle" src="question.png">
                             <div class="cache">Champ obligatoire, adresse mail correcte attendue</div>
@@ -77,6 +77,25 @@
                         <img src="" class="correct">
                         </div>
                         <div class="pasCentrer" id="erreurMail"></div>
+                </div>
+
+                <div class="marge">
+                    <div>
+                        <h3>Mot de passe :</h3>
+                    </div>
+                        <input type="password" title="8 caractères, 1 majuscule, 1 miniscule, 1 caractère spécial" id="password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[!@#\$%\^&\*+])[a-zA-Z\d!@#\$%\^&\*+]{8,}"  required/>
+                        
+                        <div class="question">
+                            <img class="infoBulle" src="question.png">
+                            <div class="cache">Champ obligatoire,8 caractères minimum dont 1 majuscule, 1 minuscule, 1 caractère spécial</div>
+                        </div>
+                        <div class="petiteTaille">
+                            <img src="oeil.png" id="oeil">
+                        </div>
+                        <div class="taille">
+                        <img src="" class="correct">
+                        </div>
+                        <div class="pasCentrer" id="erreurPw"></div>
                 </div>
                 <div class="marge">
                     <div></div>
