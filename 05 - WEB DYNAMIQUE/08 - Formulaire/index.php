@@ -44,7 +44,7 @@
                     <div class="taille">
                         <img src="" class="correct">
                     </div>
-                    <div class="pasCentrer" id="erreurNom"></div>
+                    <div class="pasCentrer" ></div>
                 </div>
 
                 <div class="marge">
@@ -52,10 +52,10 @@
                         <h3>Nom :</h3>
                     </div>
                     <input type="text" name="nom" id="nom" title="3 caractères minimum, lettres uniquements"
-                        pattern="[A-Z]{3,}" required />
+                        pattern="[A-Za-z-']{3,}" required />
                     <div class="question">
                         <img class="infoBulle" src="question.png">
-                        <div class="cache">Champ obligatoire, 3 caractères minimum, lettres uniquements.</div>
+                        <div class="cache">Champ obligatoire,Majuscules obligatoires, 3 caractères minimum, lettres uniquements.</div>
                     </div>
                     <div class="taille">
                         <img src="" class="correct">
@@ -67,7 +67,7 @@
                     <div>
                         <h3>Prénom :</h3>
                     </div>
-                    <input type="text" name="prenom" id="prenpom" title="3 caractères minimum, lettres uniquements"
+                    <input type="text" name="prenom" id="prenom" title="3 caractères minimum, lettres uniquements"
                         pattern="[A-Za-z-']{3,}" required />
                     <div class="question">
                         <img class="infoBulle" src="question.png">

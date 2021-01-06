@@ -1,3 +1,6 @@
+/**A faire**/
+/*Infos état mdp*/
+
 /*****************************VARIABLES*****************************/
 /**Get input**/
 var nomP = document.getElementById("nom");
@@ -59,9 +62,15 @@ function check() {
     if (cpt==taille)
     {
         sub.removeAttribute("disabled")
+        sub.style.backgroundColor=" rgb(42, 63, 80)";
+        sub.style.borderBottom="whitesmoke 3px solid";
+        sub.style.color="whitesmoke";
     }
     else {
         sub.setAttribute("disabled","");
+        sub.style.backgroundColor="rgb(18, 28, 36)";
+        sub.style.borderBottom="rgb(148, 148, 148) 3px solid";
+        sub.style.color="rgb(148, 148, 148)";
     }
 }
 
@@ -81,41 +90,55 @@ function validateName() {
     check();
 }
 
-/**Véfification du code postal**/
-function validateCP() {
-    if (codePostal.checkValidity()) {
-        erreurCP.textContent = "";
-        checking[3].setAttribute("src", "check.png");
-        tabVerif["code"]=0;
-    } else {
-    erreurCode.textContent = "Le code postal doit comporter 5 caractères numériques."
-    checking[3].setAttribute("src", "cross.png");
-    tabVerif["code"]=1;
+/**Verification du prénom**/
+function validatePrenom(){
+    if(prenom.checkValidity()){
+        erreurTel.textContent="";
+        checking[2].setAttribute("src","check.png");
+        tabVerif["prenom"]=0;
+    } else{
+        erreurTel.textContent="3 caractères minimum, lettres uniquements.";
+        checking[2].setAttribute("src","cross.png");
+        tabVerif["prenom"]=1;
     }
-    check();
 }
 
 /**Véfification de la date de naissance**/
 function validateDate() {
     if (dateN.checkValidity()) {
-        checking[2].setAttribute("src", "check.png");
+        checking[3].setAttribute("src", "check.png");
         tabVerif["ddn"]=0;
     } else {
-    checking[2].setAttribute("src", "cross.png");
+    checking[3].setAttribute("src", "cross.png");
     tabVerif["ddn"]=1;
     }
     check();
 }
 
+/**Véfification du code postal**/
+function validateCP() {
+    if (codePostal.checkValidity()) {
+        erreurCP.textContent = "";
+        checking[4].setAttribute("src", "check.png");
+        tabVerif["code"]=0;
+    } else {
+    erreurCode.textContent = "Le code postal doit comporter 5 caractères numériques."
+    checking[4].setAttribute("src", "cross.png");
+    tabVerif["code"]=1;
+    }
+    check();
+}
+
+
 /**Véfification de l'adresse mail**/
 function validateMail() {
     if (mail.checkValidity()) {
         erreurM.textContent = "";
-        checking[4].setAttribute("src", "check.png");
+        checking[5].setAttribute("src", "check.png");
         tabVerif["mail"]=0;
     } else {
     erreurM.textContent = "L'adresse mail doit suivre cet exemple : 'exemple@test.com'."
-    checking[4].setAttribute("src", "cross.png");
+    checking[5].setAttribute("src", "cross.png");
     tabVerif["mail"]=1;
     }
     check();
@@ -125,11 +148,11 @@ function validateMail() {
 function validateMdp(){
     if (mdp.checkValidity()) {
         erreurMdp.textContent = "";
-        checking[5].setAttribute("src", "check.png");
+        checking[6].setAttribute("src", "check.png");
         tabVerif["mdp"]=0;
     } else {
-    erreurMdp.textContent = "8 caractères minimum dont 1 majuscule, 1 minuscule, 1 caractère spécial"
-    checking[5].setAttribute("src", "cross.png");
+    erreurMdp.textContent = "8 caractères minimum dont 1 majuscule, 1 minuscule, 1 caractère spécial."
+    checking[6].setAttribute("src", "cross.png");
     tabVerif["mdp"]=1;
     }
     check();
@@ -139,11 +162,11 @@ function validateMdp(){
 function validateVerif(){
     if(mdp.value==verif.value){
         erreurVer.textContent="";
-        checking[6].setAttribute("src","check.png");
+        checking[7].setAttribute("src","check.png");
         tabVerif["verif"]=0;
     } else {
-        erreurVer.textContent="Champ obligatoire,il doit correspondre au mot de passe du dessus";
-        checking[6].setAttribute("src","cross.png");
+        erreurVer.textContent="Champ obligatoire,il doit correspondre au mot de passe du dessus.";
+        checking[7].setAttribute("src","cross.png");
         tabVerif["verif"]=1;
     }
     check();
@@ -153,24 +176,13 @@ function validateVerif(){
 function validatePhone(){
     if(tel.value==""){
         erreurTel.textContent="Numéro de téléphone valide attendu";
-        checking[7].setAttribute("src","cross.png");
+        checking[8].setAttribute("src","cross.png");
     } else if(tel.checkValidity){
         erreurTel.textContent="";
-        checking[7].setAttribute("src","check.png");
+        checking[8].setAttribute("src","check.png");
     } else {
-        erreurTel.textContent="Numéro de téléphone valide attendu";
-        checking[7].setAttribute("src","cross.png");
-    }
-}
-
-/**Verification du prénom**/
-function validatePrenom(){
-    if(prenom.checkValidity()){
-        erreurTel.textContent="";
-        checking[7].setAttribute("src","check.png");
-    } else{
-        erreurTel.textContent="3 caractères minimum, lettres uniquements.";
-        checking[7].setAttribute("src","cross.png");
+        erreurTel.textContent="Numéro de téléphone valide attendu.";
+        checking[8].setAttribute("src","cross.png");
     }
 }
 
@@ -217,6 +229,7 @@ mdp.addEventListener("input", validateMdp);
 verif.addEventListener("blur",validateVerif)
 verif.addEventListener("paste",annule)
 tel.addEventListener("blur",validatePhone);
+prenom.addEventListener("blur",validatePrenom);
 
 /**Voir le mdp**/
 see.addEventListener("click",voirMdp);

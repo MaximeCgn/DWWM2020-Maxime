@@ -54,6 +54,12 @@ input{
     border-bottom: whitesmoke 3px solid;
 }
 
+input[type="submit"]{
+    background-color:rgb(18, 28, 36) ;
+    color:rgb(148, 148, 148);
+    border-bottom: rgb(148, 148, 148) 3px solid;
+}
+
 input[required] +div::before{
     content: "*";
     color: red;
