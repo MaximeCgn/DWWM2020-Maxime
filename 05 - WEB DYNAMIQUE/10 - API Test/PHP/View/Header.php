@@ -19,7 +19,7 @@
 						<option value="london,uk">Londres</option>
 						<option value="dakar,sn">Dakar</option>
 						<option value="moscow,ru">Moscou</option>
-						<option value="athenes,gr">Athenes</option>
+						<option value="athens,gr">Athenes</option>
 						<option value="bangkok,th">Bangkok</option>
 					</select>
 					<div></div>
