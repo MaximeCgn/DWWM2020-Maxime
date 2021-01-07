@@ -1,6 +1,7 @@
 // Utilisation de l'Ajax pour appeler l'API et récuperer les enregistrements
 var contenu = document.getElementById("contenu");
 var enregs; // contient la reponse de l'API
+var flagDetail=false;
 // on définit une requete
 const req = new XMLHttpRequest();
 //on vérifie les changements d'états de la requête
@@ -10,8 +11,6 @@ req.onreadystatechange = function (event) {
             // la requete a abouti et a fournit une reponse
             //on décode la réponse, pour obtenir un objet
             reponse = JSON.parse(this.responseText);
-            console.log(this.responseText);
-            console.log(reponse);
             enregs = reponse.records;
             for (let i = 0; i < enregs.length; i++) {
                 // on crée la ligne et les div internes
@@ -64,8 +63,8 @@ function afficheDetail(e) {
     dispo.innerHTML = "Vélos disponibles :"+enregs[parkingClique.id].fields.nbvelosdispo;
     nbMax.innerHTML= "Places disponibles :" + enregs[parkingClique.id].fields.nbplacesdispo;
     contenu.insertBefore(detail, parkingClique.nextSibling);
-
 }
+
 
 //on envoi la requête
 req.open('GET', 'https://opendata.lillemetropole.fr/api/records/1.0/search/?dataset=vlille-realtime&q=&lang=fr&rows=50&facet=libelle&facet=nom&facet=commune&facet=etat&facet=type&facet=etatconnexion', true);
