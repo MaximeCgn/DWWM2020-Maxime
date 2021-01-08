@@ -1,0 +1,132 @@
+﻿/*-----------------------------------GLOBAL-----------------------------------------*/
+body {
+	background-color: #48426D;
+	color:#F0C38E;
+	background-repeat: no-repeat;
+	background-size: cover;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+	user-select: none;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.2em;
+}
+header {
+	background-color: rgb(55,51,88);
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	border-radius: 1em;
+}
+
+#image{
+	flex:0.5;
+}
+
+.colonne{
+	flex-direction: column;
+}
+div,img{
+	display: flex;
+	flex:1;
+}
+
+img {
+	width: 100%;
+}
+
+#page {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+#divContenu{
+	flex:4;
+}
+
+#contenu {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	background-color: rgb(55,51,88);
+	margin-top: 1em;
+	border-radius: 1em;
+}
+.ligne{
+	display: flex;
+	justify-content: space-between;
+}
+
+.espaceHorizon {
+	height: 1vw;
+}
+.espaceVertical {
+	flex: 0.5;
+}
+
+.centrer{
+	justify-content: center;
+	align-items: center;
+}
+
+#titre {
+	display: flex;
+	justify-content: space-between;
+	flex: 1.5;
+}
+
+#logo {
+	flex: 1;
+	padding: 0.5em;
+}
+
+#titre_page {
+	display: flex;
+	flex: 5;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#divSousTitre{
+	text-align: center;
+}
+.ville , .libelle ,.etat  {
+	flex: 1;
+}
+.dispo, .adresse, .nbMax{
+	flex: 1;
+	padding-left: 2vw;
+}
+.titreLigne{
+	font-weight: bold;
+}
+.detail{
+	display: flex;
+	justify-content: space-between;
+	background-color: darkgrey;
+}
+
+.ligne{
+	padding-top:2.5vw;
+}
+
+#sum{
+	background-color: #48426D;
+	border: none;
+	border-radius: 1em;
+	color:#F0C38E ;
+	font-size: 1em;
+	text-align: center;
+}
+
+#oksub{
+	border-radius:0.5em;
+	margin-left: -3vh;
+}

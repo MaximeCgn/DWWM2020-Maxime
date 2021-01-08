@@ -93,11 +93,11 @@ function validateName() {
 /**Verification du prénom**/
 function validatePrenom(){
     if(prenom.checkValidity()){
-        erreurTel.textContent="";
+        erreurP.textContent="";
         checking[2].setAttribute("src","check.png");
         tabVerif["prenom"]=0;
     } else{
-        erreurTel.textContent="3 caractères minimum, lettres uniquements.";
+        erreurP.textContent="3 caractères minimum, lettres uniquements.";
         checking[2].setAttribute("src","cross.png");
         tabVerif["prenom"]=1;
     }

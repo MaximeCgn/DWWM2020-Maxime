@@ -11,8 +11,11 @@ var sunset = document.getElementById("sunset");
 var meteo = document.getElementById("meteo");
 var logo = document.getElementById("image");
 var citySelect = document.getElementById("citySelect");
-var choix = "";
+var body = document.getElementsByTagName("body")[0];
 
+var choix = "";
+var time=new Date();
+console.log(time);
 /**************************Fonctions****************************/
 
 function choixVille(e) {
@@ -46,6 +49,7 @@ req.onreadystatechange = function (event) {
 
             var dateSunrise = new Date(unixSunrise * 1000);
             var dateSunset = new Date(unixSunset * 1000);
+            console.log(dateSunrise);
 
             if (dateSunrise.getHours() < 10) {
                 var hoursSunrise = "0" + dateSunrise.getHours();
@@ -78,6 +82,14 @@ req.onreadystatechange = function (event) {
             sunrise.innerHTML = "Levé du soleil :" + tsunrise +" UTC+1";
             sunset.innerHTML = "Couché du soleil :" + tsunset+" UTC+1";
 
+
+            /**Changement du style en fonction de l'heure**/
+            if(time>dateSunset || time<dateSunrise){
+                body.style.backgroundColor="#48426D";
+            }
+            else {
+                body.style.backgroundColor=" #F0C38E";
+            }
         } else {
             console.log("Status de la réponse: %d (%s)", this.status, this.statusText);
         }
