@@ -23,4 +23,4 @@ if ($typeTraitement=="ajouter"){
     VisiteursManager::delete($id);
 }
 
-header("location:index.php?listeVisiteurs");
+header("location:index.php?page=listeVisiteurs");

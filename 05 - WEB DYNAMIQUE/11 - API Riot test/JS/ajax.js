@@ -35,5 +35,5 @@ req.onreadystatechange = function (event) {
 
 /**************************EVENTS****************************/
 
-req.open('GET', 'https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/G2%20Grogu?api_key=RGAPI-7515fcd6-c12a-4f78-8241-2f85f230183c', true);
+req.open('GET', 'https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/G2%20Grogu?api_key=RGAPI-57390834-f76d-428c-93ce-ed7820047a03', true);
 req.send(null);
