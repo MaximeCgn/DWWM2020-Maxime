@@ -1,0 +1,74 @@
+[
+    {
+        "idRegion": "84",
+        "LibelleRegion": "AUVERGNE-RHONE-ALPES"
+    },
+    {
+        "idRegion": "27",
+        "LibelleRegion": "BOURGOGNE-FRANCHE-COMTE"
+    },
+    {
+        "idRegion": "53",
+        "LibelleRegion": "BRETAGNE"
+    },
+    {
+        "idRegion": "24",
+        "LibelleRegion": "CENTRE-VAL DE LOIRE"
+    },
+    {
+        "idRegion": "94",
+        "LibelleRegion": "CORSE"
+    },
+    {
+        "idRegion": "44",
+        "LibelleRegion": "GRAND EST"
+    },
+    {
+        "idRegion": "1",
+        "LibelleRegion": "GUADELOUPE"
+    },
+    {
+        "idRegion": "3",
+        "LibelleRegion": "GUYANE"
+    },
+    {
+        "idRegion": "32",
+        "LibelleRegion": "HAUTS-DE-FRANCE"
+    },
+    {
+        "idRegion": "11",
+        "LibelleRegion": "ILE-DE-FRANCE"
+    },
+    {
+        "idRegion": "4",
+        "LibelleRegion": "LA REUNION"
+    },
+    {
+        "idRegion": "2",
+        "LibelleRegion": "MARTINIQUE"
+    },
+    {
+        "idRegion": "6",
+        "LibelleRegion": "MAYOTTE"
+    },
+    {
+        "idRegion": "28",
+        "LibelleRegion": "NORMANDIE"
+    },
+    {
+        "idRegion": "75",
+        "LibelleRegion": "NOUVELLE-AQUITAINE"
+    },
+    {
+        "idRegion": "76",
+        "LibelleRegion": "OCCITANIE"
+    },
+    {
+        "idRegion": "52",
+        "LibelleRegion": "PAYS DE LA LOIRE"
+    },
+    {
+        "idRegion": "93",
+        "LibelleRegion": "PROVENCE-ALPES-COTE D AZUR"
+    }
+]

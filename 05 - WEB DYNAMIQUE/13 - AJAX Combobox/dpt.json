@@ -1,0 +1,507 @@
+[
+    {
+        "idDepartement": "1",
+        "LibelleDepartement": "AIN",
+        "IdRegion": "84"
+    },
+    {
+        "idDepartement": "2",
+        "LibelleDepartement": "AISNE",
+        "IdRegion": "32"
+    },
+    {
+        "idDepartement": "3",
+        "LibelleDepartement": "ALLIER",
+        "IdRegion": "84"
+    },
+    {
+        "idDepartement": "4",
+        "LibelleDepartement": "ALPES-DE-HAUTE-PROVENCE",
+        "IdRegion": "93"
+    },
+    {
+        "idDepartement": "6",
+        "LibelleDepartement": "ALPES-MARITIMES",
+        "IdRegion": "93"
+    },
+    {
+        "idDepartement": "7",
+        "LibelleDepartement": "ARDECHE",
+        "IdRegion": "84"
+    },
+    {
+        "idDepartement": "8",
+        "LibelleDepartement": "ARDENNES",
+        "IdRegion": "44"
+    },
+    {
+        "idDepartement": "9",
+        "LibelleDepartement": "ARIEGE",
+        "IdRegion": "76"
+    },
+    {
+        "idDepartement": "10",
+        "LibelleDepartement": "AUBE",
+        "IdRegion": "44"
+    },
+    {
+        "idDepartement": "11",
+        "LibelleDepartement": "AUDE",
+        "IdRegion": "76"
+    },
+    {
+        "idDepartement": "12",
+        "LibelleDepartement": "AVEYRON",
+        "IdRegion": "76"
+    },
+    {
+        "idDepartement": "68",
+        "LibelleDepartement": "BAS-RHIN",
+        "IdRegion": "44"
+    },
+    {
+        "idDepartement": "13",
+        "LibelleDepartement": "BOUCHES-DU-RHONE",
+        "IdRegion": "93"
+    },
+    {
+        "idDepartement": "14",
+        "LibelleDepartement": "CALVADOS",
+        "IdRegion": "28"
+    },
+    {
+        "idDepartement": "15",
+        "LibelleDepartement": "CANTAL",
+        "IdRegion": "84"
+    },
+    {
+        "idDepartement": "16",
+        "LibelleDepartement": "CHARENTE",
+        "IdRegion": "75"
+    },
+    {
+        "idDepartement": "17",
+        "LibelleDepartement": "CHARENTE-MARITIME",
+        "IdRegion": "75"
+    },
+    {
+        "idDepartement": "18",
+        "LibelleDepartement": "CHER",
+        "IdRegion": "24"
+    },
+    {
+        "idDepartement": "19",
+        "LibelleDepartement": "CORREZE",
+        "IdRegion": "75"
+    },
+    {
+        "idDepartement": "29",
+        "LibelleDepartement": "CORSE-DU-SUD",
+        "IdRegion": "94"
+    },
+    {
+        "idDepartement": "20",
+        "LibelleDepartement": "COTE-D OR",
+        "IdRegion": "27"
+    },
+    {
+        "idDepartement": "21",
+        "LibelleDepartement": "COTES-D ARMOR",
+        "IdRegion": "53"
+    },
+    {
+        "idDepartement": "22",
+        "LibelleDepartement": "CREUSE",
+        "IdRegion": "75"
+    },
+    {
+        "idDepartement": "80",
+        "LibelleDepartement": "DEUX-SEVRES",
+        "IdRegion": "75"
+    },
+    {
+        "idDepartement": "23",
+        "LibelleDepartement": "DORDOGNE",
+        "IdRegion": "75"
+    },
+    {
+        "idDepartement": "24",
+        "LibelleDepartement": "DOUBS",
+        "IdRegion": "27"
+    },
+    {
+        "idDepartement": "25",
+        "LibelleDepartement": "DROME",
+        "IdRegion": "84"
+    },
+    {
+        "idDepartement": "92",
+        "LibelleDepartement": "ESSONNE",
+        "IdRegion": "11"
+    },
+    {
+        "idDepartement": "26",
+        "LibelleDepartement": "EURE",
+        "IdRegion": "28"
+    },
+    {
+        "idDepartement": "27",
+        "LibelleDepartement": "EURE-ET-LOIR",
+        "IdRegion": "24"
+    },
+    {
+        "idDepartement": "28",
+        "LibelleDepartement": "FINISTERE",
+        "IdRegion": "53"
+    },
+    {
+        "idDepartement": "31",
+        "LibelleDepartement": "GARD",
+        "IdRegion": "76"
+    },
+    {
+        "idDepartement": "33",
+        "LibelleDepartement": "GERS",
+        "IdRegion": "76"
+    },
+    {
+        "idDepartement": "34",
+        "LibelleDepartement": "GIRONDE",
+        "IdRegion": "75"
+    },
+    {
+        "idDepartement": "97",
+        "LibelleDepartement": "GUADELOUPE",
+        "IdRegion": "1"
+    },
+    {
+        "idDepartement": "99",
+        "LibelleDepartement": "GUYANE",
+        "IdRegion": "3"
+    },
+    {
+        "idDepartement": "69",
+        "LibelleDepartement": "HAUT-RHIN",
+        "IdRegion": "44"
+    },
+    {
+        "idDepartement": "30",
+        "LibelleDepartement": "HAUTE-CORSE",
+        "IdRegion": "94"
+    },
+    {
+        "idDepartement": "32",
+        "LibelleDepartement": "HAUTE-GARONNE",
+        "IdRegion": "76"
+    },
+    {
+        "idDepartement": "44",
+        "LibelleDepartement": "HAUTE-LOIRE",
+        "IdRegion": "84"
+    },
+    {
+        "idDepartement": "53",
+        "LibelleDepartement": "HAUTE-MARNE",
+        "IdRegion": "44"
+    },
+    {
+        "idDepartement": "71",
+        "LibelleDepartement": "HAUTE-SAONE",
+        "IdRegion": "27"
+    },
+    {
+        "idDepartement": "75",
+        "LibelleDepartement": "HAUTE-SAVOIE",
+        "IdRegion": "84"
+    },
+    {
+        "idDepartement": "88",
+        "LibelleDepartement": "HAUTE-VIENNE",
+        "IdRegion": "75"
+    },
+    {
+        "idDepartement": "5",
+        "LibelleDepartement": "HAUTES-ALPES",
+        "IdRegion": "93"
+    },
+    {
+        "idDepartement": "66",
+        "LibelleDepartement": "HAUTES-PYRENEES",
+        "IdRegion": "76"
+    },
+    {
+        "idDepartement": "93",
+        "LibelleDepartement": "HAUTS-DE-SEINE",
+        "IdRegion": "11"
+    },
+    {
+        "idDepartement": "35",
+        "LibelleDepartement": "HERAULT",
+        "IdRegion": "76"
+    },
+    {
+        "idDepartement": "36",
+        "LibelleDepartement": "ILLE-ET-VILAINE",
+        "IdRegion": "53"
+    },
+    {
+        "idDepartement": "37",
+        "LibelleDepartement": "INDRE",
+        "IdRegion": "24"
+    },
+    {
+        "idDepartement": "38",
+        "LibelleDepartement": "INDRE-ET-LOIRE",
+        "IdRegion": "24"
+    },
+    {
+        "idDepartement": "39",
+        "LibelleDepartement": "ISERE",
+        "IdRegion": "84"
+    },
+    {
+        "idDepartement": "40",
+        "LibelleDepartement": "JURA",
+        "IdRegion": "27"
+    },
+    {
+        "idDepartement": "100",
+        "LibelleDepartement": "LA REUNION",
+        "IdRegion": "4"
+    },
+    {
+        "idDepartement": "41",
+        "LibelleDepartement": "LANDES",
+        "IdRegion": "75"
+    },
+    {
+        "idDepartement": "42",
+        "LibelleDepartement": "LOIR-ET-CHER",
+        "IdRegion": "24"
+    },
+    {
+        "idDepartement": "43",
+        "LibelleDepartement": "LOIRE",
+        "IdRegion": "84"
+    },
+    {
+        "idDepartement": "45",
+        "LibelleDepartement": "LOIRE-ATLANTIQUE",
+        "IdRegion": "52"
+    },
+    {
+        "idDepartement": "46",
+        "LibelleDepartement": "LOIRET",
+        "IdRegion": "24"
+    },
+    {
+        "idDepartement": "47",
+        "LibelleDepartement": "LOT",
+        "IdRegion": "76"
+    },
+    {
+        "idDepartement": "48",
+        "LibelleDepartement": "LOT-ET-GARONNE",
+        "IdRegion": "75"
+    },
+    {
+        "idDepartement": "49",
+        "LibelleDepartement": "LOZERE",
+        "IdRegion": "76"
+    },
+    {
+        "idDepartement": "50",
+        "LibelleDepartement": "MAINE-ET-LOIRE",
+        "IdRegion": "52"
+    },
+    {
+        "idDepartement": "51",
+        "LibelleDepartement": "MANCHE",
+        "IdRegion": "28"
+    },
+    {
+        "idDepartement": "52",
+        "LibelleDepartement": "MARNE",
+        "IdRegion": "44"
+    },
+    {
+        "idDepartement": "98",
+        "LibelleDepartement": "MARTINIQUE",
+        "IdRegion": "2"
+    },
+    {
+        "idDepartement": "54",
+        "LibelleDepartement": "MAYENNE",
+        "IdRegion": "52"
+    },
+    {
+        "idDepartement": "101",
+        "LibelleDepartement": "MAYOTTE",
+        "IdRegion": "6"
+    },
+    {
+        "idDepartement": "55",
+        "LibelleDepartement": "MEURTHE-ET-MOSELLE",
+        "IdRegion": "44"
+    },
+    {
+        "idDepartement": "56",
+        "LibelleDepartement": "MEUSE",
+        "IdRegion": "44"
+    },
+    {
+        "idDepartement": "57",
+        "LibelleDepartement": "MORBIHAN",
+        "IdRegion": "53"
+    },
+    {
+        "idDepartement": "58",
+        "LibelleDepartement": "MOSELLE",
+        "IdRegion": "44"
+    },
+    {
+        "idDepartement": "59",
+        "LibelleDepartement": "NIEVRE",
+        "IdRegion": "27"
+    },
+    {
+        "idDepartement": "60",
+        "LibelleDepartement": "NORD",
+        "IdRegion": "32"
+    },
+    {
+        "idDepartement": "61",
+        "LibelleDepartement": "OISE",
+        "IdRegion": "32"
+    },
+    {
+        "idDepartement": "62",
+        "LibelleDepartement": "ORNE",
+        "IdRegion": "28"
+    },
+    {
+        "idDepartement": "76",
+        "LibelleDepartement": "PARIS",
+        "IdRegion": "11"
+    },
+    {
+        "idDepartement": "63",
+        "LibelleDepartement": "PAS-DE-CALAIS",
+        "IdRegion": "32"
+    },
+    {
+        "idDepartement": "64",
+        "LibelleDepartement": "PUY-DE-DOME",
+        "IdRegion": "84"
+    },
+    {
+        "idDepartement": "65",
+        "LibelleDepartement": "PYRENEES-ATLANTIQUES",
+        "IdRegion": "75"
+    },
+    {
+        "idDepartement": "67",
+        "LibelleDepartement": "PYRENEES-ORIENTALES",
+        "IdRegion": "76"
+    },
+    {
+        "idDepartement": "70",
+        "LibelleDepartement": "RHONE",
+        "IdRegion": "84"
+    },
+    {
+        "idDepartement": "72",
+        "LibelleDepartement": "SAONE-ET-LOIRE",
+        "IdRegion": "27"
+    },
+    {
+        "idDepartement": "73",
+        "LibelleDepartement": "SARTHE",
+        "IdRegion": "52"
+    },
+    {
+        "idDepartement": "74",
+        "LibelleDepartement": "SAVOIE",
+        "IdRegion": "84"
+    },
+    {
+        "idDepartement": "78",
+        "LibelleDepartement": "SEINE-ET-MARNE",
+        "IdRegion": "11"
+    },
+    {
+        "idDepartement": "77",
+        "LibelleDepartement": "SEINE-MARITIME",
+        "IdRegion": "28"
+    },
+    {
+        "idDepartement": "94",
+        "LibelleDepartement": "SEINE-SAINT-DENIS",
+        "IdRegion": "11"
+    },
+    {
+        "idDepartement": "81",
+        "LibelleDepartement": "SOMME",
+        "IdRegion": "32"
+    },
+    {
+        "idDepartement": "82",
+        "LibelleDepartement": "TARN",
+        "IdRegion": "76"
+    },
+    {
+        "idDepartement": "83",
+        "LibelleDepartement": "TARN-ET-GARONNE",
+        "IdRegion": "76"
+    },
+    {
+        "idDepartement": "91",
+        "LibelleDepartement": "TERRITOIRE DE BELFORT",
+        "IdRegion": "27"
+    },
+    {
+        "idDepartement": "96",
+        "LibelleDepartement": "VAL-D OISE",
+        "IdRegion": "11"
+    },
+    {
+        "idDepartement": "95",
+        "LibelleDepartement": "VAL-DE-MARNE",
+        "IdRegion": "11"
+    },
+    {
+        "idDepartement": "84",
+        "LibelleDepartement": "VAR",
+        "IdRegion": "93"
+    },
+    {
+        "idDepartement": "85",
+        "LibelleDepartement": "VAUCLUSE",
+        "IdRegion": "93"
+    },
+    {
+        "idDepartement": "86",
+        "LibelleDepartement": "VENDEE",
+        "IdRegion": "52"
+    },
+    {
+        "idDepartement": "87",
+        "LibelleDepartement": "VIENNE",
+        "IdRegion": "75"
+    },
+    {
+        "idDepartement": "89",
+        "LibelleDepartement": "VOSGES",
+        "IdRegion": "44"
+    },
+    {
+        "idDepartement": "90",
+        "LibelleDepartement": "YONNE",
+        "IdRegion": "27"
+    },
+    {
+        "idDepartement": "79",
+        "LibelleDepartement": "YVELINES",
+        "IdRegion": "11"
+    }
+]
