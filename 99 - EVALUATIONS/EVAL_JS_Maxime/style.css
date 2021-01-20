@@ -1,0 +1,60 @@
+/****************General******************/
+:root{
+    --bgColor : wheat;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--bgColor);
+}
+
+div,input,fieldset{
+    display: flex;
+    flex:1;
+}
+
+.centrer{
+    justify-content: center;
+    align-items: center;
+}
+
+.colonne{
+    flex-direction: column;
+}
+
+.ligne{
+    flex-direction: row;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+h1{
+    margin-top: 5em;
+    margin-bottom: 2em;
+}
+
+button{
+    margin-right: 10em;
+    margin-left: 10em;
+}
+
+/*******************Formulaire*******************/
+fieldset{
+    border :2px rgb(86, 102, 109) solid;
+    flex:5;
+    margin-bottom: 5em;
+}
+
+#erreurCap,#erreurTN,#erreurD{
+    color: red;
+    font-weight: bold;
+}
+
+.type{
+    padding-left: 0.5em;
+}
+
+input{
+    flex:2;
+}

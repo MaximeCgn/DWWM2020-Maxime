@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Titre de la page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.jpg" />
+</head>
+
+<body>
+    <div class="centrer">
+        <h1>Calcul du Taux d'Intérêt</h1>
+    </div>
+    <div>
+        <div></div>
+        <fieldset class="colonne">
+            <div class="ligne">
+                <div>Capital Emprunté</div>
+                <input type="text" id="capital" pattern="^[0-9]{1,}$"/>
+                <div class="type">€</div>
+                <div id="erreurCap"></div>
+            </div>
+            <div class="ligne">
+                <div class="ligne">
+                    <div>Taux Nominal Annuel</div>
+                    <input type="text" id="tauxNominal" pattern="^[0-9]{1,2}$"/>
+                    <div class="type">%</div>
+                    <div id="erreurTN"></div>
+                </div>
+            </div>
+            <div class="ligne">
+                <div class="ligne">
+                    <div>Durée d'emprunt</div>
+                    <input type="text" id="dureeEmprunt" pattern="^[0-9]{1,2}$"/>
+                    <div class="type">Ans</div>
+                    <div id="erreurD"></div>
+                </div>
+            </div>
+        </fieldset>
+        <div></div>
+    </div>
+    <div class="espaceV"></div>
+    <div>
+        <div></div>
+        <fieldset class="colonne">
+            <div class="ligne">
+                <div>Mensualité</div>
+                <input type="text" id="mensualite" readonly/>
+                <div class="type">€</div>
+                <div class="erreur"></div>
+            </div>
+            <div class="ligne">
+                <div class="ligne">
+                    <div>Coût Total</div>
+                    <input type="text" id="coutTotal" readonly/>
+                    <div class="type">€</div>
+                    <div class="erreur"></div>
+                </div>
+            </div>
+        </fieldset>
+        <div></div>
+    </div>
+
+    <div>
+    <div class="centrer">
+        <button id="calcul">Calculer</button>
+        <button id="new">Nouveau Calcul</button>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
